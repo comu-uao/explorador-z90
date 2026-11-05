@@ -77,7 +77,8 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
 .go:active { transform: translateY(0); }
 .go:focus-visible { outline: 3px solid var(--white); outline-offset: 4px; }
 @keyframes rec-ring { 0% { opacity: .7; transform: scale(.92); } 100% { opacity: 0; transform: scale(1.12); } }
-.arch { position: absolute; left: 22%; bottom: -2px; width: 80%; height: var(--arch); stroke: var(--white); }
+/* arco simétrico, centrado en el recuadro */
+.arch { position: absolute; left: 50%; transform: translateX(-50%); bottom: -2px; width: 72%; height: var(--arch); stroke: var(--white); }
 .arch path { vector-effect: non-scaling-stroke; stroke-width: 2; }
 
 /* Columna derecha: mismo padding que la izquierda, bloque centrado y de ancho de lectura */
