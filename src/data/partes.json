@@ -1,0 +1,14 @@
+[
+  {"id": "parasol", "mesh": "Parasol", "explode": [-1.4, 0, 0]},
+  {"id": "lente", "mesh": "Lente_Zeiss", "explode": [-0.8, 0, 0]},
+  {"id": "nd", "mesh": "Filtro_ND", "explode": [-0.5, -1.5, 0.6]},
+  {"id": "sensor", "mesh": "Sensor_CMOS", "explode": [0, -1.5, 0.6]},
+  {"id": "cuerpo", "mesh": "Cuerpo", "explode": [0, 0, 0]},
+  {"id": "lcd", "mesh": "Pantalla_LCD", "explode": [0, 0.3, 1.6]},
+  {"id": "visor", "mesh": "Visor_OLED", "explode": [1.0, 0.6, 0]},
+  {"id": "asa", "mesh": "Asa_XLR", "explode": [0, 1.2, 0]},
+  {"id": "mic", "mesh": "Microfono", "explode": [-0.6, 0.9, 0.4]},
+  {"id": "sd", "mesh": "Ranuras_SD", "explode": [0.2, -0.2, 0.9]},
+  {"id": "conectores", "mesh": "Conectores", "explode": [-0.2, -0.6, -1.2]},
+  {"id": "bateria", "mesh": "Bateria", "explode": [1.2, -0.3, 0]}
+]

@@ -1,0 +1,60 @@
+[
+  {
+    "tipo": "identificar",
+    "pregunta": "Toca en el modelo la pieza que funciona como «gafas de sol» de la cámara.",
+    "respuesta": "nd",
+    "explicacion": "El filtro ND está dentro de la cámara. Ve el modelo por capas para encontrarlo."
+  },
+  {
+    "tipo": "opcion",
+    "pregunta": "No puedes cambiar ninguna configuración de la cámara. ¿Qué revisas primero?",
+    "opciones": ["Que el interruptor AUTO/MANUAL esté en MANUAL", "Que la batería esté cargada", "Que el parasol esté puesto", "Que el micrófono esté conectado"],
+    "correcta": 0,
+    "parte": "cuerpo",
+    "explicacion": "En AUTO la cámara decide todo y bloquea los ajustes manuales."
+  },
+  {
+    "tipo": "opcion",
+    "pregunta": "Ajustaste el iris y vuelves a presionar el botón IRIS. ¿Qué pasa?",
+    "opciones": ["Se guarda el ajuste", "El iris vuelve a automático", "Se apaga la cámara", "Cambia el ISO"],
+    "correcta": 1,
+    "parte": "cuerpo",
+    "explicacion": "Para fijar el valor se presiona la palanca de mando. Si presionas IRIS otra vez, vuelve a automático."
+  },
+  {
+    "tipo": "identificar",
+    "pregunta": "Toca la pieza donde conectas un micrófono profesional XLR.",
+    "respuesta": "audio",
+    "explicacion": "Las dos entradas XLR están al frente del asa."
+  },
+  {
+    "tipo": "opcion",
+    "pregunta": "¿Qué formato de grabación recomienda el CPMA porque funciona con cualquier tarjeta?",
+    "opciones": ["XAVC QFHD", "XAVC HD", "AVCHD", "MP4"],
+    "correcta": 2,
+    "parte": "memoria",
+    "explicacion": "Se elige en Menú → Ajuste de grabación → Formato de archivo."
+  },
+  {
+    "tipo": "opcion",
+    "pregunta": "Estás en enfoque manual, pero al girar el anillo cambia el zoom. ¿Qué haces?",
+    "opciones": ["Presiono REC", "Pongo el interruptor del lado del lente en FOCUS", "Subo el filtro ND", "Cambio la tarjeta"],
+    "correcta": 1,
+    "parte": "lente",
+    "explicacion": "El interruptor FOCUS/ZOOM decide qué hace el anillo del lente."
+  },
+  {
+    "tipo": "opcion",
+    "pregunta": "Terminaste la entrevista y vas a grabar imágenes de apoyo. ¿Qué micrófono eliges en el menú?",
+    "opciones": ["MI SHOE MIC, el del entrevistado", "INT MIC, el micrófono interno", "Ninguno", "Da igual"],
+    "correcta": 1,
+    "parte": "audio",
+    "explicacion": "Con el micrófono interno las imágenes quedan con sonido ambiente y sin la voz del entrevistado."
+  },
+  {
+    "tipo": "ordenar",
+    "pregunta": "Ordena el camino que recorre la luz hasta convertirse en imagen.",
+    "items": ["lente", "nd", "sensor"],
+    "explicacion": "La luz entra por el lente, pasa por el filtro ND y llega al sensor."
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "name": "explorador-z90",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Recurso educativo: recorrido 3D por las partes de la cámara Sony PXW-Z90V (basado en el tutorial del CPMA)",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "optimizar-modelo": "gltf-transform optimize public/models/z90-original.glb public/models/z90.glb --compress draco --texture-compress webp --texture-size 2048"
+  },
+  "dependencies": {
+    "@fontsource/inter": "5.1.0",
+    "@fontsource/rubik": "5.1.0",
+    "gsap": "3.12.5",
+    "three": "0.169.0"
+  },
+  "devDependencies": {
+    "@gltf-transform/cli": "4.1.0",
+    "vite": "5.4.10"
+  }
+}

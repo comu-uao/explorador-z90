@@ -1,0 +1,11 @@
+Coloca aquí el modelo final de la Sony PXW-Z90V con el nombre: z90.glb
+Mientras no exista, la página muestra el modelo provisional de bloques.
+
+Piezas: Parasol, Lente_Zeiss, Filtro_ND, Sensor_CMOS, Cuerpo, Pantalla_LCD,
+Visor_OLED, Asa_XLR, Microfono, Ranuras_SD, Conectores, Bateria
+
+Controles (Uso de la cámara): Tapa_SD, Tarjeta_SD, Btn_Menu, Interruptor_Auto,
+Btn_Iris, Btn_ISO, Btn_Shutter, Selector_ND, Btn_WB, Palanca_Zoom, Btn_AF,
+Anillo_Lente, Selector_Audio, Btn_REC, Btn_REC_Trasero, Btn_Encendido,
+Selector_Anillo, Palanca_Mando
+(Ubicación de cada uno en README.md)

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Explorador 3D Z90V</title>
+  <meta name="description" content="Recorrido interactivo en 3D por la cámara Sony PXW-Z90V: sus partes, para qué sirven y cómo se usa, botón por botón.">
+  <meta name="theme-color" content="#a8172f">
+  <link rel="canonical" href="https://z90.uao.edu.co/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:title" content="Explorador 3D Z90V">
+  <meta property="og:description" content="Conoce por dentro la cámara Sony PXW-Z90V: recorrido en 3D, práctica de uso botón por botón y evaluación.">
+  <meta property="og:url" content="https://z90.uao.edu.co/">
+  <meta property="og:image" content="https://z90.uao.edu.co/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body data-mode="recorrido">
+<!--APP-START-->
+<!-- ============ PORTADA ============ -->
+<section class="inicio" id="inicio" aria-labelledby="inicio-title">
+  <div class="inicio-hero">
+    <div class="frame">
+      <h1 id="inicio-title">Conoce por dentro la cámara <span class="nowrap">Sony PXW&#8209;Z90V</span></h1>
+      <button type="button" class="go" id="btn-start">
+        <span class="go-rec" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13L19 12z"/></svg></span>
+        <span>Comenzar</span>
+      </button>
+      <svg class="arch" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 120 C 40 10, 300 10, 360 120"/></svg>
+    </div>
+  </div>
+  <div class="inicio-text">
+   <div class="intro">
+    <h2 class="pill">Tu cámara, pieza por pieza</h2>
+    <p>Conocer cada parte de la cámara te ayudará a grabar mejor desde el primer día.</p>
+    <div class="green-box">
+      <p>Vas a recorrer sus partes en 3D, practicar cómo se usa botón por botón y comprobar lo que aprendiste.</p>
+      <p><b>Acompáñame y descubre cómo funciona tu cámara.</b></p>
+    </div>
+   </div>
+  </div>
+</section>
+
+<!-- ============ APLICACIÓN ============ -->
+<div class="shell" id="app" hidden>
+  <header class="topbar">
+    <div class="tb-side">
+      <button type="button" class="nav-btn" id="btn-home">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11 12 4l8 7"/><path d="M6 9.5V20h12V9.5"/></svg>
+        <span>Inicio</span>
+      </button>
+    </div>
+    <nav class="modes" aria-label="Secciones">
+      <button type="button" class="mode" data-mode="recorrido" aria-pressed="true"><span class="mode-n">1</span>Recorrido</button>
+      <button type="button" class="mode" data-mode="uso" aria-pressed="false"><span class="mode-n">2</span><span>Uso<span class="long"> de la cámara</span></span></button>
+      <button type="button" class="mode" data-mode="evaluar" aria-pressed="false"><span class="mode-n">3</span>Evaluación</button>
+    </nav>
+    <div class="tb-side end">
+      <button type="button" class="nav-btn" id="btn-ayuda">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.4 2.4c-.6.3-1 .8-1 1.5v.4"/><path d="M12 17h.01"/></svg>
+        <span>Ayuda</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="app">
+    <!-- Visor 3D: ESPACIO DEL MODELO (el lienzo de Three.js se inserta en #stage) -->
+    <section class="viewer" id="viewer" aria-label="Visor 3D de la cámara">
+      <div class="stage" id="stage" role="img" aria-label="Modelo 3D de la cámara Sony PXW-Z90V"></div>
+
+      <span class="badge" id="badge" data-obstacle hidden title="Cuando exista public/models/z90.glb se mostrará el modelo final">Modelo provisional</span>
+
+      <div class="toolbar" role="toolbar" aria-label="Herramientas del modelo" aria-orientation="vertical" data-obstacle>
+        <button type="button" class="tool" id="btn-iso" aria-pressed="false" aria-label="Aislar pieza" data-tip="Aislar pieza (I)" disabled>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/></svg>
+        </button>
+        <button type="button" class="tool" id="btn-reset" aria-label="Reiniciar vista" data-tip="Reiniciar vista (R)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12a7.5 7.5 0 1 0 2.2-5.3"/><path d="M4.5 4v4.5H9"/></svg>
+        </button>
+        <button type="button" class="tool" id="btn-full" aria-label="Pantalla completa" data-tip="Pantalla completa">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+        </button>
+      </div>
+
+      <!-- Vista del modelo: armada o por capas (los dos estados siempre visibles, tamaño fijo) -->
+      <div class="layers" id="layers" role="group" aria-label="Vista del modelo" data-obstacle>
+        <button type="button" class="layer-opt" data-capas="0" aria-pressed="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7.5v9L12 21l8-4.5v-9L12 3Z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></svg>
+          <span>Armada</span>
+        </button>
+        <button type="button" class="layer-opt" data-capas="1" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3 7.5 12 12l9-4.5L12 3Z"/><path d="m3 12 9 4.5 9-4.5"/><path d="m3 16.5 9 4.5 9-4.5"/></svg>
+          <span>Por capas</span>
+        </button>
+      </div>
+
+      <div class="monitor" id="monitor" data-obstacle></div>
+
+      <div class="notice" id="notice" role="status" hidden>
+        <p id="notice-text"></p>
+        <button type="button" class="icon" id="notice-close" aria-label="Cerrar aviso">×</button>
+      </div>
+      <div class="loading" id="loading"><p>Cargando modelo…</p><div class="bar"><span id="load-bar"></span></div></div>
+      <div class="drop" id="drop" hidden><p>Suelta el archivo .glb para probarlo</p></div>
+      <p class="hover-name" id="hover-name" data-obstacle aria-hidden="true"></p>
+    </section>
+
+    <!-- Ficha: contenido arriba, navegación fija abajo -->
+    <aside class="ficha" aria-label="Información">
+      <div class="ficha-body" id="ficha" tabindex="-1" aria-live="polite"></div>
+      <div class="ficha-foot">
+        <button type="button" class="btn secondary nav" id="f-prev">← Anterior</button>
+        <button type="button" class="btn primary nav" id="f-next">Siguiente →</button>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="bottombar">
+    <div class="segments" id="segments" aria-label="Progreso"></div>
+    <div class="bottom-row">
+      <span class="bottom-brand">Explorador Z90V · Sony PXW-Z90V</span>
+      <span class="bottom-note">Proyecto educativo basado en el tutorial del CPMA · No afiliado a Sony</span>
+    </div>
+  </footer>
+</div>
+
+<dialog id="dlg-ayuda" aria-labelledby="ayuda-title">
+  <div class="dlg-head"><h2 id="ayuda-title">Ayuda</h2><button type="button" class="icon" data-close aria-label="Cerrar ayuda">×</button></div>
+  <div class="dlg-body">
+    <dl class="keys">
+      <div><dt>Girar</dt><dd>Arrastra sobre el modelo.</dd></div>
+      <div><dt>Acercar</dt><dd>Rueda del ratón o pellizca con dos dedos.</dd></div>
+      <div><dt>Ver por capas</dt><dd>Elige <b>Por capas</b> abajo del modelo para separar la cámara. <kbd>E</kbd></dd></div>
+      <div><dt>Elegir una parte</dt><dd>Haz clic en la pieza o en su número.</dd></div>
+      <div><dt>Aislar</dt><dd>Deja visible solo la parte elegida. <kbd>I</kbd></dd></div>
+      <div><dt>Reiniciar</dt><dd>Vuelve a la vista inicial. <kbd>R</kbd></dd></div>
+      <div><dt>Avanzar</dt><dd>Botones de la ficha o las flechas <kbd>←</kbd> <kbd>→</kbd>.</dd></div>
+    </dl>
+    <div class="dev">
+      <p class="eyebrow">Para el equipo de modelado</p>
+      <p>Carga un archivo .glb para revisar que las piezas y los botones tengan el nombre correcto. También puedes arrastrarlo sobre el visor.</p>
+      <label class="btn secondary" for="glb-input">Probar un modelo .glb</label>
+      <input type="file" id="glb-input" accept=".glb" hidden>
+    </div>
+  </div>
+</dialog>
+<!--APP-END-->
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
