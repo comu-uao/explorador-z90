@@ -1,5 +1,5 @@
 // Interfaz: portada, secciones (recorrido, uso, laboratorio, evaluación), ficha con pie fijo,
-// idioma, narración, video, lista, realidad aumentada, certificado y panel docente.
+// idioma, narración, video, lista, realidad aumentada y certificado.
 // Fuentes alojadas en el propio sitio (no dependen de Google Fonts)
 import '@fontsource/rubik/latin-400.css';
 import '@fontsource/rubik/latin-500.css';
@@ -44,18 +44,20 @@ indexar();
 const CONTROLES = [...new Set(EQ.contenido.uso.flatMap((u) => [u.control, ...u.acciones.map((a) => a.objeto)]))];
 
 // ---------- Estado ----------
-const STORE = 'z90-progreso';
-const saved = (() => { try { return JSON.parse(localStorage.getItem(STORE) || '{}'); } catch { return {}; } })();
-const state = {
+// El avance vive solo en memoria: se reinicia al recargar la página o al volver a comenzar.
+// (Se borran también los datos que guardaban versiones anteriores.)
+try { ['z90-progreso', 'z90-lista', 'z90-cert'].forEach((k) => localStorage.removeItem(k)); } catch { /* sin almacenamiento */ }
+const estadoInicial = () => ({
   mode: 'recorrido', paso: 0, uso: 0, usoHecho: false, usoFin: false, lab: 'exp',
-  visto: new Set(saved.visto || []), usoListo: new Set(saved.uso || []), quizGuardado: false,
-};
-const save = () => { try { localStorage.setItem(STORE, JSON.stringify({ visto: [...state.visto], uso: [...state.usoListo] })); } catch { /* sin almacenamiento */ } };
+  visto: new Set(), usoListo: new Set(), quizGuardado: false, iniciado: false,
+});
+const state = estadoInicial();
+const save = () => {};
 
 const body = $('#ficha');
 const fPrev = $('#f-prev'), fNext = $('#f-next');
 const viewer = new Viewer($('#stage'), EQ.partes, CONTROLES);
-window.explorador = { viewer };
+window.explorador = { viewer };   // para pruebas desde la consola
 const monitor = new Monitor($('#monitor'));
 const video = crearVideo({ equipo: EQ, t, getLang });
 const lista = crearLista({ t, urlPublica: CONFIG.urlPublica });
@@ -65,7 +67,7 @@ const ar = crearAR({ viewer, equipo: EQ, t, urlPublica: CONFIG.urlPublica });
 const requisitos = () => [
   { ok: PASOS.every((s) => state.visto.has(s.id)), texto: t('cert.req.rec', { n: PASOS.filter((s) => state.visto.has(s.id)).length, total: PASOS.length }) },
   { ok: USO.every((u) => state.usoListo.has(u.id)), texto: t('cert.req.uso', { n: USO.filter((u) => state.usoListo.has(u.id)).length, total: USO.length }) },
-  { ok: stats.datos().mejor >= NOTA_MINIMA, texto: t('cert.req.eval', { min: Math.round(NOTA_MINIMA * 100), mejor: Math.round(stats.datos().mejor * 100) }) },
+  { ok: stats.sesion().mejor >= NOTA_MINIMA, texto: t('cert.req.eval', { min: Math.round(NOTA_MINIMA * 100), mejor: Math.round(stats.sesion().mejor * 100) }) },
 ];
 const cert = crearCertificado({ t, getLang, equipo: EQ, requisitos, minimo: NOTA_MINIMA });
 
@@ -77,16 +79,16 @@ const quiz = new Quiz(body, QUIZ, pasoById, {
     viewer.focusParts(s.partes, viewer.t, s.vista);
   },
   onReview: (id) => { state.paso = PASOS.indexOf(pasoById[id]); setMode('recorrido'); },
-  onAnswer: (i, ok) => stats.respuesta(i, ok),
   onChange: () => {
     if (quiz.done) {
-      if (!state.quizGuardado) { stats.quizTerminado(quiz.score, quiz.qs.length); state.quizGuardado = true; }
+      if (!state.quizGuardado) { stats.quizTerminado(quiz.score, quiz.n); state.quizGuardado = true; }
       const slot = body.querySelector('#cert-slot');
       if (slot) slot.innerHTML = cert.bloque();
     } else state.quizGuardado = false;
     updateFoot(); updateBar();
   },
-});
+}, CONFIG.evaluacion);
+window.explorador.quiz = quiz;
 
 // ---------- Laboratorio ----------
 const labCtx = (extra = {}) => ({ t, imagenes: EQ.imagenes, stats, onCambio: labCambio, ...extra });
@@ -108,8 +110,28 @@ function labCambio({ rerender }) { if (rerender && state.mode === 'lab') renderL
 
 // ---------- Portada ----------
 $('#btn-start').addEventListener('click', () => entrar());
+// Volver a comenzar borra todo el avance: recorrido, práctica, laboratorio, evaluación, lista y constancia.
+function reiniciarTodo() {
+  Object.assign(state, estadoInicial());
+  stats.nuevaSesion();
+  for (const id of ORDEN_LABS) LABS[id].limpiar();
+  lista.limpiar();
+  cert.limpiar();
+  quiz.active = false;
+  quiz.usos.clear();
+  viewer.setPulse(null);
+  viewer.resetControls();
+  viewer.setIsolate(false);
+  viewer.stopExplode();
+  viewer.setExplode(0);
+  monitor.stop();
+  monitor.set({});
+}
 function entrar() {
   if (!$('#app').hidden) return;
+  if (state.iniciado) reiniciarTodo();
+  state.iniciado = true;
+  document.body.classList.remove('con-avance');
   $('#inicio').hidden = true;
   $('#app').hidden = false;
   setMode(state.mode);
@@ -119,6 +141,7 @@ $('#btn-home').addEventListener('click', () => {
   callar();
   $('#app').hidden = true;
   $('#inicio').hidden = false;
+  document.body.classList.add('con-avance');
   $('#btn-start').focus();
 });
 
@@ -301,7 +324,7 @@ body.addEventListener('click', (e) => {
     const nombre = inp.value.trim().replace(/\s+/g, ' ');
     if (nombre.length < 3) { inp.setAttribute('aria-invalid', 'true'); inp.focus(); inp.placeholder = t('cert.nombre.falta'); return; }
     inp.removeAttribute('aria-invalid');
-    cert.generar(nombre, stats.datos().mejor);
+    cert.generar(nombre, stats.sesion().mejor);
   }
 });
 
@@ -401,7 +424,7 @@ function updateBar() {
     total = L.total(); cur = L.actual(); done = (i) => L.hecho(i); jump = (i) => L.ir(i);
     label = (i) => t('seg.item', { n: i + 1 });
   } else {
-    total = QUIZ.length; cur = quiz.done ? -1 : quiz.i;
+    total = quiz.n || CONFIG.evaluacion.total; cur = quiz.done ? -1 : quiz.i;
     done = (i) => i < quiz.i || quiz.done;
     label = (i) => t('seg.pregunta', { n: i + 1 });
   }
@@ -444,56 +467,13 @@ $('#btn-full').addEventListener('click', async () => {
   } catch { showNotice(t('aviso.full'), 'warn'); }
 });
 
-// ---------- Lista, ayuda, docente, idioma ----------
+// ---------- Lista, ayuda, idioma ----------
 document.querySelectorAll('[data-abrir="lista"]').forEach((b) => b.addEventListener('click', () => lista.abrir()));
 $('#btn-ayuda').addEventListener('click', () => $('#dlg-ayuda').showModal());
 document.querySelectorAll('dialog').forEach((d) => {
   d.addEventListener('click', (e) => { if (e.target === d || e.target.closest('[data-close]')) d.close(); });
 });
 document.querySelectorAll('.lang').forEach((g) => g.addEventListener('click', (e) => { const b = e.target.closest('[data-lang]'); if (b) setLang(b.dataset.lang); }));
-
-function renderDocente() {
-  const s = stats.datos();
-  const filas = QUIZ.map((q, i) => ({ txt: q.pregunta, n: s.quiz[i]?.n || 0, ok: s.quiz[i]?.ok || 0 }))
-    .sort((a, b) => (a.n ? a.ok / a.n : 2) - (b.n ? b.ok / b.n : 2));
-  const casos = C.lab.errores.map((c) => ({ txt: c.pregunta, n: s.errores[c.id]?.n || 0, ok: s.errores[c.id]?.ok || 0 }));
-  const tabla = (rows) => `<table class="tabla"><thead><tr><th>${t('doc.pregunta')}</th><th>${t('doc.intentos')}</th><th>${t('doc.aciertos')}</th></tr></thead><tbody>
-    ${rows.map((r) => { const p = r.n ? Math.round((r.ok / r.n) * 100) : null; return `<tr><td>${esc(r.txt)}</td><td class="num">${r.n}</td><td><div class="pbar"><span style="width:${p ?? 0}%"></span></div><span class="num">${p == null ? '—' : p + '%'}</span></td></tr>`; }).join('')}
-  </tbody></table>`;
-  $('#docente-cuerpo').innerHTML = `
-    <dl class="kpis">
-      <div><dt>${t('doc.evaluaciones')}</dt><dd>${s.intentos}</dd></div>
-      <div><dt>${t('doc.mejor')}</dt><dd>${Math.round(s.mejor * 100)}%</dd></div>
-      <div><dt>${t('doc.retos')}</dt><dd>${Object.keys(s.retos).length}/${C.lab.exposicion.retos.length}</dd></div>
-      <div><dt>${t('doc.misiones')}</dt><dd>${Object.keys(s.misiones).length}/${C.lab.menu.misiones.length}</dd></div>
-    </dl>
-    <p class="eyebrow">${t('doc.eval')}</p>${tabla(filas)}
-    <p class="eyebrow">${t('doc.err')}</p>${tabla(casos)}
-    <p class="nota">${t('doc.nota')}</p>
-    <div class="lab-acciones">
-      <button type="button" class="btn secondary" data-doc="copiar">${t('doc.copiar')}</button>
-      <button type="button" class="btn secondary" data-doc="borrar">${t('doc.borrar')}</button>
-    </div>
-    <p class="nota" id="doc-msg" role="status"></p>`;
-}
-function abrirDocente() { renderDocente(); $('#dlg-docente').showModal(); }
-document.querySelectorAll('[data-abrir="docente"]').forEach((b) => b.addEventListener('click', () => { $('#dlg-ayuda').close(); abrirDocente(); }));
-let borrarArmado = false;
-$('#dlg-docente').addEventListener('click', async (e) => {
-  const b = e.target.closest('[data-doc]');
-  if (!b) return;
-  const msg = $('#doc-msg');
-  if (b.dataset.doc === 'copiar') {
-    const s = stats.datos();
-    const csv = ['tipo,id,pregunta,intentos,aciertos',
-      ...QUIZ.map((q, i) => `evaluacion,${i + 1},"${q.pregunta.replace(/"/g, '""')}",${s.quiz[i]?.n || 0},${s.quiz[i]?.ok || 0}`),
-      ...C.lab.errores.map((c) => `laboratorio,${c.id},"${c.pregunta.replace(/"/g, '""')}",${s.errores[c.id]?.n || 0},${s.errores[c.id]?.ok || 0}`)].join('\n');
-    try { await navigator.clipboard.writeText(csv); msg.textContent = t('doc.copiado'); } catch { msg.textContent = t('doc.nocopia'); }
-  } else if (b.dataset.doc === 'borrar') {
-    if (!borrarArmado) { borrarArmado = true; msg.textContent = t('doc.confirmar'); return; }
-    borrarArmado = false; stats.reiniciar(); renderDocente(); $('#doc-msg').textContent = t('doc.borrado');
-  }
-});
 
 onLang(() => {
   callar();
@@ -513,7 +493,6 @@ onLang(() => {
     else quiz.render();
     updateFoot(); updateBar(); updateTools();
   }
-  if ($('#dlg-docente').open) renderDocente();
 });
 
 // ---------- Teclado ----------
@@ -582,8 +561,7 @@ aplicar();
   catch { viewer.usePlaceholder(EQ.placeholder); }
 })();
 
-// Enlaces directos: #lista (QR del estuche), #ar (abrir en el celular), #docente
+// Enlaces directos: #lista (QR del estuche), #ar (abrir en el celular)
 const ruta = location.hash.replace('#', '');
 if (ruta === 'lista') lista.abrir();
-else if (ruta === 'docente') abrirDocente();
 else if (ruta === 'ar') { entrar(); alCargar.push(() => ar.abrir()); }

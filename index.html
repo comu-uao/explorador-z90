@@ -28,6 +28,7 @@
         <span class="go-rec" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13L19 12z"/></svg></span>
         <span data-i18n="comenzar">Comenzar</span>
       </button>
+      <p class="cover-aviso" id="cover-aviso" data-i18n="cover.aviso" aria-live="polite">Al comenzar de nuevo se borra tu avance.</p>
       <svg class="arch" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 120 C 30 6, 370 6, 400 120"/></svg>
     </div>
   </div>
@@ -164,11 +165,6 @@
       <div><dt data-i18n="ay.menu">Menú simulado</dt><dd data-i18n-html="ay.menu.d">Flechas para moverte, <kbd>Enter</kbd> para elegir y <kbd>M</kbd> para MENU.</dd></div>
     </dl>
     <div class="dev">
-      <p class="eyebrow" data-i18n="ay.docente">Para docentes</p>
-      <p data-i18n="ay.docente.d">Revisa qué preguntas fallan más en este dispositivo.</p>
-      <button type="button" class="btn secondary" data-abrir="docente" data-i18n="ay.docente.btn">Abrir panel docente</button>
-    </div>
-    <div class="dev">
       <p class="eyebrow" data-i18n="ay.modelado">Para el equipo de modelado</p>
       <p data-i18n="ay.modelado.d">Carga un archivo .glb para revisar que las piezas y los botones tengan el nombre correcto. También puedes arrastrarlo sobre el visor.</p>
       <label class="btn secondary" for="glb-input" data-i18n="ay.modelado.btn">Probar un modelo .glb</label>
@@ -206,10 +202,6 @@
   </div>
 </dialog>
 
-<dialog id="dlg-docente" class="dlg-wide" aria-labelledby="docente-title">
-  <div class="dlg-head"><h2 id="docente-title" data-i18n="doc.titulo">Panel docente</h2><button type="button" class="icon" data-close data-i18n-aria="cerrar" aria-label="Cerrar">×</button></div>
-  <div class="dlg-body" id="docente-cuerpo"></div>
-</dialog>
 
 <div id="print-area" aria-hidden="true"></div>
 <!--APP-END-->

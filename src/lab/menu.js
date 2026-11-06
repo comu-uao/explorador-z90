@@ -67,7 +67,7 @@ export function crearMenu({ t, imagenes, stats, onCambio }) {
     valores[item.id] = opc;
     opc = null;
     recienHecha = null;
-    misiones.forEach((mi) => { if (hecha(mi) && !stats.datos().misiones[mi.id]) { stats.mision(mi.id); if (mi === misiones[m]) recienHecha = mi.id; } });
+    misiones.forEach((mi) => { if (hecha(mi) && !stats.sesion().misiones[mi.id]) { stats.mision(mi.id); if (mi === misiones[m]) recienHecha = mi.id; } });
     dibujarVivo();
     if (panelEl) actualizarPanel(panelEl);
     onCambio({ rerender: false });
@@ -141,6 +141,7 @@ export function crearMenu({ t, imagenes, stats, onCambio }) {
     hecho: (k) => hecha(misiones[k]),
     ir(k) { m = Math.max(0, Math.min(misiones.length - 1, k)); pista = false; onCambio({ rerender: true }); },
     minuto: () => misiones[m]?.min,
+    limpiar() { valores = {}; initValores(); m = 0; abierto = false; pila = []; opc = null; pista = false; recienHecha = null; },
     panelHTML() {
       const mi = misiones[m];
       return `

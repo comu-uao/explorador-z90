@@ -24,6 +24,10 @@ export const CONFIG = {
   // Lo mismo para los acercamientos a botones en "Uso de la cámara"
   vistaControles: 1.3,
 
+  // Evaluación: cada intento saca preguntas al azar del banco (quiz.json) y mezcla sus opciones.
+  // total = preguntas por intento; identificar y ordenar = cuántas de esos tipos lleva (el resto es opción múltiple).
+  evaluacion: { total: 8, identificar: 2, ordenar: 1 },
+
   // Duración de las animaciones de cámara y despiece (segundos)
   tweenDuration: 1.0,
 

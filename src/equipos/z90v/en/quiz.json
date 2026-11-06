@@ -1,64 +1,694 @@
-[
- {
-  "pregunta": "Tap the part of the model that works as the camera's “sunglasses”.",
-  "explicacion": "The ND filter is inside the camera. View the model in layers to find it."
- },
- {
-  "pregunta": "You can't change any camera setting. What do you check first?",
-  "opciones": [
-   "That the AUTO/MANUAL switch is on MANUAL",
-   "That the battery is charged",
-   "That the hood is on",
-   "That the microphone is connected"
-  ],
-  "explicacion": "In AUTO the camera decides everything and locks the manual settings."
- },
- {
-  "pregunta": "You adjusted the iris and press the IRIS button again. What happens?",
-  "opciones": [
-   "The setting is saved",
-   "The iris goes back to automatic",
-   "The camera turns off",
-   "The ISO changes"
-  ],
-  "explicacion": "To lock the value you press the multi-selector. Pressing IRIS again sends it back to automatic."
- },
- {
-  "pregunta": "Tap the part where you connect a professional XLR microphone.",
-  "explicacion": "The two XLR inputs are at the front of the handle."
- },
- {
-  "pregunta": "Which recording format does the CPMA recommend because it works with any card?",
-  "opciones": [
-   "XAVC QFHD",
-   "XAVC HD",
-   "AVCHD",
-   "MP4"
-  ],
-  "explicacion": "It's set in Menu → Recording Settings → File Format."
- },
- {
-  "pregunta": "You're in manual focus, but turning the ring changes the zoom. What do you do?",
-  "opciones": [
-   "Press REC",
-   "Set the switch beside the lens to FOCUS",
-   "Raise the ND filter",
-   "Change the card"
-  ],
-  "explicacion": "The FOCUS/ZOOM switch decides what the lens ring does."
- },
- {
-  "pregunta": "You finished the interview and will record supporting shots. Which microphone do you choose in the menu?",
-  "opciones": [
-   "MI SHOE MIC, the interviewee's",
-   "INT MIC, the internal microphone",
-   "None",
-   "It doesn't matter"
-  ],
-  "explicacion": "With the internal microphone, the shots keep ambient sound without the interviewee's voice."
- },
- {
-  "pregunta": "Put in order the path light follows until it becomes an image.",
-  "explicacion": "Light enters through the lens, passes the ND filter and reaches the sensor."
- }
-]
+{
+  "id-nd": {
+    "pregunta": "Tap the part of the model that works as the camera's “sunglasses”.",
+    "explicacion": "The ND filter is inside the camera. View the model in layers to find it."
+  },
+  "id-xlr": {
+    "pregunta": "Tap the part where you connect a professional XLR microphone.",
+    "explicacion": "The two XLR inputs are at the front of the handle."
+  },
+  "id-sensor": {
+    "pregunta": "Tap the part that turns light into a digital image.",
+    "explicacion": "It's the sensor. It sits inside the body, behind the ND filter: view it in layers."
+  },
+  "id-bateria": {
+    "pregunta": "Tap the part that powers the whole camera.",
+    "explicacion": "The battery goes on the back, under the viewfinder."
+  },
+  "id-memoria": {
+    "pregunta": "Tap the part where your video gets stored.",
+    "explicacion": "The two SD slots are under a small cover, behind the screen."
+  },
+  "id-visor": {
+    "pregunta": "It's very sunny and you can't see the screen well. Tap the part you'd use to see the image.",
+    "explicacion": "The rear viewfinder, where you put your eye, helps when the sun washes out the screen."
+  },
+  "id-zoom": {
+    "pregunta": "Tap the part that brings the image closer without losing quality.",
+    "explicacion": "The fixed lens has an optical zoom: it gets closer without losing quality."
+  },
+  "id-encender": {
+    "pregunta": "Tap the part that turns the camera on when you open it.",
+    "explicacion": "Opening the LCD screen turns the camera on and reveals the buttons."
+  },
+  "id-exposicion": {
+    "pregunta": "Tap the part where the IRIS, ISO and SHUTTER buttons are.",
+    "explicacion": "They're on the body, in the bottom row, under the screen."
+  },
+  "id-rec-asa": {
+    "pregunta": "Tap the part with the zoom lever and the second REC button.",
+    "explicacion": "Both are on top of the handle."
+  },
+  "id-afmf": {
+    "pregunta": "Tap the part with the AF/MF button and FOCUS/ZOOM switch beside it.",
+    "explicacion": "They're on the left side of the lens."
+  },
+  "id-palanca": {
+    "pregunta": "Tap the part with the multi-selector you use to move through the menu.",
+    "explicacion": "The multi-selector is on the back, on the camera body."
+  },
+  "op-auto": {
+    "pregunta": "You can't change any camera setting. What do you check first?",
+    "opciones": [
+      "That the AUTO/MANUAL switch is on MANUAL",
+      "That the battery is charged",
+      "That the hood is on",
+      "That the microphone is connected"
+    ],
+    "explicacion": "In AUTO the camera decides everything and locks the manual settings."
+  },
+  "op-iris-otra": {
+    "pregunta": "You adjusted the iris and press the IRIS button again. What happens?",
+    "opciones": [
+      "The iris goes back to automatic",
+      "The setting is saved",
+      "The camera turns off",
+      "The ISO changes"
+    ],
+    "explicacion": "To lock the value you press the multi-selector. Pressing IRIS again sends it back to automatic."
+  },
+  "op-fijar": {
+    "pregunta": "You set the ISO with the multi-selector. How do you lock the value?",
+    "opciones": [
+      "By pressing the multi-selector",
+      "By pressing the ISO button again",
+      "By closing the screen",
+      "By pressing REC"
+    ],
+    "explicacion": "IRIS, ISO and SHUTTER are adjusted and locked the same way: with the rear multi-selector."
+  },
+  "op-formato": {
+    "pregunta": "Which recording format does the CPMA recommend because it works with any card?",
+    "opciones": [
+      "AVCHD",
+      "XAVC QFHD",
+      "XAVC HD",
+      "MP4"
+    ],
+    "explicacion": "You choose it in Menu → Recording settings → File format."
+  },
+  "op-formato-ruta": {
+    "pregunta": "In which menu do you change the file format?",
+    "opciones": [
+      "Recording settings",
+      "Audio settings",
+      "Display settings",
+      "Camera settings"
+    ],
+    "explicacion": "Menu → Recording settings → File format. That's where you pick AVCHD."
+  },
+  "op-menu-mover": {
+    "pregunta": "You pressed MENU. What do you use to move through the options?",
+    "opciones": [
+      "The rear multi-selector",
+      "The lens ring",
+      "The zoom lever",
+      "The ND selector"
+    ],
+    "explicacion": "You move the multi-selector to go through the menu and press it to choose."
+  },
+  "op-encender": {
+    "pregunta": "The screen is already open and the camera is off. What do you do?",
+    "opciones": [
+      "Press the power button behind the screen",
+      "Remove and refit the handle",
+      "Take out the SD card",
+      "Press MENU"
+    ],
+    "explicacion": "Opening the screen turns the camera on; if it was already open, use the power button on the side panel."
+  },
+  "op-lente-fijo": {
+    "pregunta": "Can the Z90V lens be swapped for another one?",
+    "opciones": [
+      "No: it's fixed and has an optical zoom",
+      "Yes, like on a stills camera",
+      "Only in AUTO mode",
+      "Yes, by removing the hood"
+    ],
+    "explicacion": "The lens is fixed, but its optical zoom brings the image closer without losing quality."
+  },
+  "op-zoom-optico": {
+    "pregunta": "What's the advantage of optical zoom?",
+    "opciones": [
+      "It brings the image closer without losing quality",
+      "It brightens the image in low light",
+      "It only focuses on faces",
+      "It records to two cards"
+    ],
+    "explicacion": "Optical zoom moves the lens elements, so it doesn't lose quality like a digital zoom."
+  },
+  "op-parasol": {
+    "pregunta": "What is the hood, the visor at the front of the lens, for?",
+    "opciones": [
+      "It blocks light from the sides and protects the lens",
+      "It brings the image closer",
+      "It cuts light like the ND filter",
+      "It improves the sound"
+    ],
+    "explicacion": "The hood blocks side light that washes out the image and protects the lens from bumps."
+  },
+  "op-focus-zoom": {
+    "pregunta": "You're in manual focus, but turning the ring changes the zoom. What do you do?",
+    "opciones": [
+      "Set the switch beside the lens to FOCUS",
+      "Press REC",
+      "Raise the ND filter",
+      "Change the card"
+    ],
+    "explicacion": "The FOCUS/ZOOM switch decides what the lens ring does."
+  },
+  "op-afmf-donde": {
+    "pregunta": "Where is the AF/MF button to switch between auto and manual focus?",
+    "opciones": [
+      "On the left side of the lens",
+      "On top of the handle",
+      "Next to the battery",
+      "On the IRIS, ISO and SHUTTER panel"
+    ],
+    "explicacion": "It's on the left side of the lens; the FOCUS/ZOOM switch sits below it."
+  },
+  "op-foco-cpma": {
+    "pregunta": "What does the CPMA recommend about focus?",
+    "opciones": [
+      "Shoot almost always in manual, helped by peaking",
+      "Always use autofocus",
+      "Don't focus: the zoom does it",
+      "Only focus in AUTO mode"
+    ],
+    "explicacion": "Autofocus is fast and detects faces, but in manual you decide what is sharp."
+  },
+  "op-af-puntos": {
+    "pregunta": "How many reference points does the Z90V's hybrid autofocus have?",
+    "opciones": [
+      "273",
+      "27",
+      "12",
+      "1,000"
+    ],
+    "explicacion": "There are 273 points: that's why autofocus is so fast and detects faces easily."
+  },
+  "op-sensor-luz": {
+    "pregunta": "Why does the Z90V look good in low light?",
+    "opciones": [
+      "Because its sensor is large for a camera of its size",
+      "Because of the hood",
+      "Because it records in AVCHD",
+      "Because of the XLR inputs"
+    ],
+    "explicacion": "A large sensor gathers more light. Even so, lighting the scene well is always better."
+  },
+  "op-peaking": {
+    "pregunta": "What does peaking show on the screen?",
+    "opciones": [
+      "Colored dots on the areas in focus",
+      "Stripes on blown-out areas",
+      "The battery level",
+      "The audio volume"
+    ],
+    "explicacion": "It's a focus aid: it colors sharp edges so you know what's in focus."
+  },
+  "op-peaking-graba": {
+    "pregunta": "Do the peaking color dots get recorded in the video?",
+    "opciones": [
+      "No, they're only a guide on the screen",
+      "Yes, always",
+      "Only in AVCHD format",
+      "Only if they're red"
+    ],
+    "explicacion": "Peaking only shows on the screen and viewfinder; the shot stays clean."
+  },
+  "op-peaking-ruta": {
+    "pregunta": "Where do you turn on peaking?",
+    "opciones": [
+      "Menu → Display settings → Peaking",
+      "Menu → Audio settings",
+      "With the WHITE BALANCE button",
+      "With the ND selector"
+    ],
+    "explicacion": "In Display settings, open Peaking and turn it on."
+  },
+  "op-nd-cuando": {
+    "pregunta": "When do you use the ND filter?",
+    "opciones": [
+      "When there's a lot of light, like in the sun",
+      "When the scene is dark",
+      "When you want more zoom",
+      "When you record sound"
+    ],
+    "explicacion": "The ND cuts light so the image doesn't look blown out outdoors."
+  },
+  "op-nd-donde": {
+    "pregunta": "Where is the ND filter selector?",
+    "opciones": [
+      "On the back, left side, above the AUTO/MANUAL switch",
+      "On top of the handle",
+      "Next to the lens",
+      "Behind the screen"
+    ],
+    "explicacion": "Each time you move the selector up, the filter cuts a bit more light."
+  },
+  "op-nd-orden": {
+    "pregunta": "You're shooting in the sun and want a blurred background. What do you do first?",
+    "opciones": [
+      "Raise the ND and then finish adjusting the iris",
+      "Close the iris all the way",
+      "Raise the ISO",
+      "Remove the hood"
+    ],
+    "explicacion": "With the ND you cut light without closing the iris, so the background stays blurred."
+  },
+  "op-nd-max": {
+    "pregunta": "Which ND filter position cuts the most light?",
+    "opciones": [
+      "1/64",
+      "1/4",
+      "1/16",
+      "CLEAR"
+    ],
+    "explicacion": "1/64 lets through only one part in 64 of the light; CLEAR means no filter."
+  },
+  "op-nd-estudio": {
+    "pregunta": "In a dim studio, how do you set the ND filter?",
+    "opciones": [
+      "No filter (CLEAR): light is short here, not excess",
+      "At 1/64",
+      "At 1/16",
+      "It doesn't matter"
+    ],
+    "explicacion": "The ND is only for when there's too much light. In low light, take it off."
+  },
+  "op-iso-ultimo": {
+    "pregunta": "There's little light. What do you raise last, and as little as possible?",
+    "opciones": [
+      "The ISO, because it adds grain",
+      "The iris",
+      "The ND filter",
+      "The zoom"
+    ],
+    "explicacion": "First remove the ND, open the iris and set the shutter to 1/60. ISO comes last."
+  },
+  "op-iris-fondo": {
+    "pregunta": "You want a blurred background so the person stands out. How do you set the iris?",
+    "opciones": [
+      "Open, with a small f-number like f/2.8",
+      "Closed, like f/11",
+      "On automatic",
+      "The iris doesn't affect the background"
+    ],
+    "explicacion": "An open iris shrinks the sharp zone and blurs the background."
+  },
+  "op-iris-nitido": {
+    "pregunta": "In a wide shot you want everything sharp, front to back. How do you set the iris?",
+    "opciones": [
+      "More closed, like f/8",
+      "Fully open",
+      "At f/2.8",
+      "The iris doesn't affect sharpness"
+    ],
+    "explicacion": "A closed iris widens the sharp zone. If light runs short, compensate with as little ISO as possible."
+  },
+  "op-obturador": {
+    "pregunta": "Which shutter speed do we use in the lab so movement looks natural?",
+    "opciones": [
+      "1/60",
+      "1/2000",
+      "1/1000",
+      "1/500"
+    ],
+    "explicacion": "At 1/60 motion looks smooth; very high speeds make it look choppy."
+  },
+  "op-cebra": {
+    "pregunta": "What is zebra for?",
+    "opciones": [
+      "It marks blown-out areas with stripes",
+      "It shows what's in focus",
+      "It stabilizes the image",
+      "It records to both cards"
+    ],
+    "explicacion": "The stripes warn you where the image is so bright it loses detail."
+  },
+  "op-hist": {
+    "pregunta": "On the histogram, almost everything is pushed to the right. What does it mean?",
+    "opciones": [
+      "The image is overexposed: too bright",
+      "The image is dark",
+      "It's out of focus",
+      "The audio is too loud"
+    ],
+    "explicacion": "The right side holds bright tones. If everything piles up there, cut light with ND or iris."
+  },
+  "op-wb-cuando": {
+    "pregunta": "Colors look bluish or yellowish. Which setting do you fix?",
+    "opciones": [
+      "White balance",
+      "The ND filter",
+      "The zoom",
+      "The file format"
+    ],
+    "explicacion": "White balance tells the camera what white looks like under that light."
+  },
+  "op-wb-como": {
+    "pregunta": "To set white balance, what do you frame?",
+    "opciones": [
+      "Something white under the same light you'll shoot in",
+      "The interviewee's face",
+      "The sky",
+      "Any colored object"
+    ],
+    "explicacion": "Fill the frame with something white lit like the scene and press the multi-selector."
+  },
+  "op-wb-memoria": {
+    "pregunta": "Before setting white balance with WB SET, what do you choose when pressing WHITE BALANCE?",
+    "opciones": [
+      "Memory A or B, where the balance is stored",
+      "The AVCHD format",
+      "The INT MIC microphone",
+      "The 1/64 ND filter"
+    ],
+    "explicacion": "The balance is stored in memory A or B; then go to Menu → Camera settings → WB SET."
+  },
+  "op-wb-3200": {
+    "pregunta": "You're shooting in daylight, but white balance is set to 3200K. How does the image look?",
+    "opciones": [
+      "Bluish",
+      "Yellowish",
+      "Blown out",
+      "Blurry"
+    ],
+    "explicacion": "3200K is for warm lamps. In daylight it turns everything blue."
+  },
+  "op-wb-lampara": {
+    "pregunta": "Which white balance matches the warm lamps of a studio?",
+    "opciones": [
+      "3200K",
+      "5600K",
+      "1/60",
+      "f/8"
+    ],
+    "explicacion": "3200K is warm lamp light; 5600K is daylight."
+  },
+  "op-input-mic": {
+    "pregunta": "You plugged in a microphone via XLR. What do you check first on the camera?",
+    "opciones": [
+      "That the INPUT switch is on MIC",
+      "That the ND filter is at 1/64",
+      "That the format is AVCHD",
+      "That AF/MF is on auto"
+    ],
+    "explicacion": "The INPUT switches on the handle must be on MIC; then you pick the microphone in the menu."
+  },
+  "op-mishoe": {
+    "pregunta": "With the XLR mic plugged in and INPUT on MIC, what do you pick in Mic select?",
+    "opciones": [
+      "MI SHOE MIC",
+      "INT MIC",
+      "STEREO MINI MIC",
+      "It doesn't matter"
+    ],
+    "explicacion": "MI SHOE MIC takes the sound from the XLR inputs on the handle."
+  },
+  "op-intmic": {
+    "pregunta": "You finished the interview and will shoot B-roll. Which microphone do you choose in the menu?",
+    "opciones": [
+      "INT MIC, the internal microphone",
+      "MI SHOE MIC, the interviewee's",
+      "None",
+      "It doesn't matter"
+    ],
+    "explicacion": "With the internal mic, B-roll gets ambient sound without the interviewee's voice."
+  },
+  "op-audio-ruta": {
+    "pregunta": "In which menu do you choose which microphone records?",
+    "opciones": [
+      "Audio settings → Mic select",
+      "Camera settings → SteadyShot",
+      "Display settings → Peaking",
+      "Recording settings → File format"
+    ],
+    "explicacion": "In Audio settings → Mic select you switch between MI SHOE MIC and INT MIC."
+  },
+  "op-xlr-cuantas": {
+    "pregunta": "How many XLR inputs does the Z90V handle have?",
+    "opciones": [
+      "Two",
+      "One",
+      "Four",
+      "None: XLR is on the body"
+    ],
+    "explicacion": "There are two XLR inputs, for recording professional audio on two channels."
+  },
+  "op-asa": {
+    "pregunta": "What can you do with the top handle?",
+    "opciones": [
+      "Remove it: it's a detachable mount with the XLR inputs",
+      "Nothing, it's fixed to the body",
+      "Store the battery in it",
+      "Swap it for another lens"
+    ],
+    "explicacion": "The handle is detachable and carries the XLR inputs, a zoom lever and a REC button."
+  },
+  "op-mic-integrado": {
+    "pregunta": "What does the camera's built-in microphone pick up well?",
+    "opciones": [
+      "Ambient sound",
+      "A distant interviewee's voice, like a lavalier",
+      "Only music",
+      "Nothing: it's decorative"
+    ],
+    "explicacion": "The built-in mic captures ambience. For clear voices, use an external XLR microphone."
+  },
+  "op-audifonos": {
+    "pregunta": "Why is it worth checking the sound with headphones?",
+    "opciones": [
+      "To hear what is actually being recorded",
+      "So the interviewee stays quiet",
+      "Because the viewfinder needs them",
+      "To charge the battery"
+    ],
+    "explicacion": "With headphones you catch noise, loose cables or the wrong mic in time."
+  },
+  "op-steady": {
+    "pregunta": "You'll follow someone walking, with the camera handheld. What do you turn on?",
+    "opciones": [
+      "SteadyShot, the stabilizer",
+      "Zebra",
+      "The histogram",
+      "The ND filter"
+    ],
+    "explicacion": "SteadyShot stabilizes handheld shots and walkthroughs."
+  },
+  "op-steady-recorte": {
+    "pregunta": "What happens to the image when you turn on SteadyShot?",
+    "opciones": [
+      "It crops slightly, but handheld shots stay steady",
+      "It gets darker",
+      "It loses color",
+      "It records without sound"
+    ],
+    "explicacion": "In either mode the image is cropped a little in exchange for stability."
+  },
+  "op-steady-ruta": {
+    "pregunta": "Which menu has SteadyShot?",
+    "opciones": [
+      "Camera settings",
+      "Audio settings",
+      "Recording settings",
+      "Display settings"
+    ],
+    "explicacion": "Menu → Camera settings → SteadyShot, then choose the mode."
+  },
+  "op-rec-dos": {
+    "pregunta": "How many REC buttons does the Z90V have and where are they?",
+    "opciones": [
+      "Two: one on top of the handle and one on the back",
+      "One, on top of the handle",
+      "One, next to the lens",
+      "Three: handle, back and lens"
+    ],
+    "explicacion": "You can record with the handle REC or the rear one, depending on how you hold the camera."
+  },
+  "op-rec-detener": {
+    "pregunta": "You're recording. How do you stop?",
+    "opciones": [
+      "Press REC again",
+      "Press WHITE BALANCE",
+      "Press MENU",
+      "Take out the card"
+    ],
+    "explicacion": "The same REC button starts and stops. Never remove the card while recording."
+  },
+  "op-sd-cuantas": {
+    "pregunta": "How many SD card slots does the Z90V have?",
+    "opciones": [
+      "Two",
+      "One",
+      "Three",
+      "None: it uses internal memory"
+    ],
+    "explicacion": "With two slots you can record a copy on each card or continue on the other when one fills up."
+  },
+  "op-sd-meter": {
+    "pregunta": "How do you insert the SD card correctly?",
+    "opciones": [
+      "Following the shape marked by the guide, until it clicks",
+      "Backwards, contacts facing out",
+      "Pushing it in without opening the cover",
+      "Forcing it, even if it doesn't go in straight"
+    ],
+    "explicacion": "Open the cover behind the screen, follow the guide and push until it clicks."
+  },
+  "op-sd-donde": {
+    "pregunta": "Where are the SD card slots?",
+    "opciones": [
+      "Under a small cover, behind the screen",
+      "Under the battery",
+      "In the handle",
+      "Inside the hood"
+    ],
+    "explicacion": "To see them, open the LCD screen and then the cover on the side panel."
+  },
+  "op-simul": {
+    "pregunta": "What does the “Simultaneous rec” menu option do?",
+    "opciones": [
+      "Records the same thing on both cards at once, as a backup",
+      "Records with two microphones",
+      "Records two takes in a row",
+      "Records the screen and the viewfinder"
+    ],
+    "explicacion": "If one card fails, you have the other copy."
+  },
+  "op-rele": {
+    "pregunta": "What does relay recording do?",
+    "opciones": [
+      "When one card fills up, it continues on the other",
+      "Records on both at once",
+      "Repeats the last take",
+      "Sends the video to your phone"
+    ],
+    "explicacion": "It's handy for long shoots: recording doesn't stop when one card is full."
+  },
+  "op-sd-formatear": {
+    "pregunta": "Where should you format the SD cards before shooting?",
+    "opciones": [
+      "In the camera itself",
+      "On your phone",
+      "On any computer",
+      "They never need formatting"
+    ],
+    "explicacion": "Formatting in the camera prepares the card exactly as it needs. Careful: it erases everything."
+  },
+  "op-conectores": {
+    "pregunta": "What are the camera's connection ports for?",
+    "opciones": [
+      "To send the image to a TV or a live stream",
+      "To charge the SD card",
+      "To change the lens",
+      "To set white balance"
+    ],
+    "explicacion": "By cable the image goes out to a monitor, a TV or streaming gear."
+  },
+  "op-bat-montar": {
+    "pregunta": "How do you mount the battery?",
+    "opciones": [
+      "Slide the lower latch, insert it with the contacts facing up and release the latch",
+      "Push it in sideways until it clicks",
+      "Insert it with the contacts facing down",
+      "Open the screen and put it behind"
+    ],
+    "explicacion": "Releasing the latch locks the battery in place on the back."
+  },
+  "op-bat-donde": {
+    "pregunta": "Where does the battery go?",
+    "opciones": [
+      "On the back, under the viewfinder",
+      "Under the handle",
+      "Behind the screen, with the cards",
+      "Next to the lens"
+    ],
+    "explicacion": "The battery mounts on the back, just below the viewfinder."
+  },
+  "op-bat-repuesto": {
+    "pregunta": "You'll shoot all day. What must be in your bag?",
+    "opciones": [
+      "A charged spare battery",
+      "A second hood",
+      "An extra ND filter",
+      "A spare HDMI cable"
+    ],
+    "explicacion": "A battery can run out mid-shoot; a spare one saves the day."
+  },
+  "op-visor": {
+    "pregunta": "When is it better to use the rear viewfinder instead of the screen?",
+    "opciones": [
+      "When it's sunny and the screen is hard to see",
+      "Only to enter the menu",
+      "To record sound",
+      "Never: it's decorative"
+    ],
+    "explicacion": "Also, resting your eye on the viewfinder helps you hold the camera steadier."
+  },
+  "op-pantalla-abrir": {
+    "pregunta": "What happens when you open the LCD screen?",
+    "opciones": [
+      "The camera turns on and the buttons and slots become visible",
+      "The camera turns off",
+      "SteadyShot turns on",
+      "It starts recording"
+    ],
+    "explicacion": "Opening the screen is the quickest way to turn the camera on."
+  },
+  "op-prueba": {
+    "pregunta": "You've arrived and everything seems ready. What do you do before the real take?",
+    "opciones": [
+      "A 10-second test recording, checked with headphones",
+      "Switch to AUTO just in case",
+      "Remove the hood",
+      "Format the card again"
+    ],
+    "explicacion": "The test shows you in time whether picture and sound are right."
+  },
+  "or-luz": {
+    "pregunta": "Put in order the path light takes until it becomes an image.",
+    "explicacion": "Light enters through the lens, passes the ND filter and reaches the sensor."
+  },
+  "or-preparar": {
+    "pregunta": "Put in order how you prepare the camera before shooting.",
+    "explicacion": "Without a battery it won't turn on; the card cover is behind the screen; and the format is chosen once all is ready.",
+    "items": [
+      "Mount the battery",
+      "Open the screen to turn it on",
+      "Insert the SD card",
+      "Choose the AVCHD format in the menu"
+    ]
+  },
+  "or-poca-luz": {
+    "pregunta": "There's little light in the studio. Put the settings in order, first to last.",
+    "explicacion": "ISO comes last because it adds grain: first use all the light you can.",
+    "items": [
+      "Remove the ND filter",
+      "Open the iris",
+      "Set the shutter to 1/60",
+      "Raise the ISO, as little as possible"
+    ]
+  },
+  "or-wb": {
+    "pregunta": "Put in order the steps to set white balance.",
+    "explicacion": "When you're done, press MENU to exit.",
+    "items": [
+      "Press WHITE BALANCE",
+      "Choose memory A or B",
+      "Go to Menu → Camera settings → WB SET",
+      "Frame something white and press the multi-selector"
+    ]
+  },
+  "or-audio": {
+    "pregunta": "Put in order how you set up sound from an XLR microphone.",
+    "explicacion": "For B-roll, switch back to INT MIC afterwards.",
+    "items": [
+      "Set the INPUT switch to MIC",
+      "Press MENU and open Audio settings",
+      "Open Mic select",
+      "Choose MI SHOE MIC"
+    ]
+  }
+}

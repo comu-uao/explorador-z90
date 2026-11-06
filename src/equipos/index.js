@@ -30,7 +30,7 @@ export function contenido(equipo, lang) {
   return {
     recorrido: porId(b.recorrido, t.recorrido),
     uso: porId(b.uso, t.uso),
-    quiz: b.quiz.map((q, i) => ({ ...q, ...(t.quiz?.[i] || {}) })),
+    quiz: porId(b.quiz, t.quiz),
     lab,
   };
 }

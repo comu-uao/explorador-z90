@@ -1,16 +1,14 @@
-// Registro de resultados en este navegador (para el progreso, el certificado y el panel docente).
-// Para reunir los datos de todo un curso se necesita un servicio externo: ver DESPLIEGUE.md.
-const KEY = 'z90-stats';
-const vacio = () => ({ quiz: {}, intentos: 0, mejor: 0, errores: {}, retos: {}, misiones: {} });
-let s = (() => { try { return { ...vacio(), ...JSON.parse(localStorage.getItem(KEY) || '{}') }; } catch { return vacio(); } })();
-const save = () => { try { localStorage.setItem(KEY, JSON.stringify(s)); } catch { /* sin almacenamiento */ } };
+// Avance del estudiante en esta visita (solo en memoria): mejor nota de la evaluación,
+// retos de exposición y misiones del menú superados. Se borra al recargar o al volver a comenzar.
+const vacio = () => ({ mejor: 0, retos: {}, misiones: {} });
+let ses = vacio();
+// Limpia los datos que guardaba la versión con panel docente
+try { localStorage.removeItem('z90-stats'); } catch { /* sin almacenamiento */ }
 
 export const stats = {
-  respuesta(i, ok) { const q = (s.quiz[i] ??= { n: 0, ok: 0 }); q.n++; if (ok) q.ok++; save(); },
-  quizTerminado(score, total) { s.intentos++; s.mejor = Math.max(s.mejor, score / total); save(); },
-  error(id, ok) { const e = (s.errores[id] ??= { n: 0, ok: 0 }); e.n++; if (ok) e.ok++; save(); },
-  reto(id) { s.retos[id] = true; save(); },
-  mision(id) { s.misiones[id] = true; save(); },
-  datos: () => s,
-  reiniciar() { s = vacio(); save(); },
+  quizTerminado(score, total) { ses.mejor = Math.max(ses.mejor, score / total); },
+  reto(id) { ses.retos[id] = true; },
+  mision(id) { ses.misiones[id] = true; },
+  sesion: () => ses,
+  nuevaSesion() { ses = vacio(); },
 };

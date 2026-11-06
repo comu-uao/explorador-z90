@@ -22,7 +22,7 @@ export function crearExposicion({ t, imagenes, stats, onCambio }) {
     const r = reto();
     st = { ...r.inicio, nd: D.nd.findIndex((n) => n.pasos === r.inicio.nd), cebra: st?.cebra ?? false, hist: st?.hist ?? true };
     if (st.nd < 0) st.nd = 0;
-    superado = !!stats.datos().retos[r.id];
+    superado = !!stats.sesion().retos[r.id];
     pista = false;
   }
 
@@ -112,7 +112,8 @@ export function crearExposicion({ t, imagenes, stats, onCambio }) {
     mostrar() { actualizarHud(); dibujar(); },
     total: () => D.retos.length,
     actual: () => i,
-    hecho: (k) => !!stats.datos().retos[D.retos[k].id],
+    hecho: (k) => !!stats.sesion().retos[D.retos[k].id],
+    limpiar() { i = 0; st = null; if (D) reiniciar(); },
     ir(k) { i = clamp(k, 0, D.retos.length - 1); reiniciar(); onCambio({ rerender: true }); },
     panelHTML() {
       const r = reto();

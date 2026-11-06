@@ -1,15 +1,14 @@
-// Lista «Antes de salir a grabar»: se marca en el celular y se recuerda en este navegador.
+// Lista «Antes de salir a grabar»: se marca en el celular. Se borra al recargar o al volver a comenzar.
 import { qrSVG } from './qr.js';
 
-const KEY = 'z90-lista';
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
 export function crearLista({ t, urlPublica }) {
   const dlg = document.querySelector('#dlg-lista');
   const cuerpo = dlg.querySelector('.lista-cuerpo');
   let items = [];
-  let marcados = new Set((() => { try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch { return []; } })());
-  const save = () => { try { localStorage.setItem(KEY, JSON.stringify([...marcados])); } catch { /* sin almacenamiento */ } };
+  const marcados = new Set();
+  const save = () => {};
 
   function render() {
     const grupos = [...new Set(items.map((i) => i.grupo))];
@@ -48,5 +47,6 @@ export function crearLista({ t, urlPublica }) {
     setItems(lista) { items = lista; if (dlg.open) render(); },
     abrir() { render(); dlg.showModal(); },
     refrescar() { if (dlg.open) render(); },
+    limpiar() { marcados.clear(); if (dlg.open) render(); },
   };
 }

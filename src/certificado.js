@@ -1,7 +1,6 @@
 // Constancia de uso: se obtiene al completar recorrido, práctica y evaluación.
 // El código es una huella de los datos; la verificación oficial la haría el CPMA con su registro.
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-const KEY = 'z90-cert';
 
 function huella(txt) {
   let h1 = 0x811c9dc5, h2 = 0x01000193;
@@ -13,7 +12,8 @@ export function crearCertificado({ t, getLang, equipo, requisitos, minimo }) {
   const dlg = document.querySelector('#dlg-cert');
   const hoja = dlg.querySelector('.cert-hoja');
   const area = document.querySelector('#print-area');
-  const guardado = () => { try { return JSON.parse(localStorage.getItem(KEY) || 'null'); } catch { return null; } };
+  let ultima = null;                 // solo en memoria: no queda el nombre en computadores compartidos
+  const guardado = () => ultima;
 
   function bloque() {
     const req = requisitos();
@@ -53,7 +53,7 @@ export function crearCertificado({ t, getLang, equipo, requisitos, minimo }) {
   function generar(nombre, puntaje) {
     const fecha = new Date().toISOString();
     const d = { nombre, puntaje, fecha, codigo: `${equipo.corto}-${huella(`${nombre}|${fecha.slice(0, 10)}|${puntaje}`)}` };
-    try { localStorage.setItem(KEY, JSON.stringify(d)); } catch { /* sin almacenamiento */ }
+    ultima = d;
     hoja.innerHTML = hojaHTML(d);
     dlg.showModal();
   }
@@ -65,5 +65,5 @@ export function crearCertificado({ t, getLang, equipo, requisitos, minimo }) {
     }
   });
 
-  return { bloque, generar };
+  return { bloque, generar, limpiar() { ultima = null; } };
 }

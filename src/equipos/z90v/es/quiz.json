@@ -1,60 +1,990 @@
 [
   {
+    "id": "id-nd",
     "tipo": "identificar",
     "pregunta": "Toca en el modelo la pieza que funciona como «gafas de sol» de la cámara.",
     "respuesta": "nd",
     "explicacion": "El filtro ND está dentro de la cámara. Ve el modelo por capas para encontrarlo."
   },
   {
-    "tipo": "opcion",
-    "pregunta": "No puedes cambiar ninguna configuración de la cámara. ¿Qué revisas primero?",
-    "opciones": ["Que el interruptor AUTO/MANUAL esté en MANUAL", "Que la batería esté cargada", "Que el parasol esté puesto", "Que el micrófono esté conectado"],
-    "correcta": 0,
-    "parte": "cuerpo",
-    "explicacion": "En AUTO la cámara decide todo y bloquea los ajustes manuales."
-  },
-  {
-    "tipo": "opcion",
-    "pregunta": "Ajustaste el iris y vuelves a presionar el botón IRIS. ¿Qué pasa?",
-    "opciones": ["Se guarda el ajuste", "El iris vuelve a automático", "Se apaga la cámara", "Cambia el ISO"],
-    "correcta": 1,
-    "parte": "cuerpo",
-    "explicacion": "Para fijar el valor se presiona la palanca de mando. Si presionas IRIS otra vez, vuelve a automático."
-  },
-  {
+    "id": "id-xlr",
     "tipo": "identificar",
     "pregunta": "Toca la pieza donde conectas un micrófono profesional XLR.",
     "respuesta": "audio",
     "explicacion": "Las dos entradas XLR están al frente del asa."
   },
   {
+    "id": "id-sensor",
+    "tipo": "identificar",
+    "pregunta": "Toca la pieza que convierte la luz en imagen digital.",
+    "respuesta": "sensor",
+    "explicacion": "Es el sensor. Está dentro del cuerpo, detrás del filtro ND: velo por capas."
+  },
+  {
+    "id": "id-bateria",
+    "tipo": "identificar",
+    "pregunta": "Toca la pieza que le da energía a toda la cámara.",
+    "respuesta": "bateria",
+    "explicacion": "La batería va en la parte de atrás, debajo del visor."
+  },
+  {
+    "id": "id-memoria",
+    "tipo": "identificar",
+    "pregunta": "Toca la pieza donde queda guardado tu video.",
+    "respuesta": "memoria",
+    "explicacion": "Las dos ranuras SD están bajo una tapa pequeña, detrás de la pantalla."
+  },
+  {
+    "id": "id-visor",
+    "tipo": "identificar",
+    "pregunta": "Hay mucho sol y la pantalla no se ve bien. Toca la pieza que usarías para ver la imagen.",
+    "respuesta": "pantalla",
+    "explicacion": "El visor de atrás, donde pones el ojo, sirve cuando el sol no deja ver la pantalla."
+  },
+  {
+    "id": "id-zoom",
+    "tipo": "identificar",
+    "pregunta": "Toca la pieza que acerca la imagen sin perder calidad.",
+    "respuesta": "lente",
+    "explicacion": "El lente fijo tiene zoom óptico: acerca sin perder calidad."
+  },
+  {
+    "id": "id-encender",
+    "tipo": "identificar",
+    "pregunta": "Toca la pieza que, al abrirla, enciende la cámara.",
+    "respuesta": "pantalla",
+    "explicacion": "Al abrir la pantalla LCD la cámara se enciende y quedan a la vista los botones."
+  },
+  {
+    "id": "id-exposicion",
+    "tipo": "identificar",
+    "pregunta": "Toca la pieza donde están los botones IRIS, ISO y SHUTTER.",
+    "respuesta": "cuerpo",
+    "explicacion": "Están en el cuerpo, en la fila de abajo, debajo de la pantalla."
+  },
+  {
+    "id": "id-rec-asa",
+    "tipo": "identificar",
+    "pregunta": "Toca la pieza donde están la palanca de zoom y el segundo botón REC.",
+    "respuesta": "audio",
+    "explicacion": "Ambos están encima del asa."
+  },
+  {
+    "id": "id-afmf",
+    "tipo": "identificar",
+    "pregunta": "Toca la pieza que tiene a su lado el botón AF/MF y el interruptor FOCUS/ZOOM.",
+    "respuesta": "lente",
+    "explicacion": "Están en el costado izquierdo del lente."
+  },
+  {
+    "id": "id-palanca",
+    "tipo": "identificar",
+    "pregunta": "Toca la pieza donde está la palanca de mando para moverte por el menú.",
+    "respuesta": "cuerpo",
+    "explicacion": "La palanca de mando está atrás, en el cuerpo de la cámara."
+  },
+  {
+    "id": "op-auto",
+    "tipo": "opcion",
+    "pregunta": "No puedes cambiar ninguna configuración de la cámara. ¿Qué revisas primero?",
+    "opciones": [
+      "Que el interruptor AUTO/MANUAL esté en MANUAL",
+      "Que la batería esté cargada",
+      "Que el parasol esté puesto",
+      "Que el micrófono esté conectado"
+    ],
+    "correcta": 0,
+    "parte": "cuerpo",
+    "explicacion": "En AUTO la cámara decide todo y bloquea los ajustes manuales."
+  },
+  {
+    "id": "op-iris-otra",
+    "tipo": "opcion",
+    "pregunta": "Ajustaste el iris y vuelves a presionar el botón IRIS. ¿Qué pasa?",
+    "opciones": [
+      "El iris vuelve a automático",
+      "Se guarda el ajuste",
+      "Se apaga la cámara",
+      "Cambia el ISO"
+    ],
+    "correcta": 0,
+    "parte": "cuerpo",
+    "explicacion": "Para fijar el valor se presiona la palanca de mando. Si presionas IRIS otra vez, vuelve a automático."
+  },
+  {
+    "id": "op-fijar",
+    "tipo": "opcion",
+    "pregunta": "Ya ajustaste el ISO con la palanca de mando. ¿Cómo fijas el valor?",
+    "opciones": [
+      "Presionando la palanca de mando",
+      "Presionando otra vez el botón ISO",
+      "Cerrando la pantalla",
+      "Presionando REC"
+    ],
+    "correcta": 0,
+    "parte": "cuerpo",
+    "explicacion": "IRIS, ISO y SHUTTER se ajustan y se fijan igual: con la palanca de mando de atrás."
+  },
+  {
+    "id": "op-formato",
     "tipo": "opcion",
     "pregunta": "¿Qué formato de grabación recomienda el CPMA porque funciona con cualquier tarjeta?",
-    "opciones": ["XAVC QFHD", "XAVC HD", "AVCHD", "MP4"],
-    "correcta": 2,
+    "opciones": [
+      "AVCHD",
+      "XAVC QFHD",
+      "XAVC HD",
+      "MP4"
+    ],
+    "correcta": 0,
     "parte": "memoria",
     "explicacion": "Se elige en Menú → Ajuste de grabación → Formato de archivo."
   },
   {
+    "id": "op-formato-ruta",
+    "tipo": "opcion",
+    "pregunta": "¿En qué menú cambias el formato de archivo?",
+    "opciones": [
+      "Ajuste de grabación",
+      "Ajuste de audio",
+      "Ajuste de pantalla",
+      "Ajuste de cámara"
+    ],
+    "correcta": 0,
+    "parte": "memoria",
+    "explicacion": "Menú → Ajuste de grabación → Formato de archivo. Ahí eliges AVCHD."
+  },
+  {
+    "id": "op-menu-mover",
+    "tipo": "opcion",
+    "pregunta": "Presionaste MENU. ¿Con qué te mueves por las opciones?",
+    "opciones": [
+      "Con la palanca de mando de atrás",
+      "Con el anillo del lente",
+      "Con la palanca de zoom",
+      "Con el selector ND"
+    ],
+    "correcta": 0,
+    "parte": "cuerpo",
+    "explicacion": "La palanca de mando se mueve para recorrer el menú y se presiona para elegir."
+  },
+  {
+    "id": "op-encender",
+    "tipo": "opcion",
+    "pregunta": "La pantalla ya está abierta y la cámara está apagada. ¿Qué haces?",
+    "opciones": [
+      "Presiono el botón de encendido que está detrás de la pantalla",
+      "Quito y pongo el asa",
+      "Saco la tarjeta SD",
+      "Presiono MENU"
+    ],
+    "correcta": 0,
+    "parte": "pantalla",
+    "explicacion": "Abrir la pantalla enciende la cámara; si ya estaba abierta, usa el botón de encendido del panel lateral."
+  },
+  {
+    "id": "op-lente-fijo",
+    "tipo": "opcion",
+    "pregunta": "¿El lente de la Z90V se puede cambiar por otro?",
+    "opciones": [
+      "No: es fijo y tiene zoom óptico",
+      "Sí, como en una cámara de fotos",
+      "Solo en modo AUTO",
+      "Sí, quitando el parasol"
+    ],
+    "correcta": 0,
+    "parte": "lente",
+    "explicacion": "El lente es fijo, pero su zoom óptico acerca la imagen sin perder calidad."
+  },
+  {
+    "id": "op-zoom-optico",
+    "tipo": "opcion",
+    "pregunta": "¿Qué ventaja tiene el zoom óptico?",
+    "opciones": [
+      "Acerca la imagen sin perder calidad",
+      "Aclara la imagen cuando falta luz",
+      "Enfoca solo los rostros",
+      "Graba en dos tarjetas"
+    ],
+    "correcta": 0,
+    "parte": "lente",
+    "explicacion": "El zoom óptico mueve las lentes; por eso no pierde calidad como un zoom digital."
+  },
+  {
+    "id": "op-parasol",
+    "tipo": "opcion",
+    "pregunta": "¿Para qué sirve el parasol, la visera de adelante del lente?",
+    "opciones": [
+      "Evita que entre luz de los lados al lente y lo protege",
+      "Acerca la imagen",
+      "Quita luz como el filtro ND",
+      "Mejora el sonido"
+    ],
+    "correcta": 0,
+    "parte": "lente",
+    "explicacion": "El parasol bloquea la luz lateral que lava la imagen y protege el lente de golpes."
+  },
+  {
+    "id": "op-focus-zoom",
     "tipo": "opcion",
     "pregunta": "Estás en enfoque manual, pero al girar el anillo cambia el zoom. ¿Qué haces?",
-    "opciones": ["Presiono REC", "Pongo el interruptor del lado del lente en FOCUS", "Subo el filtro ND", "Cambio la tarjeta"],
-    "correcta": 1,
+    "opciones": [
+      "Pongo el interruptor del lado del lente en FOCUS",
+      "Presiono REC",
+      "Subo el filtro ND",
+      "Cambio la tarjeta"
+    ],
+    "correcta": 0,
     "parte": "lente",
     "explicacion": "El interruptor FOCUS/ZOOM decide qué hace el anillo del lente."
   },
   {
+    "id": "op-afmf-donde",
+    "tipo": "opcion",
+    "pregunta": "¿Dónde está el botón AF/MF para cambiar entre enfoque automático y manual?",
+    "opciones": [
+      "En el costado izquierdo del lente",
+      "Encima del asa",
+      "Junto a la batería",
+      "En el panel de IRIS, ISO y SHUTTER"
+    ],
+    "correcta": 0,
+    "parte": "lente",
+    "explicacion": "Está al lado izquierdo del lente; debajo queda el interruptor FOCUS/ZOOM."
+  },
+  {
+    "id": "op-foco-cpma",
+    "tipo": "opcion",
+    "pregunta": "¿Qué recomienda el CPMA sobre el enfoque?",
+    "opciones": [
+      "Grabar casi siempre en manual, apoyándote en el peaking",
+      "Usar siempre el enfoque automático",
+      "No enfocar: el zoom lo hace solo",
+      "Enfocar solo en modo AUTO"
+    ],
+    "correcta": 0,
+    "parte": "lente",
+    "explicacion": "El autofoco es rápido y reconoce rostros, pero en manual tú decides qué queda nítido."
+  },
+  {
+    "id": "op-af-puntos",
+    "tipo": "opcion",
+    "pregunta": "¿Cuántos puntos de referencia tiene el enfoque automático híbrido de la Z90V?",
+    "opciones": [
+      "273",
+      "27",
+      "12",
+      "1.000"
+    ],
+    "correcta": 0,
+    "parte": "sensor",
+    "explicacion": "Son 273 puntos: por eso el autofoco es tan rápido y reconoce rostros con facilidad."
+  },
+  {
+    "id": "op-sensor-luz",
+    "tipo": "opcion",
+    "pregunta": "¿Por qué la Z90V se ve bien con poca luz?",
+    "opciones": [
+      "Porque su sensor es grande para una cámara de su tamaño",
+      "Por el parasol",
+      "Porque graba en AVCHD",
+      "Por las entradas XLR"
+    ],
+    "correcta": 0,
+    "parte": "sensor",
+    "explicacion": "Un sensor grande recibe más luz. Aun así, siempre es mejor iluminar bien la escena."
+  },
+  {
+    "id": "op-peaking",
+    "tipo": "opcion",
+    "pregunta": "¿Qué muestra el peaking (atenuación) en la pantalla?",
+    "opciones": [
+      "Puntos de color en las zonas que están enfocadas",
+      "Rayas en las zonas quemadas",
+      "El nivel de la batería",
+      "El volumen del audio"
+    ],
+    "correcta": 0,
+    "parte": "pantalla",
+    "explicacion": "Es un asistente de foco: colorea los bordes nítidos para que sepas qué está enfocado."
+  },
+  {
+    "id": "op-peaking-graba",
+    "tipo": "opcion",
+    "pregunta": "¿Los puntos de color del peaking quedan grabados en el video?",
+    "opciones": [
+      "No, solo son una ayuda en la pantalla",
+      "Sí, siempre",
+      "Solo en formato AVCHD",
+      "Solo si son de color rojo"
+    ],
+    "correcta": 0,
+    "parte": "pantalla",
+    "explicacion": "El peaking solo se ve en la pantalla y el visor; la toma queda limpia."
+  },
+  {
+    "id": "op-peaking-ruta",
+    "tipo": "opcion",
+    "pregunta": "¿Dónde activas el peaking?",
+    "opciones": [
+      "Menú → Ajuste de pantalla → Atenuación",
+      "Menú → Ajuste de audio",
+      "Con el botón WHITE BALANCE",
+      "Con el selector ND"
+    ],
+    "correcta": 0,
+    "parte": "pantalla",
+    "explicacion": "En Ajuste de pantalla entra a Atenuación y actívala."
+  },
+  {
+    "id": "op-nd-cuando",
+    "tipo": "opcion",
+    "pregunta": "¿Cuándo usas el filtro ND?",
+    "opciones": [
+      "Cuando hay mucha luz, por ejemplo al sol",
+      "Cuando la escena está oscura",
+      "Cuando quieres más zoom",
+      "Cuando grabas sonido"
+    ],
+    "correcta": 0,
+    "parte": "nd",
+    "explicacion": "El ND quita luz para que la imagen no se vea quemada en exteriores."
+  },
+  {
+    "id": "op-nd-donde",
+    "tipo": "opcion",
+    "pregunta": "¿Dónde está el selector del filtro ND?",
+    "opciones": [
+      "Atrás, en el lado izquierdo, encima del interruptor AUTO/MANUAL",
+      "Encima del asa",
+      "Al lado del lente",
+      "Detrás de la pantalla"
+    ],
+    "correcta": 0,
+    "parte": "nd",
+    "explicacion": "Cada vez que subes el selector, el filtro quita un poco más de luz."
+  },
+  {
+    "id": "op-nd-orden",
+    "tipo": "opcion",
+    "pregunta": "Grabas al sol y quieres el fondo desenfocado. ¿Qué haces primero?",
+    "opciones": [
+      "Subo el ND y después termino de ajustar el iris",
+      "Cierro el iris al máximo",
+      "Subo el ISO",
+      "Quito el parasol"
+    ],
+    "correcta": 0,
+    "parte": "nd",
+    "explicacion": "Con el ND bajas la luz sin cerrar el iris, y así mantienes el fondo desenfocado."
+  },
+  {
+    "id": "op-nd-max",
+    "tipo": "opcion",
+    "pregunta": "¿Qué posición del filtro ND quita más luz?",
+    "opciones": [
+      "1/64",
+      "1/4",
+      "1/16",
+      "CLEAR"
+    ],
+    "correcta": 0,
+    "parte": "nd",
+    "explicacion": "1/64 deja pasar solo una parte de 64 de la luz; CLEAR es sin filtro."
+  },
+  {
+    "id": "op-nd-estudio",
+    "tipo": "opcion",
+    "pregunta": "En un estudio con poca luz, ¿cómo pones el filtro ND?",
+    "opciones": [
+      "Sin filtro (CLEAR): aquí falta luz, no sobra",
+      "En 1/64",
+      "En 1/16",
+      "Da igual"
+    ],
+    "correcta": 0,
+    "parte": "nd",
+    "explicacion": "El ND solo se usa cuando sobra luz. Con poca luz, quítalo."
+  },
+  {
+    "id": "op-iso-ultimo",
+    "tipo": "opcion",
+    "pregunta": "Hay poca luz. ¿Qué subes de último y lo menos posible?",
+    "opciones": [
+      "El ISO, porque agrega grano",
+      "El iris",
+      "El filtro ND",
+      "El zoom"
+    ],
+    "correcta": 0,
+    "parte": "cuerpo",
+    "explicacion": "Primero quita el ND, abre el iris y pon el obturador en 1/60. El ISO va al final."
+  },
+  {
+    "id": "op-iris-fondo",
+    "tipo": "opcion",
+    "pregunta": "Quieres el fondo desenfocado para que la persona resalte. ¿Cómo pones el iris?",
+    "opciones": [
+      "Abierto, con un número f pequeño como f/2.8",
+      "Cerrado, como f/11",
+      "En automático",
+      "El iris no cambia el fondo"
+    ],
+    "correcta": 0,
+    "parte": "lente",
+    "explicacion": "Un iris abierto reduce la zona nítida y desenfoca el fondo."
+  },
+  {
+    "id": "op-iris-nitido",
+    "tipo": "opcion",
+    "pregunta": "En un plano general quieres que todo, de adelante hacia atrás, quede nítido. ¿Cómo pones el iris?",
+    "opciones": [
+      "Más cerrado, como f/8",
+      "Totalmente abierto",
+      "En f/2.8",
+      "El iris no cambia la nitidez"
+    ],
+    "correcta": 0,
+    "parte": "lente",
+    "explicacion": "Un iris cerrado amplía la zona nítida. Si falta luz, compensa con el ISO lo menos posible."
+  },
+  {
+    "id": "op-obturador",
+    "tipo": "opcion",
+    "pregunta": "¿Qué velocidad de obturación usamos en el laboratorio para que el movimiento se vea natural?",
+    "opciones": [
+      "1/60",
+      "1/2000",
+      "1/1000",
+      "1/500"
+    ],
+    "correcta": 0,
+    "parte": "cuerpo",
+    "explicacion": "Con 1/60 el movimiento se ve fluido; velocidades muy altas lo hacen ver entrecortado."
+  },
+  {
+    "id": "op-cebra",
+    "tipo": "opcion",
+    "pregunta": "¿Para qué sirve la cebra?",
+    "opciones": [
+      "Marca con rayas las zonas que se están quemando",
+      "Muestra qué está enfocado",
+      "Estabiliza la imagen",
+      "Graba en las dos tarjetas"
+    ],
+    "correcta": 0,
+    "parte": "pantalla",
+    "explicacion": "Las rayas avisan dónde la imagen está tan clara que pierde detalle."
+  },
+  {
+    "id": "op-hist",
+    "tipo": "opcion",
+    "pregunta": "En el histograma, casi todo está pegado al lado derecho. ¿Qué significa?",
+    "opciones": [
+      "La imagen está sobreexpuesta: demasiado clara",
+      "La imagen está oscura",
+      "Está desenfocada",
+      "El audio está muy alto"
+    ],
+    "correcta": 0,
+    "parte": "pantalla",
+    "explicacion": "La derecha son los tonos claros. Si todo se amontona ahí, baja la luz con ND o iris."
+  },
+  {
+    "id": "op-wb-cuando",
+    "tipo": "opcion",
+    "pregunta": "Los colores se ven azulados o amarillentos. ¿Qué ajuste haces?",
+    "opciones": [
+      "El balance de blancos",
+      "El filtro ND",
+      "El zoom",
+      "El formato de archivo"
+    ],
+    "correcta": 0,
+    "parte": "cuerpo",
+    "explicacion": "El balance de blancos le dice a la cámara qué es blanco bajo esa luz."
+  },
+  {
+    "id": "op-wb-como",
+    "tipo": "opcion",
+    "pregunta": "Para hacer el balance de blancos, ¿qué encuadras?",
+    "opciones": [
+      "Algo blanco bajo la misma luz donde vas a grabar",
+      "La cara del entrevistado",
+      "El cielo",
+      "Cualquier objeto de color"
+    ],
+    "correcta": 0,
+    "parte": "cuerpo",
+    "explicacion": "Llena el cuadro con algo blanco iluminado igual que la escena y presiona la palanca de mando."
+  },
+  {
+    "id": "op-wb-memoria",
+    "tipo": "opcion",
+    "pregunta": "Antes de hacer el balance con WB SET, ¿qué eliges al presionar WHITE BALANCE?",
+    "opciones": [
+      "La memoria A o B, donde se guarda el balance",
+      "El formato AVCHD",
+      "El micrófono INT MIC",
+      "El filtro ND 1/64"
+    ],
+    "correcta": 0,
+    "parte": "cuerpo",
+    "explicacion": "El balance se guarda en la memoria A o B; después vas a Menú → Ajuste de cámara → WB SET."
+  },
+  {
+    "id": "op-wb-3200",
+    "tipo": "opcion",
+    "pregunta": "Grabas con luz de día, pero el balance quedó en 3200K. ¿Cómo se ve la imagen?",
+    "opciones": [
+      "Azulada",
+      "Amarillenta",
+      "Quemada",
+      "Borrosa"
+    ],
+    "correcta": 0,
+    "parte": "cuerpo",
+    "explicacion": "3200K es para lámparas cálidas. Con luz de día pinta todo de azul."
+  },
+  {
+    "id": "op-wb-lampara",
+    "tipo": "opcion",
+    "pregunta": "¿Qué balance corresponde a las lámparas cálidas de un estudio?",
+    "opciones": [
+      "3200K",
+      "5600K",
+      "1/60",
+      "f/8"
+    ],
+    "correcta": 0,
+    "parte": "cuerpo",
+    "explicacion": "3200K es la luz cálida de lámpara; 5600K, la luz del día."
+  },
+  {
+    "id": "op-input-mic",
+    "tipo": "opcion",
+    "pregunta": "Conectaste un micrófono por XLR. ¿Qué revisas primero en la cámara?",
+    "opciones": [
+      "Que el interruptor INPUT esté en MIC",
+      "Que el filtro ND esté en 1/64",
+      "Que el formato sea AVCHD",
+      "Que el AF/MF esté en automático"
+    ],
+    "correcta": 0,
+    "parte": "audio",
+    "explicacion": "Los interruptores INPUT del asa deben estar en MIC; después eliges el micrófono en el menú."
+  },
+  {
+    "id": "op-mishoe",
+    "tipo": "opcion",
+    "pregunta": "Con el micrófono XLR conectado e INPUT en MIC, ¿qué eliges en Selección micrófono?",
+    "opciones": [
+      "MI SHOE MIC",
+      "INT MIC",
+      "STEREO MINI MIC",
+      "Da igual"
+    ],
+    "correcta": 0,
+    "parte": "audio",
+    "explicacion": "MI SHOE MIC toma el sonido de las entradas XLR del asa."
+  },
+  {
+    "id": "op-intmic",
     "tipo": "opcion",
     "pregunta": "Terminaste la entrevista y vas a grabar imágenes de apoyo. ¿Qué micrófono eliges en el menú?",
-    "opciones": ["MI SHOE MIC, el del entrevistado", "INT MIC, el micrófono interno", "Ninguno", "Da igual"],
-    "correcta": 1,
+    "opciones": [
+      "INT MIC, el micrófono interno",
+      "MI SHOE MIC, el del entrevistado",
+      "Ninguno",
+      "Da igual"
+    ],
+    "correcta": 0,
     "parte": "audio",
     "explicacion": "Con el micrófono interno las imágenes quedan con sonido ambiente y sin la voz del entrevistado."
   },
   {
+    "id": "op-audio-ruta",
+    "tipo": "opcion",
+    "pregunta": "¿En qué menú eliges qué micrófono graba?",
+    "opciones": [
+      "Ajuste de audio → Selección micrófono",
+      "Ajuste de cámara → SteadyShot",
+      "Ajuste de pantalla → Atenuación",
+      "Ajuste de grabación → Formato de archivo"
+    ],
+    "correcta": 0,
+    "parte": "audio",
+    "explicacion": "En Ajuste de audio → Selección micrófono cambias entre MI SHOE MIC e INT MIC."
+  },
+  {
+    "id": "op-xlr-cuantas",
+    "tipo": "opcion",
+    "pregunta": "¿Cuántas entradas XLR tiene el asa de la Z90V?",
+    "opciones": [
+      "Dos",
+      "Una",
+      "Cuatro",
+      "Ninguna: el XLR va en el cuerpo"
+    ],
+    "correcta": 0,
+    "parte": "audio",
+    "explicacion": "Son dos entradas XLR, para grabar audio profesional en dos canales."
+  },
+  {
+    "id": "op-asa",
+    "tipo": "opcion",
+    "pregunta": "¿Qué se puede hacer con el asa de arriba?",
+    "opciones": [
+      "Quitarla: es una montura extraíble con las entradas XLR",
+      "Nada, es parte fija del cuerpo",
+      "Guardar ahí la batería",
+      "Cambiarla por otro lente"
+    ],
+    "correcta": 0,
+    "parte": "audio",
+    "explicacion": "El asa es extraíble y trae las entradas XLR, la palanca de zoom y un botón REC."
+  },
+  {
+    "id": "op-mic-integrado",
+    "tipo": "opcion",
+    "pregunta": "¿Qué capta bien el micrófono integrado de la cámara?",
+    "opciones": [
+      "El sonido ambiente",
+      "La voz de un entrevistado lejano, como un micrófono de solapa",
+      "Solo música",
+      "Nada: es decorativo"
+    ],
+    "correcta": 0,
+    "parte": "audio",
+    "explicacion": "El integrado capta el ambiente. Para voces claras usa un micrófono externo por XLR."
+  },
+  {
+    "id": "op-audifonos",
+    "tipo": "opcion",
+    "pregunta": "¿Por qué conviene revisar el sonido con audífonos?",
+    "opciones": [
+      "Para escuchar lo que realmente se está grabando",
+      "Para que el entrevistado no hable",
+      "Porque el visor no funciona sin ellos",
+      "Para cargar la batería"
+    ],
+    "correcta": 0,
+    "parte": "audio",
+    "explicacion": "Con audífonos descubres a tiempo ruidos, cables sueltos o el micrófono equivocado."
+  },
+  {
+    "id": "op-steady",
+    "tipo": "opcion",
+    "pregunta": "Vas a seguir a una persona caminando con la cámara en la mano. ¿Qué activas?",
+    "opciones": [
+      "El SteadyShot, el estabilizador",
+      "La cebra",
+      "El histograma",
+      "El filtro ND"
+    ],
+    "correcta": 0,
+    "parte": "cuerpo",
+    "explicacion": "El SteadyShot estabiliza las tomas a mano alzada y los recorridos."
+  },
+  {
+    "id": "op-steady-recorte",
+    "tipo": "opcion",
+    "pregunta": "¿Qué le pasa a la imagen al activar el SteadyShot?",
+    "opciones": [
+      "Se recorta un poco, pero las tomas a mano quedan estables",
+      "Se oscurece",
+      "Pierde el color",
+      "Se graba sin sonido"
+    ],
+    "correcta": 0,
+    "parte": "cuerpo",
+    "explicacion": "En cualquiera de sus modos la imagen tiene un pequeño recorte a cambio de estabilidad."
+  },
+  {
+    "id": "op-steady-ruta",
+    "tipo": "opcion",
+    "pregunta": "¿En qué menú está el SteadyShot?",
+    "opciones": [
+      "Ajuste de cámara",
+      "Ajuste de audio",
+      "Ajuste de grabación",
+      "Ajuste de pantalla"
+    ],
+    "correcta": 0,
+    "parte": "cuerpo",
+    "explicacion": "Menú → Ajuste de cámara → SteadyShot, y eliges el modo."
+  },
+  {
+    "id": "op-rec-dos",
+    "tipo": "opcion",
+    "pregunta": "¿Cuántos botones REC tiene la Z90V y dónde están?",
+    "opciones": [
+      "Dos: uno encima del asa y otro atrás",
+      "Uno, encima del asa",
+      "Uno, al lado del lente",
+      "Tres: asa, atrás y lente"
+    ],
+    "correcta": 0,
+    "parte": "audio",
+    "explicacion": "Puedes grabar con el REC del asa o con el de atrás, según cómo sostengas la cámara."
+  },
+  {
+    "id": "op-rec-detener",
+    "tipo": "opcion",
+    "pregunta": "Estás grabando. ¿Cómo detienes la grabación?",
+    "opciones": [
+      "Presionando REC otra vez",
+      "Presionando WHITE BALANCE",
+      "Presionando MENU",
+      "Sacando la tarjeta"
+    ],
+    "correcta": 0,
+    "parte": "audio",
+    "explicacion": "El mismo botón REC inicia y detiene. Nunca saques la tarjeta mientras graba."
+  },
+  {
+    "id": "op-sd-cuantas",
+    "tipo": "opcion",
+    "pregunta": "¿Cuántas ranuras para tarjeta SD tiene la Z90V?",
+    "opciones": [
+      "Dos",
+      "Una",
+      "Tres",
+      "Ninguna: usa memoria interna"
+    ],
+    "correcta": 0,
+    "parte": "memoria",
+    "explicacion": "Con dos ranuras puedes grabar una copia en cada tarjeta o seguir en la otra cuando una se llena."
+  },
+  {
+    "id": "op-sd-meter",
+    "tipo": "opcion",
+    "pregunta": "¿Cómo metes bien la tarjeta SD?",
+    "opciones": [
+      "Siguiendo la forma que marca la guía, hasta que haga clic",
+      "Al revés, con los contactos hacia afuera",
+      "A presión, sin abrir la tapa",
+      "Con fuerza, aunque no entre derecha"
+    ],
+    "correcta": 0,
+    "parte": "memoria",
+    "explicacion": "Abre la tapa detrás de la pantalla, sigue la guía y empuja hasta el clic."
+  },
+  {
+    "id": "op-sd-donde",
+    "tipo": "opcion",
+    "pregunta": "¿Dónde están las ranuras de las tarjetas SD?",
+    "opciones": [
+      "Bajo una tapa pequeña, detrás de la pantalla",
+      "Debajo de la batería",
+      "En el asa",
+      "Dentro del parasol"
+    ],
+    "correcta": 0,
+    "parte": "memoria",
+    "explicacion": "Para verlas abre la pantalla LCD y luego la tapa del panel lateral."
+  },
+  {
+    "id": "op-simul",
+    "tipo": "opcion",
+    "pregunta": "¿Qué hace la opción «Grab. simultánea» del menú?",
+    "opciones": [
+      "Graba lo mismo en las dos tarjetas a la vez, como copia de seguridad",
+      "Graba con dos micrófonos",
+      "Graba dos tomas seguidas",
+      "Graba la pantalla y el visor"
+    ],
+    "correcta": 0,
+    "parte": "memoria",
+    "explicacion": "Si una tarjeta falla, tienes la otra copia."
+  },
+  {
+    "id": "op-rele",
+    "tipo": "opcion",
+    "pregunta": "¿Qué hace la grabación en relé?",
+    "opciones": [
+      "Cuando se llena una tarjeta, sigue grabando en la otra",
+      "Graba en las dos a la vez",
+      "Repite la última toma",
+      "Pasa el video al celular"
+    ],
+    "correcta": 0,
+    "parte": "memoria",
+    "explicacion": "Es útil en grabaciones largas: no se corta cuando una tarjeta se llena."
+  },
+  {
+    "id": "op-sd-formatear",
+    "tipo": "opcion",
+    "pregunta": "¿Dónde conviene formatear las tarjetas SD antes de grabar?",
+    "opciones": [
+      "En la misma cámara",
+      "En el celular",
+      "En cualquier computador",
+      "No hace falta formatearlas nunca"
+    ],
+    "correcta": 0,
+    "parte": "memoria",
+    "explicacion": "Formatear en la cámara prepara la tarjeta tal como ella la necesita. Ojo: borra todo."
+  },
+  {
+    "id": "op-conectores",
+    "tipo": "opcion",
+    "pregunta": "¿Para qué sirven los puertos de conexión de la cámara?",
+    "opciones": [
+      "Para llevar la imagen a un televisor o a una transmisión en vivo",
+      "Para cargar la tarjeta SD",
+      "Para cambiar el lente",
+      "Para hacer el balance de blancos"
+    ],
+    "correcta": 0,
+    "parte": "memoria",
+    "explicacion": "Por cable la imagen sale a un monitor, un televisor o un equipo de transmisión."
+  },
+  {
+    "id": "op-bat-montar",
+    "tipo": "opcion",
+    "pregunta": "¿Cómo se monta la batería?",
+    "opciones": [
+      "Corro el seguro de abajo, la inserto con los conectores hacia arriba y suelto el seguro",
+      "La empujo de lado hasta que suene",
+      "La meto con los conectores hacia abajo",
+      "Abro la pantalla y la meto detrás"
+    ],
+    "correcta": 0,
+    "parte": "bateria",
+    "explicacion": "Al soltar el seguro la batería queda fija en la parte de atrás."
+  },
+  {
+    "id": "op-bat-donde",
+    "tipo": "opcion",
+    "pregunta": "¿Dónde va la batería?",
+    "opciones": [
+      "Atrás, debajo del visor",
+      "Debajo del asa",
+      "Detrás de la pantalla, con las tarjetas",
+      "Al lado del lente"
+    ],
+    "correcta": 0,
+    "parte": "bateria",
+    "explicacion": "La batería se monta en la parte trasera, justo debajo del visor."
+  },
+  {
+    "id": "op-bat-repuesto",
+    "tipo": "opcion",
+    "pregunta": "Vas a grabar todo el día. ¿Qué no puede faltar en tu maleta?",
+    "opciones": [
+      "Una batería de repuesto cargada",
+      "Un segundo parasol",
+      "Un filtro ND extra",
+      "Un cable HDMI de repuesto"
+    ],
+    "correcta": 0,
+    "parte": "bateria",
+    "explicacion": "Una batería se agota en plena grabación; la de repuesto te salva la jornada."
+  },
+  {
+    "id": "op-visor",
+    "tipo": "opcion",
+    "pregunta": "¿Cuándo conviene usar el visor de atrás en lugar de la pantalla?",
+    "opciones": [
+      "Cuando hay sol y la pantalla no se ve bien",
+      "Solo para entrar al menú",
+      "Para grabar sonido",
+      "Nunca: es decorativo"
+    ],
+    "correcta": 0,
+    "parte": "pantalla",
+    "explicacion": "Además, apoyar el ojo en el visor te ayuda a sostener la cámara más firme."
+  },
+  {
+    "id": "op-pantalla-abrir",
+    "tipo": "opcion",
+    "pregunta": "¿Qué pasa al abrir la pantalla LCD?",
+    "opciones": [
+      "La cámara se enciende y quedan a la vista los botones y las ranuras",
+      "Se apaga la cámara",
+      "Se activa el SteadyShot",
+      "Empieza a grabar"
+    ],
+    "correcta": 0,
+    "parte": "pantalla",
+    "explicacion": "Abrir la pantalla es la forma más rápida de encender la cámara."
+  },
+  {
+    "id": "op-prueba",
+    "tipo": "opcion",
+    "pregunta": "Llegaste al lugar y todo parece listo. ¿Qué haces antes de la toma real?",
+    "opciones": [
+      "Una grabación de prueba de 10 segundos, revisada con audífonos",
+      "Pasar a AUTO por si acaso",
+      "Quitar el parasol",
+      "Formatear la tarjeta otra vez"
+    ],
+    "correcta": 0,
+    "parte": "pantalla",
+    "explicacion": "La prueba te muestra a tiempo si la imagen y el sonido están bien."
+  },
+  {
+    "id": "or-luz",
     "tipo": "ordenar",
     "pregunta": "Ordena el camino que recorre la luz hasta convertirse en imagen.",
-    "items": ["lente", "nd", "sensor"],
+    "items": [
+      "lente",
+      "nd",
+      "sensor"
+    ],
+    "parte": "sensor",
     "explicacion": "La luz entra por el lente, pasa por el filtro ND y llega al sensor."
+  },
+  {
+    "id": "or-preparar",
+    "tipo": "ordenar",
+    "pregunta": "Ordena cómo preparas la cámara antes de grabar.",
+    "items": [
+      "Montar la batería",
+      "Abrir la pantalla para encenderla",
+      "Insertar la tarjeta SD",
+      "Elegir el formato AVCHD en el menú"
+    ],
+    "parte": "bateria",
+    "explicacion": "Sin batería no enciende; la tapa de las tarjetas está detrás de la pantalla; y el formato se elige con todo listo."
+  },
+  {
+    "id": "or-poca-luz",
+    "tipo": "ordenar",
+    "pregunta": "Hay poca luz en el estudio. Ordena los ajustes, del primero al último.",
+    "items": [
+      "Quitar el filtro ND",
+      "Abrir el iris",
+      "Poner el obturador en 1/60",
+      "Subir el ISO, lo menos posible"
+    ],
+    "parte": "cuerpo",
+    "explicacion": "El ISO va al final porque agrega grano: antes aprovecha toda la luz que puedas."
+  },
+  {
+    "id": "or-wb",
+    "tipo": "ordenar",
+    "pregunta": "Ordena los pasos para hacer el balance de blancos.",
+    "items": [
+      "Presionar WHITE BALANCE",
+      "Elegir la memoria A o B",
+      "Entrar a Menú → Ajuste de cámara → WB SET",
+      "Encuadrar algo blanco y presionar la palanca de mando"
+    ],
+    "parte": "cuerpo",
+    "explicacion": "Al terminar, presiona MENU para salir."
+  },
+  {
+    "id": "or-audio",
+    "tipo": "ordenar",
+    "pregunta": "Ordena cómo configuras el sonido de un micrófono XLR.",
+    "items": [
+      "Poner el interruptor INPUT en MIC",
+      "Presionar MENU y entrar a Ajuste de audio",
+      "Abrir Selección micrófono",
+      "Elegir MI SHOE MIC"
+    ],
+    "parte": "audio",
+    "explicacion": "Para las imágenes de apoyo, vuelve después a INT MIC."
   }
 ]

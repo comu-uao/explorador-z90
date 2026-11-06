@@ -5,9 +5,9 @@ Página web educativa para conocer la cámara Sony PXW-Z90V en 3D. El contenido 
 - **Recorrido:** 8 partes explicadas en lenguaje sencillo (qué es, para qué sirve y un tip). Tocar cualquier pieza del modelo lleva a su ficha.
 - **Uso de la cámara:** 12 pasos guiados, en el mismo orden del tutorial, para hacer la primera toma. El estudiante presiona cada botón o palanca en el modelo, la pieza se mueve o se hunde y una pantalla simulada muestra el efecto.
 - **Laboratorio:** simulador de exposición (iris, ISO, obturador, ND y balance sobre fotos reales, con cebra, histograma y medidor), réplica navegable del menú de la cámara con misiones, y «¿Qué falló?», con tomas que tienen un error típico.
-- **Evaluación:** 8 preguntas cortas, con resultado, partes para repasar y **constancia de uso** cuando se completa todo con 75 % o más.
+- **Evaluación:** banco de 77 preguntas (tocar la pieza en el modelo, opción múltiple y ordenar pasos). Cada intento saca 8 al azar, repartidas entre las partes de la cámara, con las opciones en otro orden; se ajusta en `src/config.js → evaluacion`. Tiene resultado, partes para repasar y **constancia de uso** cuando se completa todo con 75 % o más.
 
-Además: **lista «Antes de salir a grabar»** (con QR para abrirla en el celular), **video tutorial** que abre en el minuto de cada paso con subtítulos, **narración en voz** de cada ficha, **versión en inglés**, **realidad aumentada** (ver la cámara a tamaño real sobre la mesa desde el celular) y un **panel docente** con las preguntas que más fallan.
+Además: **lista «Antes de salir a grabar»** (con QR para abrirla en el celular), **video tutorial** que abre en el minuto de cada paso con subtítulos, **narración en voz** de cada ficha, **versión en inglés** y **realidad aumentada** (ver la cámara a tamaño real sobre la mesa desde el celular).
 
 Mientras se termina el modelo 3D, el visor muestra un **modelo provisional de bloques**. Sus piezas y botones tienen los mismos nombres que tendrá el modelo final, así que todo funciona desde ya. Cuando el modelo esté listo, basta con copiarlo a `public/models/z90.glb`.
 
@@ -37,7 +37,7 @@ explorador-z90/
    ├─ monitor.js              Pantalla simulada de «Uso de la cámara»
    ├─ quiz.js                 Evaluación
    ├─ lab/                    Laboratorio: exposicion.js, menu.js, errores.js e imagen.js (motor de imagen)
-   ├─ lista.js · video.js · voz.js · ar.js · certificado.js · stats.js · qr.js
+   ├─ lista.js · video.js · voz.js · ar.js · certificado.js · stats.js (avance de la visita) · qr.js
    ├─ i18n/                   Textos de la interfaz en español (es.js) e inglés (en.js)
    ├─ style.css               Diseño (solo rojo y blanco)
    └─ equipos/
@@ -45,7 +45,7 @@ explorador-z90/
       ├─ _plantilla/          Copia esta carpeta para agregar otro equipo (ver LEEME.md)
       └─ z90v/
          ├─ partes.json       Piezas del modelo y hacia dónde se separan
-         ├─ es/               recorrido, uso, quiz y lab (retos, menú, errores, lista) en español
+         ├─ es/               recorrido, uso, quiz (banco de preguntas) y lab (retos, menú, errores, lista) en español
          ├─ en/               Las mismas fichas en inglés (solo los textos)
          ├─ subtitulos/       Subtítulos del video (es.vtt, en.vtt)
          ├─ fotos/ · lab/     Fotos del tutorial y fotos para el laboratorio
@@ -54,9 +54,9 @@ explorador-z90/
 
 Los textos están en `src/equipos/z90v/es/` y `en/`. Un profesor puede corregirlos sin tocar el código.
 
-### Estadísticas para docentes
+### Avance del estudiante
 
-El panel docente (Ayuda → Abrir panel docente, o `#docente` al final de la dirección) muestra lo que pasó **en ese navegador**: sirve en un computador de sala o para revisar con un estudiante. Para ver los resultados de todo un curso hace falta guardarlos en un servidor (por ejemplo un formulario de Microsoft Forms o Google Forms al terminar la evaluación, o una base de datos de la universidad). El botón **Copiar CSV** ya entrega los datos en ese formato.
+El avance (partes vistas, pasos de la práctica, retos, misiones, evaluación, lista y constancia) vive solo mientras la página está abierta: **se reinicia al recargar o al volver a comenzar** desde la portada. Así cada estudiante empieza de cero, también en computadores compartidos. Solo se recuerda el idioma elegido.
 
 ## Diseño
 

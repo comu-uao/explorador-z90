@@ -42,6 +42,7 @@ export function crearErrores({ t, imagenes, stats, onCambio, titulo }) {
     total: () => casos.length,
     actual: () => i,
     hecho: (k) => resp[casos[k].id] != null,
+    limpiar() { i = 0; for (const k of Object.keys(resp)) delete resp[k]; },
     ir(k) { i = Math.max(0, Math.min(casos.length - 1, k)); onCambio({ rerender: true }); },
     panelHTML() {
       const c = casos[i];
@@ -67,7 +68,6 @@ export function crearErrores({ t, imagenes, stats, onCambio, titulo }) {
         if (!b) return;
         const c = casos[i];
         resp[c.id] = +b.dataset.op;
-        stats.error(c.id, +b.dataset.op === c.correcta);
         onCambio({ rerender: true });
       });
     },
