@@ -81,6 +81,6 @@ export default {
   'ay.modelado': 'For the modeling team', 'ay.modelado.btn': 'Test a .glb model',
   'ay.modelado.d': 'Load a .glb file to check that the parts and buttons have the right names. You can also drag it onto the viewer.',
   'aviso.full': 'This browser doesn’t allow full screen here.', 'aviso.glb': 'Use a .glb file (binary glTF with embedded textures).',
-  'aviso.faltan': 'Loaded “{name}”. {n} objects with the expected name are missing: {lista}.', 'aviso.completo': 'Loaded “{name}”. All parts and controls are present.',
+  'aviso.falta1': 'Loaded “{name}”. 1 object with the expected name is missing: {lista}.', 'aviso.faltan': 'Loaded “{name}”. {n} objects with the expected name are missing: {lista}.', 'aviso.completo': 'Loaded “{name}”. All parts and controls are present.',
   'aviso.noleer': 'Couldn’t read “{name}”: {err}',
 };

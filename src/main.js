@@ -539,7 +539,9 @@ viewer.on('loaded', ({ provisional, name, missingParts, missingCtrls }) => {
   $('#badge').hidden = !provisional;
   if (!provisional) {
     const faltan = [...new Set([...missingParts.map((p) => p.mesh), ...missingCtrls])];   // Pantalla_LCD y Bateria son pieza y control a la vez
-    if (faltan.length) showNotice(t('aviso.faltan', { name, n: faltan.length, lista: faltan.join(', ') }), 'warn', 0);
+    // El estudiante no ve avisos técnicos: solo aparecen al probar un .glb desde Ayuda (equipo de modelado).
+    if (viewer.modeloFinal) { if (faltan.length) console.warn(`z90.glb: faltan ${faltan.join(', ')}`); }
+    else if (faltan.length) showNotice(t(faltan.length === 1 ? 'aviso.falta1' : 'aviso.faltan', { name, n: faltan.length, lista: faltan.join(', ') }), 'warn', 0);
     else showNotice(t('aviso.completo', { name }), 'ok');
   }
   if (!$('#app').hidden) setMode(state.mode);

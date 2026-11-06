@@ -81,6 +81,6 @@ export default {
   'ay.modelado': 'Para el equipo de modelado', 'ay.modelado.btn': 'Probar un modelo .glb',
   'ay.modelado.d': 'Carga un archivo .glb para revisar que las piezas y los botones tengan el nombre correcto. También puedes arrastrarlo sobre el visor.',
   'aviso.full': 'Este navegador no permite pantalla completa aquí.', 'aviso.glb': 'Usa un archivo .glb (glTF binario, con texturas incluidas).',
-  'aviso.faltan': 'Se cargó «{name}». Faltan {n} objetos con el nombre esperado: {lista}.', 'aviso.completo': 'Se cargó «{name}». Están todas las piezas y controles.',
+  'aviso.falta1': 'Se cargó «{name}». Falta 1 objeto con el nombre esperado: {lista}.', 'aviso.faltan': 'Se cargó «{name}». Faltan {n} objetos con el nombre esperado: {lista}.', 'aviso.completo': 'Se cargó «{name}». Están todas las piezas y controles.',
   'aviso.noleer': 'No se pudo leer «{name}»: {err}',
 };

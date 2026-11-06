@@ -119,8 +119,8 @@ export class Viewer {
     loader.setDRACOLoader(draco);
     try {
       const gltf = await loader.loadAsync(url, (e) => this.emit('progress', e.total ? e.loaded / e.total : null));
+      this.modeloFinal = !(source instanceof File);   // antes de setModel: el aviso de «cargado» lo consulta
       this.setModel(gltf.scene, { provisional: false, name });
-      this.modeloFinal = !(source instanceof File);
     } finally {
       if (source instanceof File) URL.revokeObjectURL(url);
     }
