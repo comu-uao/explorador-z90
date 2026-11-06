@@ -384,7 +384,13 @@ kbd { font: 600 .78rem var(--f-body); padding: 2px 7px; border: 1px solid var(--
 [data-voz][aria-pressed="true"] .onda2 { animation: onda 1s ease-in-out .3s infinite; }
 @keyframes onda { 50% { opacity: .2; } }
 .lab-acciones { display: grid; grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr)); gap: 8px; }
-.lab-acciones .btn { min-width: 0; }
+.lab-acciones .btn { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.lab-acciones.apiladas { grid-template-columns: minmax(0, 1fr); }
+/* Resumen de la práctica: los 12 pasos numerados, en dos columnas */
+.orden-box { background: var(--white); border-radius: 14px; padding: 14px 16px 16px; display: grid; gap: 10px; }
+.orden { list-style: none; margin: 0; padding: 0; counter-reset: paso; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 14px; }
+.orden li { counter-increment: paso; display: flex; align-items: center; gap: 8px; font-size: .88rem; line-height: 1.25; min-width: 0; }
+.orden li::before { content: counter(paso); flex: none; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: var(--red); color: var(--white); font: 700 .7rem/1 var(--f-display); }
 .nota { font-size: .82rem; color: var(--muted); }
 .nota:empty { display: none; }
 .warn-line { padding: 12px 14px; border-radius: 12px; border: 1.5px dashed var(--ink); font-size: .9rem; }

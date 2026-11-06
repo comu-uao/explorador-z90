@@ -31,7 +31,7 @@ export default {
   'uso.fin.resumen': 'You now know how to set up the Z90V, adjust exposure, light and color, frame, focus, set up sound and record.',
   'uso.fin.orden': 'Battery → screen → card → AVCHD format → MANUAL → IRIS → ND → white balance → zoom → focus → sound → REC',
   'uso.fin.lab': 'In the Lab you can practice exposure, the camera menu and spotting common mistakes.',
-  'uso.reiniciar': 'Repeat the practice', 'lista.abrir': 'Open the pre-shoot checklist',
+  'uso.reiniciar': 'Repeat the practice', 'lista.abrir': 'Open the pre-shoot checklist', 'uso.fin.ordenTitulo': 'The order to shoot',
   'mon.cap': 'Camera screen', 'mon.cerrada': 'Screen closed', 'mon.apagada': 'Camera off', 'mon.grabando': 'Recording', 'mon.sintarjeta': 'NO CARD',
   'lab.aria': 'Lab', 'lab.exp': 'Exposure', 'lab.menu': 'Menu', 'lab.err': 'What failed?', 'lab.pista': 'Hint', 'lab.reiniciar': 'Reset',
   'lab.exp.eyebrow': 'Lab · Exposure · Challenge {n} of {total}',

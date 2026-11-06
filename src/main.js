@@ -247,13 +247,18 @@ function renderUsoFinal() {
   callar();
   state.usoFin = true;
   viewer.setPulse(null);
+  viewer.reset();   // vuelve a mostrar la cámara completa, ya armada y encendida
+  const pasos = t('uso.fin.orden').split('→').map((x) => x.trim()).filter(Boolean).map((x) => x[0].toUpperCase() + x.slice(1));
   body.innerHTML = `
     <p class="eyebrow">${t('uso.fin.eyebrow')}</p>
     <h2 tabindex="-1">${t('uso.fin.titulo')}</h2>
     <p class="resumen">${t('uso.fin.resumen')}</p>
-    <div class="green-box sm"><p>${t('uso.fin.orden')}</p></div>
+    <div class="orden-box">
+      <p class="eyebrow">${t('uso.fin.ordenTitulo')}</p>
+      <ol class="orden">${pasos.map((x) => `<li>${esc(x)}</li>`).join('')}</ol>
+    </div>
     <p class="resumen">${t('uso.fin.lab')}</p>
-    <div class="lab-acciones">
+    <div class="lab-acciones apiladas">
       <button type="button" class="btn secondary" data-uso="reiniciar">${t('uso.reiniciar')}</button>
       <button type="button" class="btn secondary" data-lista-abrir>${t('lista.abrir')}</button>
     </div>`;

@@ -31,7 +31,7 @@ export default {
   'uso.fin.resumen': 'Ya sabes preparar la Z90V, ajustar la exposición, la luz y el color, encuadrar, enfocar, configurar el sonido y grabar.',
   'uso.fin.orden': 'Batería → pantalla → tarjeta → formato AVCHD → MANUAL → IRIS → ND → balance de blancos → zoom → enfoque → sonido → REC',
   'uso.fin.lab': 'En el Laboratorio puedes practicar la exposición, el menú de la cámara y detectar errores comunes.',
-  'uso.reiniciar': 'Repetir la práctica', 'lista.abrir': 'Abrir la lista antes de grabar',
+  'uso.reiniciar': 'Repetir la práctica', 'lista.abrir': 'Abrir la lista antes de grabar', 'uso.fin.ordenTitulo': 'El orden para grabar',
   'mon.cap': 'Pantalla de la cámara', 'mon.cerrada': 'Pantalla cerrada', 'mon.apagada': 'Cámara apagada', 'mon.grabando': 'Grabando', 'mon.sintarjeta': 'SIN TARJETA',
   'lab.aria': 'Laboratorio', 'lab.exp': 'Exposición', 'lab.menu': 'Menú', 'lab.err': '¿Qué falló?', 'lab.pista': 'Pista', 'lab.reiniciar': 'Reiniciar',
   'lab.exp.eyebrow': 'Laboratorio · Exposición · Reto {n} de {total}',
