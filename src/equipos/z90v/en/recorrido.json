@@ -1,0 +1,58 @@
+{
+ "lente": {
+  "titulo": "The lens and lens hood",
+  "que_es": "A fixed lens with optical zoom: it can't be swapped, but it brings the image closer without losing quality. The hood is the visor at the front.",
+  "para_que": "The lens frames and focuses. On its left side are the AF/MF button, to choose auto or manual focus, and the FOCUS/ZOOM switch, which sets whether the ring focuses or zooms.",
+  "tip": "Autofocus recognizes faces very quickly, but the CPMA recommends shooting in manual most of the time.",
+  "foto_pie": "The Z90V with its fixed lens and hood"
+ },
+ "nd": {
+  "titulo": "The ND filter",
+  "que_es": "Built-in “sunglasses” that sit inside the camera, behind the lens.",
+  "para_que": "When there's a lot of light or you shoot outdoors, it cuts light so the image doesn't blow out. It's controlled with the ND switch on the back: each step up darkens the image a little more.",
+  "tip": "Raise the ND first, then finish adjusting with the iris.",
+  "foto_pie": "Back of the camera: ND switch, AUTO/MANUAL and REC button"
+ },
+ "sensor": {
+  "titulo": "The sensor",
+  "que_es": "A chip that receives light and turns it into a digital image.",
+  "para_que": "It's large for a camera this size, so it looks good in low light. It also powers the hybrid autofocus, which has 273 reference points.",
+  "tip": "Even with a good sensor, it's always better to light the scene well.",
+  "foto_pie": null
+ },
+ "pantalla": {
+  "titulo": "Screen and viewfinder",
+  "que_es": "The LCD screen on the left side and the viewfinder at the back, where you put your eye.",
+  "para_que": "Opening the screen turns the camera on and reveals the control buttons and the card slots. The viewfinder helps in sunlight, when the screen is hard to see.",
+  "tip": "Resting your eye on the viewfinder also helps you hold the camera steadier.",
+  "foto_pie": "Screen open: the buttons and SD slots are behind it"
+ },
+ "cuerpo": {
+  "titulo": "Body and buttons",
+  "que_es": "The central box with the camera's “brain” and most of its buttons.",
+  "para_que": "Next to the screen are power, WHITE BALANCE and MENU. Below, IRIS, ISO and SHUTTER for exposure. On the back, the multi-selector to move through the menu and the AUTO/MANUAL switch.",
+  "tip": "If you can't change anything in AUTO, move the switch on the back to MANUAL.",
+  "foto_pie": "Button panel on the left side"
+ },
+ "audio": {
+  "titulo": "Handle and sound",
+  "que_es": "The top handle is removable. It has two XLR inputs for professional microphones, their INPUT switches, the zoom lever and a second REC button. There's a built-in microphone at the front.",
+  "para_que": "With an external microphone on XLR you record clear voices. The built-in microphone captures ambient sound.",
+  "tip": "For supporting shots, switch back to the internal mic so the interviewee's voice doesn't sneak in.",
+  "foto_pie": "XLR inputs at the front of the handle"
+ },
+ "memoria": {
+  "titulo": "Cards and connections",
+  "que_es": "Two SD card slots under a small door behind the screen, and the ports to connect cables.",
+  "para_que": "Your video is saved on the card. Cables send the image to a TV or a live broadcast.",
+  "tip": "Insert the card following the shape on the guide until it clicks.",
+  "foto_pie": "SD card slots"
+ },
+ "bateria": {
+  "titulo": "The battery",
+  "que_es": "The camera's power source. It goes on the back, under the viewfinder.",
+  "para_que": "It powers everything. To attach it, slide the lock at the bottom and insert the battery with the connectors facing up; release the lock and it's secure.",
+  "tip": "Always carry a charged spare battery.",
+  "foto_pie": "Attaching the battery on the back"
+ }
+}

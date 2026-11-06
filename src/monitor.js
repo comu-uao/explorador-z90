@@ -1,13 +1,15 @@
 // Pantalla simulada: imita la información que muestra la LCD de la Z90V en cada paso de la práctica.
 // Estado: bateria, pantalla, encendida, tarjeta, formato, manual, iris, nd, wb, zoom, foco, audio, rec
 
+import { t } from './i18n/index.js';
+
 const KEYS = ['bateria', 'pantalla', 'encendida', 'tarjeta', 'formato', 'manual', 'iris', 'nd', 'wb', 'zoom', 'foco', 'audio', 'rec'];
 
 export class Monitor {
   constructor(el) {
     this.el = el;
     el.innerHTML = `
-      <p class="mon-cap">Pantalla de la cámara</p>
+      <p class="mon-cap">${t('mon.cap')}</p>
       <div class="mon-screen">
         <div class="scene" aria-hidden="true">
           <div class="sky"></div><div class="sun"></div>
@@ -27,14 +29,16 @@ export class Monitor {
       <p class="mon-live" role="status"></p>`;
     this.$ = (s) => el.querySelector(s);
     this.timer = null;
+    this.s = {};
     this.secs = 0;
   }
 
   set(s) {
+    this.s = s;
     const d = this.el.dataset;
     for (const k of KEYS) d[k] = String(!!s[k]);
     const on = s.pantalla && s.bateria && s.encendida;
-    const msg = !s.pantalla ? 'Pantalla cerrada' : !on ? 'Cámara apagada' : '';
+    const msg = !s.pantalla ? t('mon.cerrada') : !on ? t('mon.apagada') : '';
     this.$('.msg').textContent = msg;
     this.$('.fmt').textContent = s.formato ? 'AVCHD 1080/60i' : 'XAVC HD';
     this.$('.hmode').textContent = s.manual ? 'MANUAL' : 'AUTO';
@@ -42,14 +46,14 @@ export class Monitor {
     this.$('.f').textContent = s.iris ? 'F4.0' : 'A F5.6';
     this.$('.iso').textContent = s.iris ? 'ISO320' : 'A ISO400';
     this.$('.wbt').textContent = s.wb ? 'WB A' : 'AWB';
-    this.$('.mon-live').textContent = msg || (s.rec ? 'Grabando' : '');
+    this.$('.mon-live').textContent = msg || (s.rec ? t('mon.grabando') : '');
     clearInterval(this.timer);
     if (s.rec) {
       this.secs = 0;
       this.tick();
       this.timer = setInterval(() => { this.secs++; this.tick(); }, 1000);
     } else {
-      this.$('.st').textContent = s.tarjeta ? 'STBY' : 'SIN TARJETA';
+      this.$('.st').textContent = s.tarjeta ? 'STBY' : t('mon.sintarjeta');
     }
   }
 
@@ -60,4 +64,6 @@ export class Monitor {
   }
 
   stop() { clearInterval(this.timer); }
+
+  relabel() { this.el.querySelector('.mon-cap').textContent = t('mon.cap'); this.set(this.s); }
 }

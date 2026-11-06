@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
@@ -6,14 +6,14 @@
   <title>Explorador 3D Z90V</title>
   <meta name="description" content="Recorrido interactivo en 3D por la cámara Sony PXW-Z90V: sus partes, para qué sirven y cómo se usa, botón por botón.">
   <meta name="theme-color" content="#a8172f">
-  <link rel="canonical" href="https://z90.uao.edu.co/">
+  <link rel="canonical" href="https://comu-uao.github.io/explorador-z90/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_CO">
   <meta property="og:title" content="Explorador 3D Z90V">
   <meta property="og:description" content="Conoce por dentro la cámara Sony PXW-Z90V: recorrido en 3D, práctica de uso botón por botón y evaluación.">
-  <meta property="og:url" content="https://z90.uao.edu.co/">
-  <meta property="og:image" content="https://z90.uao.edu.co/og.jpg">
+  <meta property="og:url" content="https://comu-uao.github.io/explorador-z90/">
+  <meta property="og:image" content="https://comu-uao.github.io/explorador-z90/og.jpg">
   <meta name="twitter:card" content="summary_large_image">
 </head>
 <body data-mode="recorrido">
@@ -22,23 +22,28 @@
 <section class="inicio" id="inicio" aria-labelledby="inicio-title">
   <div class="inicio-hero">
     <div class="frame">
-      <h1 id="inicio-title">Conoce por dentro la cámara <span class="nowrap">Sony PXW&#8209;Z90V</span></h1>
+      <img class="cover-logo" src="marca/uao-blanco.png" width="404" height="134" alt="Universidad Autónoma de Occidente" data-i18n-alt="logo.uao">
+      <h1 id="inicio-title" data-i18n-html="cover.titulo">Conoce por dentro la cámara <span class="nowrap">Sony PXW&#8209;Z90V</span></h1>
       <button type="button" class="go" id="btn-start">
         <span class="go-rec" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13L19 12z"/></svg></span>
-        <span>Comenzar</span>
+        <span data-i18n="comenzar">Comenzar</span>
       </button>
       <svg class="arch" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 120 C 30 6, 370 6, 400 120"/></svg>
     </div>
   </div>
   <div class="inicio-text">
-   <div class="intro">
-    <h2 class="pill">Tu cámara, pieza por pieza</h2>
-    <p>Conocer cada parte de la cámara te ayudará a grabar mejor desde el primer día.</p>
-    <div class="green-box">
-      <p>Vas a recorrer sus partes en 3D, practicar cómo se usa botón por botón y comprobar lo que aprendiste.</p>
-      <p><b>Acompáñame y descubre cómo funciona tu cámara.</b></p>
+    <div class="lang inicio-lang" role="group" aria-label="Idioma / Language">
+      <button type="button" data-lang="es" aria-pressed="true">ES</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
     </div>
-   </div>
+    <div class="intro">
+      <h2 class="pill" data-i18n="cover.pill">Tu cámara, pieza por pieza</h2>
+      <p data-i18n="cover.lead">Conocer cada parte de la cámara te ayudará a grabar mejor desde el primer día.</p>
+      <div class="green-box">
+        <p data-i18n="cover.box1">Vas a recorrer sus partes en 3D, practicar cómo se usa botón por botón y comprobar lo que aprendiste.</p>
+        <p><b data-i18n="cover.box2">Acompáñame y descubre cómo funciona tu cámara.</b></p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -46,52 +51,64 @@
 <div class="shell" id="app" hidden>
   <header class="topbar">
     <div class="tb-side">
-      <button type="button" class="nav-btn" id="btn-home">
+      <img class="tb-logo" src="marca/uao-rojo.png" width="404" height="134" alt="Universidad Autónoma de Occidente" data-i18n-alt="logo.uao">
+      <button type="button" class="nav-btn" id="btn-home" data-i18n-title="inicio" title="Inicio">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11 12 4l8 7"/><path d="M6 9.5V20h12V9.5"/></svg>
-        <span>Inicio</span>
+        <span data-i18n="inicio">Inicio</span>
+      </button>
+      <button type="button" class="nav-btn" data-abrir="lista" data-i18n-title="lista" title="Lista">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="m3.5 6 1.5 1.5L7.5 5M3.5 12l1.5 1.5L7.5 11M3.5 18l1.5 1.5L7.5 17"/></svg>
+        <span data-i18n="lista">Lista</span>
       </button>
     </div>
-    <nav class="modes" aria-label="Secciones">
-      <button type="button" class="mode" data-mode="recorrido" aria-pressed="true"><span class="mode-n">1</span>Recorrido</button>
-      <button type="button" class="mode" data-mode="uso" aria-pressed="false"><span class="mode-n">2</span><span>Uso<span class="long"> de la cámara</span></span></button>
-      <button type="button" class="mode" data-mode="evaluar" aria-pressed="false"><span class="mode-n">3</span>Evaluación</button>
+    <nav class="modes" data-i18n-aria="secciones" aria-label="Secciones">
+      <button type="button" class="mode" data-mode="recorrido" aria-pressed="true"><span class="mode-n">1</span><span data-i18n="modo.recorrido">Recorrido</span></button>
+      <button type="button" class="mode" data-mode="uso" aria-pressed="false"><span class="mode-n">2</span><span class="long" data-i18n="modo.uso">Uso de la cámara</span><span class="short" data-i18n="modo.uso.corto">Uso</span></button>
+      <button type="button" class="mode" data-mode="lab" aria-pressed="false"><span class="mode-n">3</span><span class="long" data-i18n="modo.lab">Laboratorio</span><span class="short" data-i18n="modo.lab.corto">Lab</span></button>
+      <button type="button" class="mode" data-mode="evaluar" aria-pressed="false"><span class="mode-n">4</span><span class="long" data-i18n="modo.evaluar">Evaluación</span><span class="short" data-i18n="modo.evaluar.corto">Evaluar</span></button>
     </nav>
     <div class="tb-side end">
-      <button type="button" class="nav-btn" id="btn-ayuda">
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button type="button" class="nav-btn" id="btn-ayuda" data-i18n-title="ayuda" title="Ayuda">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.4 2.4c-.6.3-1 .8-1 1.5v.4"/><path d="M12 17h.01"/></svg>
-        <span>Ayuda</span>
+        <span data-i18n="ayuda">Ayuda</span>
       </button>
     </div>
   </header>
 
   <main class="app">
     <!-- Visor 3D: ESPACIO DEL MODELO (el lienzo de Three.js se inserta en #stage) -->
-    <section class="viewer" id="viewer" aria-label="Visor 3D de la cámara">
-      <div class="stage" id="stage" role="img" aria-label="Modelo 3D de la cámara Sony PXW-Z90V"></div>
+    <section class="viewer" id="viewer" data-i18n-aria="visor.aria" aria-label="Visor 3D de la cámara">
+      <div class="stage" id="stage" role="img" data-i18n-aria="visor.modelo" aria-label="Modelo 3D de la cámara Sony PXW-Z90V"></div>
 
-      <span class="badge" id="badge" data-obstacle hidden title="Cuando exista public/models/z90.glb se mostrará el modelo final">Modelo provisional</span>
+      <span class="badge" id="badge" data-obstacle hidden data-i18n="badge.provisional">Modelo provisional</span>
 
-      <div class="toolbar" role="toolbar" aria-label="Herramientas del modelo" aria-orientation="vertical" data-obstacle>
-        <button type="button" class="tool" id="btn-iso" aria-pressed="false" aria-label="Aislar pieza" data-tip="Aislar pieza (I)" disabled>
+      <div class="toolbar" role="toolbar" data-i18n-aria="tools.aria" aria-label="Herramientas del modelo" aria-orientation="vertical" data-obstacle>
+        <button type="button" class="tool" id="btn-iso" aria-pressed="false" data-i18n-aria="tool.aislar" data-i18n-tip="tool.aislar.tip" disabled>
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/></svg>
         </button>
-        <button type="button" class="tool" id="btn-reset" aria-label="Reiniciar vista" data-tip="Reiniciar vista (R)">
+        <button type="button" class="tool" id="btn-reset" data-i18n-aria="tool.reset" data-i18n-tip="tool.reset.tip">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12a7.5 7.5 0 1 0 2.2-5.3"/><path d="M4.5 4v4.5H9"/></svg>
         </button>
-        <button type="button" class="tool" id="btn-full" aria-label="Pantalla completa" data-tip="Pantalla completa">
+        <button type="button" class="tool" id="btn-ar" data-i18n-aria="tool.ar" data-i18n-tip="tool.ar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 7v8l7 4 7-4V7z"/><path d="m5 7 7 4 7-4M12 11v8"/><path d="M3 4V3h2M21 4V3h-2M3 20v1h2M21 20v1h-2"/></svg>
+        </button>
+        <button type="button" class="tool" id="btn-full" data-i18n-aria="tool.full" data-i18n-tip="tool.full">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
         </button>
       </div>
 
-      <!-- Vista del modelo: armada o por capas (los dos estados siempre visibles, tamaño fijo) -->
-      <div class="layers" id="layers" role="group" aria-label="Vista del modelo" data-obstacle>
+      <div class="layers" id="layers" role="group" data-i18n-aria="capas.aria" aria-label="Vista del modelo" data-obstacle>
         <button type="button" class="layer-opt" data-capas="0" aria-pressed="true">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7.5v9L12 21l8-4.5v-9L12 3Z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></svg>
-          <span>Armada</span>
+          <span data-i18n="capas.armada">Armada</span>
         </button>
         <button type="button" class="layer-opt" data-capas="1" aria-pressed="false">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3 7.5 12 12l9-4.5L12 3Z"/><path d="m3 12 9 4.5 9-4.5"/><path d="m3 16.5 9 4.5 9-4.5"/></svg>
-          <span>Por capas</span>
+          <span data-i18n="capas.capas">Por capas</span>
         </button>
       </div>
 
@@ -99,15 +116,22 @@
 
       <div class="notice" id="notice" role="status" hidden>
         <p id="notice-text"></p>
-        <button type="button" class="icon" id="notice-close" aria-label="Cerrar aviso">×</button>
+        <button type="button" class="icon" id="notice-close" data-i18n-aria="cerrar" aria-label="Cerrar aviso">×</button>
       </div>
-      <div class="loading" id="loading"><p>Cargando modelo…</p><div class="bar"><span id="load-bar"></span></div></div>
-      <div class="drop" id="drop" hidden><p>Suelta el archivo .glb para probarlo</p></div>
+      <div class="loading" id="loading"><p data-i18n="cargando">Cargando modelo…</p><div class="bar"><span id="load-bar"></span></div></div>
+      <div class="drop" id="drop" hidden><p data-i18n="soltar">Suelta el archivo .glb para probarlo</p></div>
       <p class="hover-name" id="hover-name" data-obstacle aria-hidden="true"></p>
     </section>
 
+    <!-- Laboratorio: ocupa el lugar del visor -->
+    <section class="lab-stage" id="lab-stage" data-i18n-aria="lab.aria" aria-label="Laboratorio">
+      <div class="lab-pane" data-pane="exp"></div>
+      <div class="lab-pane" data-pane="menu" hidden></div>
+      <div class="lab-pane" data-pane="err" hidden></div>
+    </section>
+
     <!-- Ficha: contenido arriba, navegación fija abajo -->
-    <aside class="ficha" aria-label="Información">
+    <aside class="ficha" data-i18n-aria="ficha.aria" aria-label="Información">
       <div class="ficha-body" id="ficha" tabindex="-1" aria-live="polite"></div>
       <div class="ficha-foot">
         <button type="button" class="btn secondary nav" id="f-prev">← Anterior</button>
@@ -117,34 +141,77 @@
   </main>
 
   <footer class="bottombar">
-    <div class="segments" id="segments" aria-label="Progreso"></div>
+    <div class="segments" id="segments" data-i18n-aria="progreso" aria-label="Progreso"></div>
     <div class="bottom-row">
       <span class="bottom-brand">Explorador Z90V · Sony PXW-Z90V</span>
-      <span class="bottom-note">Proyecto educativo basado en el tutorial del CPMA · No afiliado a Sony</span>
+      <span class="bottom-note" data-i18n="pie.nota">Proyecto educativo basado en el tutorial del CPMA · No afiliado a Sony</span>
     </div>
   </footer>
 </div>
 
+<!-- ============ VENTANAS ============ -->
 <dialog id="dlg-ayuda" aria-labelledby="ayuda-title">
-  <div class="dlg-head"><h2 id="ayuda-title">Ayuda</h2><button type="button" class="icon" data-close aria-label="Cerrar ayuda">×</button></div>
+  <div class="dlg-head"><h2 id="ayuda-title" data-i18n="ayuda">Ayuda</h2><button type="button" class="icon" data-close data-i18n-aria="cerrar" aria-label="Cerrar">×</button></div>
   <div class="dlg-body">
     <dl class="keys">
-      <div><dt>Girar</dt><dd>Arrastra sobre el modelo.</dd></div>
-      <div><dt>Acercar</dt><dd>Rueda del ratón o pellizca con dos dedos.</dd></div>
-      <div><dt>Ver por capas</dt><dd>Elige <b>Por capas</b> abajo del modelo para separar la cámara. <kbd>E</kbd></dd></div>
-      <div><dt>Elegir una parte</dt><dd>Haz clic en la pieza o en su número.</dd></div>
-      <div><dt>Aislar</dt><dd>Deja visible solo la parte elegida. <kbd>I</kbd></dd></div>
-      <div><dt>Reiniciar</dt><dd>Vuelve a la vista inicial. <kbd>R</kbd></dd></div>
-      <div><dt>Avanzar</dt><dd>Botones de la ficha o las flechas <kbd>←</kbd> <kbd>→</kbd>.</dd></div>
+      <div><dt data-i18n="ay.girar">Girar</dt><dd data-i18n="ay.girar.d">Arrastra sobre el modelo.</dd></div>
+      <div><dt data-i18n="ay.acercar">Acercar</dt><dd data-i18n="ay.acercar.d">Rueda del ratón o pellizca con dos dedos.</dd></div>
+      <div><dt data-i18n="ay.capas">Ver por capas</dt><dd data-i18n-html="ay.capas.d">Elige <b>Por capas</b> abajo del modelo. <kbd>E</kbd></dd></div>
+      <div><dt data-i18n="ay.parte">Elegir una parte</dt><dd data-i18n="ay.parte.d">Haz clic en la pieza o en su número.</dd></div>
+      <div><dt data-i18n="ay.aislar">Aislar</dt><dd data-i18n-html="ay.aislar.d">Deja visible solo la parte elegida. <kbd>I</kbd></dd></div>
+      <div><dt data-i18n="ay.reiniciar">Reiniciar</dt><dd data-i18n-html="ay.reiniciar.d">Vuelve a la vista inicial. <kbd>R</kbd></dd></div>
+      <div><dt data-i18n="ay.avanzar">Avanzar</dt><dd data-i18n-html="ay.avanzar.d">Botones de la ficha o las flechas <kbd>←</kbd> <kbd>→</kbd>.</dd></div>
+      <div><dt data-i18n="ay.menu">Menú simulado</dt><dd data-i18n-html="ay.menu.d">Flechas para moverte, <kbd>Enter</kbd> para elegir y <kbd>M</kbd> para MENU.</dd></div>
     </dl>
     <div class="dev">
-      <p class="eyebrow">Para el equipo de modelado</p>
-      <p>Carga un archivo .glb para revisar que las piezas y los botones tengan el nombre correcto. También puedes arrastrarlo sobre el visor.</p>
-      <label class="btn secondary" for="glb-input">Probar un modelo .glb</label>
+      <p class="eyebrow" data-i18n="ay.docente">Para docentes</p>
+      <p data-i18n="ay.docente.d">Revisa qué preguntas fallan más en este dispositivo.</p>
+      <button type="button" class="btn secondary" data-abrir="docente" data-i18n="ay.docente.btn">Abrir panel docente</button>
+    </div>
+    <div class="dev">
+      <p class="eyebrow" data-i18n="ay.modelado">Para el equipo de modelado</p>
+      <p data-i18n="ay.modelado.d">Carga un archivo .glb para revisar que las piezas y los botones tengan el nombre correcto. También puedes arrastrarlo sobre el visor.</p>
+      <label class="btn secondary" for="glb-input" data-i18n="ay.modelado.btn">Probar un modelo .glb</label>
       <input type="file" id="glb-input" accept=".glb" hidden>
     </div>
   </div>
 </dialog>
+
+<dialog id="dlg-lista" class="dlg-wide" aria-labelledby="lista-title">
+  <div class="dlg-head"><h2 id="lista-title" data-i18n="lista.titulo">Antes de salir a grabar</h2><button type="button" class="icon" data-close data-i18n-aria="cerrar" aria-label="Cerrar">×</button></div>
+  <div class="dlg-body lista-cuerpo"></div>
+</dialog>
+
+<dialog id="dlg-video" class="dlg-video" aria-labelledby="video-title">
+  <div class="dlg-head"><h2 id="video-title" data-i18n="video.titulo">Video tutorial</h2><button type="button" class="icon" data-close data-i18n-aria="cerrar" aria-label="Cerrar">×</button></div>
+  <div class="video-cuerpo">
+    <video controls playsinline preload="none"></video>
+    <p class="video-pie"></p>
+  </div>
+</dialog>
+
+<dialog id="dlg-ar" class="dlg-wide" aria-labelledby="ar-title">
+  <div class="dlg-head"><h2 id="ar-title" data-i18n="ar.titulo">Ver la cámara en tu espacio</h2><button type="button" class="icon" data-close data-i18n-aria="cerrar" aria-label="Cerrar">×</button></div>
+  <div class="dlg-body"><div class="ar-zona"></div><div class="ar-info"></div></div>
+</dialog>
+
+<dialog id="dlg-cert" class="dlg-cert" aria-labelledby="cert-title">
+  <div class="dlg-head"><h2 id="cert-title" data-i18n="cert.titulo">Constancia de uso</h2><button type="button" class="icon" data-close data-i18n-aria="cerrar" aria-label="Cerrar">×</button></div>
+  <div class="dlg-body">
+    <div class="cert-hoja"></div>
+    <div class="lab-acciones">
+      <button type="button" class="btn primary" data-cert="imprimir" data-i18n="cert.imprimir">Imprimir o guardar en PDF</button>
+    </div>
+    <p class="nota" data-i18n="cert.nota">Si no se abre la ventana de impresión, usa Ctrl + P (Cmd + P en Mac).</p>
+  </div>
+</dialog>
+
+<dialog id="dlg-docente" class="dlg-wide" aria-labelledby="docente-title">
+  <div class="dlg-head"><h2 id="docente-title" data-i18n="doc.titulo">Panel docente</h2><button type="button" class="icon" data-close data-i18n-aria="cerrar" aria-label="Cerrar">×</button></div>
+  <div class="dlg-body" id="docente-cuerpo"></div>
+</dialog>
+
+<div id="print-area" aria-hidden="true"></div>
 <!--APP-END-->
 <script type="module" src="/src/main.js"></script>
 </body>

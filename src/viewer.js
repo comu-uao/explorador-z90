@@ -6,7 +6,7 @@ import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import gsap from 'gsap';
 import { CONFIG } from './config.js';
-import { buildPlaceholder } from './placeholder.js';
+import { GLTFExporter } from 'three/addons/exporters/GLTFExporter.js';
 
 const reduceMotion = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 const v3 = (a) => new THREE.Vector3(...a);
@@ -120,13 +120,55 @@ export class Viewer {
     try {
       const gltf = await loader.loadAsync(url, (e) => this.emit('progress', e.total ? e.loaded / e.total : null));
       this.setModel(gltf.scene, { provisional: false, name });
+      this.modeloFinal = !(source instanceof File);
     } finally {
       if (source instanceof File) URL.revokeObjectURL(url);
     }
   }
 
-  usePlaceholder() {
-    this.setModel(buildPlaceholder(), { provisional: true, name: 'provisional' });
+  usePlaceholder(build) {
+    this.modeloFinal = false;
+    this.setModel(build(), { provisional: true, name: 'provisional' });
+  }
+
+  // Vuelve a leer los títulos de las piezas (al cambiar de idioma)
+  refreshTitles() {
+    for (const g of this.groups.values()) {
+      const p = g.members[0].part;
+      g.btn.title = p.titulo;
+      g.btn.setAttribute('aria-label', p.titulo);
+    }
+  }
+
+  // Exporta el modelo armado como GLB, escalado a su tamaño real en metros (para realidad aumentada)
+  async exportarGLB(largo = 0.36) {
+    if (!this.root) throw new Error('sin modelo');
+    const prev = { t: this.t, sel: [...this.sel], iso: this.isolated, pulse: this.pulse };
+    this.pulse = null;
+    this.sel = new Set(); this.isolated = false;
+    this.setExplode(0);
+    this.applyStyles();
+    this.root.updateMatrixWorld(true);
+    const clon = this.root.clone(true);
+    clon.position.set(0, 0, 0);
+    clon.scale.set(1, 1, 1);
+    clon.updateMatrixWorld(true);
+    const box = new THREE.Box3().setFromObject(clon);
+    const size = box.getSize(new THREE.Vector3());
+    const k = largo / Math.max(size.x, size.y, size.z);
+    clon.scale.setScalar(k);
+    clon.updateMatrixWorld(true);
+    const b2 = new THREE.Box3().setFromObject(clon);
+    const c = b2.getCenter(new THREE.Vector3());
+    clon.position.set(-c.x, -b2.min.y, -c.z);   // apoyada sobre el piso, centrada
+    const escena = new THREE.Scene();
+    escena.add(clon);
+    const glb = await new GLTFExporter().parseAsync(escena, { binary: true });
+    this.sel = new Set(prev.sel); this.isolated = prev.iso; this.pulse = prev.pulse;
+    this.setExplode(prev.t);
+    this.applyStyles();
+    this.dirty = true;
+    return new Blob([glb], { type: 'model/gltf-binary' });
   }
 
   setModel(obj, { provisional, name }) {

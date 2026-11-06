@@ -2,6 +2,9 @@
 // Cuando el modelo 3D esté listo, colócalo en public/models/z90.glb y no hay que cambiar nada más.
 
 export const CONFIG = {
+  // Dirección pública de la página (se usa en los códigos QR). Cámbiala si la universidad le asigna su dominio.
+  urlPublica: 'https://comu-uao.github.io/explorador-z90/',
+
   // Ruta del modelo final. Si no existe, se muestra el modelo provisional de bloques.
   modelUrl: 'models/z90.glb',
 

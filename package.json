@@ -13,7 +13,9 @@
   "dependencies": {
     "@fontsource/inter": "5.1.0",
     "@fontsource/rubik": "5.1.0",
+    "@google/model-viewer": "3.5.0",
     "gsap": "3.12.5",
+    "qrcode-generator": "1.4.4",
     "three": "0.169.0"
   },
   "devDependencies": {

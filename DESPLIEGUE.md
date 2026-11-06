@@ -49,6 +49,7 @@ El valor es solo `CUENTA.github.io`, **sin** el nombre del repositorio. Cambia `
 1. **Settings → Pages → Custom domain**: escribe `z90.uao.edu.co` y guarda.
 2. Espera a que GitHub confirme el DNS. Puede tardar desde minutos hasta 24 horas, según la propagación.
 3. Activa **Enforce HTTPS**. GitHub emite el certificado gratis; si la casilla aparece gris, espera a que termine de crearlo.
+4. En `src/config.js` cambia `urlPublica` a `https://z90.uao.edu.co/` y en `index.html` las etiquetas `canonical` y `og:`. Así los códigos QR de la lista y de la realidad aumentada apuntan a la dirección nueva.
 
 **4.3 Recomendado: verificar el dominio.** En la configuración de la organización: **Settings → Pages → Add a domain**, agrega `uao.edu.co` y crea el registro TXT que indique GitHub. Así nadie más puede usar subdominios de la universidad en GitHub Pages.
 
@@ -56,7 +57,8 @@ El valor es solo `CUENTA.github.io`, **sin** el nombre del repositorio. Cambia `
 
 - **Cualquier cambio** subido a `main` se publica solo en 1 o 2 minutos.
 - **Modelo 3D final:** colócalo en `public/models/z90.glb` y súbelo. GitHub no acepta archivos de más de 100 MB; la meta es menos de 10 MB (ver `npm run optimizar-modelo` en el README).
-- **Textos, preguntas y pasos:** están en `src/data/`.
+- **Textos, preguntas y pasos:** están en `src/equipos/z90v/es/` (español) y `en/` (inglés).
+- **Video:** `public/video/tutorial-z90.mp4`; subtítulos en `src/equipos/z90v/subtitulos/`.
 
 ## Antes de anunciarla
 

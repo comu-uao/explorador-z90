@@ -1,0 +1,74 @@
+{
+ "bateria": {
+  "titulo": "Attach the battery",
+  "instruccion": "Click the loose battery behind the camera.",
+  "hecho": "Done! On the real camera: slide the lock at the bottom, insert the battery with the connectors facing up and release the lock so it stays in place.",
+  "pista": "Look for the dark block sitting apart at the back, under the viewfinder."
+ },
+ "pantalla": {
+  "titulo": "Open the screen",
+  "instruccion": "Click the screen on the left side to open it. Opening it turns the camera on.",
+  "hecho": "The camera is on. If the screen was already open and the camera is off, press the power button behind it.",
+  "pista": "The screen is closed against the left side of the camera."
+ },
+ "tarjeta": {
+  "titulo": "Insert the SD card",
+  "instruccion": "Behind the screen there's a small door. Click it to open it and insert the card.",
+  "hecho": "The card is in. On the real camera, follow the shape shown on the guide and push it until it clicks.",
+  "pista": "The door is on the panel the screen uncovered, toward the back."
+ },
+ "formato": {
+  "titulo": "Choose the recording format",
+  "instruccion": "Press the MENU button on the side panel.",
+  "hecho": "With the multi-selector on the back, go to “Recording Settings” → “File Format” and choose AVCHD. It's the format the CPMA recommends because it works with any card.",
+  "pista": "MENU is on the button panel, to the right of the WHITE BALANCE button."
+ },
+ "manual": {
+  "titulo": "Switch to manual mode",
+  "instruccion": "Move the AUTO/MANUAL switch on the back to MANUAL.",
+  "hecho": "Now you can adjust the image yourself. In AUTO the camera decides everything and won't let you change any setting.",
+  "pista": "It's the lower switch, at the back corner of the left side."
+ },
+ "iris": {
+  "titulo": "Adjust the exposure",
+  "instruccion": "Press the IRIS button, the first one in the bottom row.",
+  "hecho": "Now move the multi-selector to adjust and press it to lock the value. ISO and SHUTTER work the same way. Careful: if you press IRIS again after adjusting, it goes back to automatic.",
+  "pista": "The IRIS, ISO and SHUTTER row is at the bottom of the left side, below the screen."
+ },
+ "nd": {
+  "titulo": "Cut the light with the ND filter",
+  "instruccion": "It's very sunny and the image looks too white. Move the ND switch on the back up.",
+  "hecho": "With the ND filter the image is no longer blown out. Each position cuts more light.",
+  "pista": "The ND switch is on the back, left side, above the AUTO/MANUAL switch."
+ },
+ "wb": {
+  "titulo": "Set the white balance",
+  "instruccion": "The colors look bluish. Press the WHITE BALANCE button on the side panel.",
+  "hecho": "On the real camera: choose memory A or B, go to Menu → “Camera Settings” → “WB SET”, fill the frame with something white under the same light and press the multi-selector. Press MENU to exit.",
+  "pista": "WHITE BALANCE is the left button on the panel, below power."
+ },
+ "zoom": {
+  "titulo": "Frame with the zoom",
+  "instruccion": "Push the zoom lever on top of the handle.",
+  "hecho": "The optical zoom brings the image closer without moving and without losing quality.",
+  "pista": "It's the silver piece on top of the handle, toward the middle."
+ },
+ "foco": {
+  "titulo": "Focus manually",
+  "instruccion": "The image is now blurry. Press the AF/MF button on the left side of the lens to focus manually.",
+  "hecho": "Turning the ring makes the image sharp. If the ring moves the zoom, set the switch next to it to FOCUS. To help you, turn on peaking: Menu → “Display Settings” → “Peaking”.",
+  "pista": "It's on the left side of the lens, near the body. The FOCUS/ZOOM switch is below it."
+ },
+ "audio": {
+  "titulo": "Set up the sound",
+  "instruccion": "You connected a microphone through XLR. Move the INPUT switch on the handle to MIC.",
+  "hecho": "Then, in Menu → “Audio Settings” → “Mic Select”, choose MI SHOE MIC. For supporting shots, switch back to INT MIC to get ambient sound.",
+  "pista": "The INPUT switches are on the left side of the XLR input block, at the front of the handle."
+ },
+ "rec": {
+  "titulo": "Roll!",
+  "instruccion": "Press the red REC button on top of the handle.",
+  "hecho": "You're recording! The Z90V has two REC buttons: this one and another on the back. Press REC again to stop.",
+  "pista": "The red button is on top of the handle, toward the back."
+ }
+}

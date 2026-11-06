@@ -1,0 +1,64 @@
+[
+ {
+  "pregunta": "Tap the part of the model that works as the camera's “sunglasses”.",
+  "explicacion": "The ND filter is inside the camera. View the model in layers to find it."
+ },
+ {
+  "pregunta": "You can't change any camera setting. What do you check first?",
+  "opciones": [
+   "That the AUTO/MANUAL switch is on MANUAL",
+   "That the battery is charged",
+   "That the hood is on",
+   "That the microphone is connected"
+  ],
+  "explicacion": "In AUTO the camera decides everything and locks the manual settings."
+ },
+ {
+  "pregunta": "You adjusted the iris and press the IRIS button again. What happens?",
+  "opciones": [
+   "The setting is saved",
+   "The iris goes back to automatic",
+   "The camera turns off",
+   "The ISO changes"
+  ],
+  "explicacion": "To lock the value you press the multi-selector. Pressing IRIS again sends it back to automatic."
+ },
+ {
+  "pregunta": "Tap the part where you connect a professional XLR microphone.",
+  "explicacion": "The two XLR inputs are at the front of the handle."
+ },
+ {
+  "pregunta": "Which recording format does the CPMA recommend because it works with any card?",
+  "opciones": [
+   "XAVC QFHD",
+   "XAVC HD",
+   "AVCHD",
+   "MP4"
+  ],
+  "explicacion": "It's set in Menu → Recording Settings → File Format."
+ },
+ {
+  "pregunta": "You're in manual focus, but turning the ring changes the zoom. What do you do?",
+  "opciones": [
+   "Press REC",
+   "Set the switch beside the lens to FOCUS",
+   "Raise the ND filter",
+   "Change the card"
+  ],
+  "explicacion": "The FOCUS/ZOOM switch decides what the lens ring does."
+ },
+ {
+  "pregunta": "You finished the interview and will record supporting shots. Which microphone do you choose in the menu?",
+  "opciones": [
+   "MI SHOE MIC, the interviewee's",
+   "INT MIC, the internal microphone",
+   "None",
+   "It doesn't matter"
+  ],
+  "explicacion": "With the internal microphone, the shots keep ambient sound without the interviewee's voice."
+ },
+ {
+  "pregunta": "Put in order the path light follows until it becomes an image.",
+  "explicacion": "Light enters through the lens, passes the ND filter and reaches the sensor."
+ }
+]

@@ -1,0 +1,582 @@
+{
+  "exposicion": {
+    "iris": [
+      2.8,
+      3.2,
+      3.5,
+      4,
+      4.5,
+      5,
+      5.6,
+      6.3,
+      7.1,
+      8,
+      9,
+      10,
+      11
+    ],
+    "iso": [
+      320,
+      400,
+      500,
+      640,
+      800,
+      1000,
+      1250,
+      1600,
+      2000,
+      2500,
+      3200,
+      6400
+    ],
+    "obturador": [
+      30,
+      50,
+      60,
+      100,
+      125,
+      250,
+      500,
+      1000,
+      2000
+    ],
+    "nd": [
+      {
+        "pasos": 0,
+        "nombre": "Clear"
+      },
+      {
+        "pasos": 2,
+        "nombre": "1/4"
+      },
+      {
+        "pasos": 4,
+        "nombre": "1/16"
+      },
+      {
+        "pasos": 6,
+        "nombre": "1/64"
+      }
+    ],
+    "wb": [
+      3200,
+      4300,
+      5600
+    ],
+    "retos": [
+      {
+        "id": "sol",
+        "imagen": "entrevista",
+        "ev": 14.7,
+        "luzK": 5600,
+        "titulo": "Entrevista al sol",
+        "desc": "Grabas una entrevista en exteriores a mediodía. Quieres el fondo desenfocado para que la persona resalte.",
+        "inicio": {
+          "f": 5.6,
+          "iso": 320,
+          "obt": 60,
+          "nd": 4,
+          "wb": 3200
+        },
+        "metas": [
+          {
+            "tipo": "exp",
+            "texto": "Exposición correcta (la aguja en el centro)"
+          },
+          {
+            "tipo": "fmax",
+            "valor": 4.5,
+            "texto": "Fondo desenfocado: iris en f/4.5 o más abierto"
+          },
+          {
+            "tipo": "obt",
+            "valores": [
+              60
+            ],
+            "texto": "Movimiento natural: obturador en 1/60"
+          },
+          {
+            "tipo": "isomax",
+            "valor": 400,
+            "texto": "Imagen limpia: ISO 400 o menos"
+          },
+          {
+            "tipo": "wb",
+            "texto": "Color natural: balance de blancos según la luz del sol"
+          }
+        ],
+        "pista": "Con el iris tan abierto entra demasiada luz. Sube el filtro ND hasta 1/64 antes de cerrar el iris."
+      },
+      {
+        "id": "estudio",
+        "imagen": "estudio",
+        "ev": 6,
+        "luzK": 3200,
+        "titulo": "Presentador en el estudio",
+        "desc": "El estudio tiene poca luz y lámparas cálidas. La imagen debe verse clara y sin grano.",
+        "inicio": {
+          "f": 4,
+          "iso": 800,
+          "obt": 60,
+          "nd": 2,
+          "wb": 5600
+        },
+        "metas": [
+          {
+            "tipo": "exp",
+            "texto": "Exposición correcta (la aguja en el centro)"
+          },
+          {
+            "tipo": "ndmax",
+            "valor": 0,
+            "texto": "Sin filtro ND: aquí falta luz, no sobra"
+          },
+          {
+            "tipo": "obt",
+            "valores": [
+              60
+            ],
+            "texto": "Movimiento natural: obturador en 1/60"
+          },
+          {
+            "tipo": "isomax",
+            "valor": 1250,
+            "texto": "Grano controlado: ISO 1250 o menos"
+          },
+          {
+            "tipo": "wb",
+            "texto": "Color natural: balance de blancos para luz de lámpara"
+          }
+        ],
+        "pista": "Primero quita el ND, abre el iris al máximo y baja el obturador a 1/60. Solo después sube el ISO."
+      },
+      {
+        "id": "jardin",
+        "imagen": "jardin",
+        "ev": 12.3,
+        "luzK": 5600,
+        "titulo": "Jardín bien nítido",
+        "desc": "Un plano general a la sombra. Todo, de adelante hacia atrás, debe quedar enfocado.",
+        "inicio": {
+          "f": 4,
+          "iso": 640,
+          "obt": 60,
+          "nd": 4,
+          "wb": 5600
+        },
+        "metas": [
+          {
+            "tipo": "exp",
+            "texto": "Exposición correcta (la aguja en el centro)"
+          },
+          {
+            "tipo": "fmin",
+            "valor": 8,
+            "texto": "Todo nítido: iris en f/8 o más cerrado"
+          },
+          {
+            "tipo": "obt",
+            "valores": [
+              60
+            ],
+            "texto": "Movimiento natural: obturador en 1/60"
+          },
+          {
+            "tipo": "isomax",
+            "valor": 400,
+            "texto": "Imagen limpia: ISO 400 o menos"
+          },
+          {
+            "tipo": "wb",
+            "texto": "Color natural: balance de blancos según la luz del día"
+          }
+        ],
+        "pista": "Cierra el iris a f/8 y baja el ISO. Si todavía sobra luz, usa el ND 1/4."
+      }
+    ]
+  },
+  "menu": {
+    "arbol": [
+      {
+        "id": "cam",
+        "icono": "cam",
+        "nombre": "AJUSTE CÁM",
+        "items": [
+          {
+            "id": "iso",
+            "nombre": "SELECC. ISO/GANANCIA",
+            "opciones": [
+              "ISO",
+              "GANANCIA"
+            ],
+            "valor": 0
+          },
+          {
+            "id": "wbpre",
+            "nombre": "PREAJUSTE WB",
+            "opciones": [
+              "EXTERIOR",
+              "INTERIOR",
+              "MANUAL"
+            ],
+            "valor": 0
+          },
+          {
+            "id": "cebra",
+            "nombre": "CEBRA",
+            "opciones": [
+              "DESACTIV.",
+              "ACTIVADO"
+            ],
+            "valor": 0
+          },
+          {
+            "id": "steady",
+            "nombre": "STEADYSHOT",
+            "opciones": [
+              "ESTÁNDAR",
+              "ACTIVO",
+              "DESACTIV."
+            ],
+            "valor": 2
+          }
+        ]
+      },
+      {
+        "id": "grab",
+        "icono": "grab",
+        "nombre": "AJUSTE GRAB/SALIDA",
+        "items": [
+          {
+            "id": "ajgrab",
+            "nombre": "AJUSTE GRABACIÓN",
+            "items": [
+              {
+                "id": "fmt",
+                "nombre": "FORMATO DE ARCHIVO",
+                "opciones": [
+                  "XAVC QFHD",
+                  "XAVC HD",
+                  "AVCHD"
+                ],
+                "valor": 1
+              },
+              {
+                "id": "formgrab",
+                "nombre": "FORM. GRAB",
+                "opciones": [
+                  "1080/60i 50Mbps",
+                  "1080/30p 50Mbps",
+                  "720/60p 50Mbps"
+                ],
+                "valor": 0
+              },
+              {
+                "id": "simul",
+                "nombre": "GRAB SIMULTÁN/RELÉ",
+                "opciones": [
+                  "DESACTIV.",
+                  "GRAB. SIMULT.",
+                  "GRAB. RELÉ"
+                ],
+                "valor": 0
+              }
+            ]
+          },
+          {
+            "id": "salida",
+            "nombre": "SALIDA VÍDEO",
+            "opciones": [
+              "HDMI",
+              "SDI",
+              "HDMI Y SDI"
+            ],
+            "valor": 0
+          }
+        ]
+      },
+      {
+        "id": "audio",
+        "icono": "audio",
+        "nombre": "AJUSTE AUDIO",
+        "items": [
+          {
+            "id": "vol",
+            "nombre": "VOLUMEN",
+            "opciones": [
+              "2",
+              "4",
+              "6",
+              "8"
+            ],
+            "valor": 1
+          },
+          {
+            "id": "fmtaudio",
+            "nombre": "FORMATO AUDIO AVCHD",
+            "opciones": [
+              "LINEAL PCM",
+              "DOLBY DIGITAL"
+            ],
+            "valor": 1
+          },
+          {
+            "id": "mic",
+            "nombre": "SELECCIÓN MICRÓFONO",
+            "opciones": [
+              "AUTO",
+              "INT MIC",
+              "MI SHOE MIC",
+              "STEREO MINI MIC"
+            ],
+            "valor": 2
+          }
+        ]
+      },
+      {
+        "id": "pant",
+        "icono": "pant",
+        "nombre": "AJUSTE PANT.",
+        "items": [
+          {
+            "id": "hist",
+            "nombre": "HISTOGRAMA",
+            "opciones": [
+              "DESACTIV.",
+              "ACTIVADO"
+            ],
+            "valor": 0
+          },
+          {
+            "id": "aten",
+            "nombre": "ATENUACIÓN",
+            "items": [
+              {
+                "id": "atenon",
+                "nombre": "ON/OFF",
+                "opciones": [
+                  "DESACTIV.",
+                  "ACTIVADO"
+                ],
+                "valor": 0
+              },
+              {
+                "id": "atencol",
+                "nombre": "COLOR",
+                "opciones": [
+                  "BLANCO",
+                  "ROJO",
+                  "AMARILLO"
+                ],
+                "valor": 1
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "misiones": [
+      {
+        "id": "avchd",
+        "texto": "Cambia el formato de archivo a AVCHD",
+        "ayuda": "Ajuste grab/salida → Ajuste grabación → Formato de archivo",
+        "item": "fmt",
+        "valor": 2,
+        "min": "03:06"
+      },
+      {
+        "id": "simul",
+        "texto": "Graba en las dos tarjetas a la vez",
+        "ayuda": "Ajuste grab/salida → Ajuste grabación → Grab simultán/relé",
+        "item": "simul",
+        "valor": 1,
+        "min": null
+      },
+      {
+        "id": "intmic",
+        "texto": "Para las imágenes de apoyo, elige el micrófono interno",
+        "ayuda": "Ajuste audio → Selección micrófono → INT MIC",
+        "item": "mic",
+        "valor": 1,
+        "min": "07:02"
+      },
+      {
+        "id": "steady",
+        "texto": "Activa el estabilizador en modo Activo",
+        "ayuda": "Ajuste cám → SteadyShot → Activo",
+        "item": "steady",
+        "valor": 1,
+        "min": "08:16"
+      },
+      {
+        "id": "peaking",
+        "texto": "Activa el peaking (atenuación) para enfocar",
+        "ayuda": "Ajuste pant. → Atenuación → On/Off",
+        "item": "atenon",
+        "valor": 1,
+        "min": "08:51"
+      }
+    ]
+  },
+  "errores": [
+    {
+      "id": "quemada",
+      "imagen": "entrevista",
+      "efecto": {
+        "exp": 3.4
+      },
+      "pregunta": "La entrevista al sol se ve casi blanca. ¿Qué salió mal?",
+      "opciones": [
+        "Sobraba luz y no se usó el filtro ND",
+        "El balance de blancos",
+        "Faltaba enfocar",
+        "La batería estaba baja"
+      ],
+      "correcta": 0,
+      "explicacion": "Con sol fuerte hay que subir el filtro ND. Así baja la luz sin cerrar el iris ni perder el fondo desenfocado.",
+      "repasar": "nd"
+    },
+    {
+      "id": "azul",
+      "imagen": "entrevista",
+      "efecto": {
+        "wb": -1.3
+      },
+      "pregunta": "La toma en exteriores quedó toda azulada. ¿Qué salió mal?",
+      "opciones": [
+        "El ISO estaba muy alto",
+        "El balance de blancos estaba en luz de lámpara (3200K)",
+        "El filtro ND estaba en 1/64",
+        "El zoom estaba al máximo"
+      ],
+      "correcta": 1,
+      "explicacion": "Con luz de día, un balance de 3200K pinta todo de azul. Haz el balance con algo blanco bajo la misma luz.",
+      "repasar": "cuerpo"
+    },
+    {
+      "id": "oscura",
+      "imagen": "estudio",
+      "efecto": {
+        "exp": -1.8,
+        "ruido": 0.11
+      },
+      "pregunta": "En el estudio la imagen quedó oscura y con mucho grano. ¿Qué salió mal?",
+      "opciones": [
+        "Se subió el ISO sin abrir antes el iris",
+        "Faltó el parasol",
+        "Se grabó en AVCHD",
+        "El micrófono estaba en MIC"
+      ],
+      "correcta": 0,
+      "explicacion": "Con poca luz, primero abre el iris y pon el obturador en 1/60. Sube el ISO al final y lo menos posible.",
+      "repasar": "cuerpo"
+    },
+    {
+      "id": "borrosa",
+      "imagen": "jardin",
+      "efecto": {
+        "blur": 5
+      },
+      "pregunta": "Todo el plano quedó borroso. ¿Qué salió mal?",
+      "opciones": [
+        "El filtro ND",
+        "El enfoque: no se ajustó el anillo después del zoom",
+        "El balance de blancos",
+        "La tarjeta SD"
+      ],
+      "correcta": 1,
+      "explicacion": "Pasa a enfoque manual con AF/MF, gira el anillo y activa el peaking para ver qué está nítido.",
+      "repasar": "lente"
+    },
+    {
+      "id": "temblor",
+      "imagen": "camina",
+      "efecto": {
+        "temblor": 14
+      },
+      "pregunta": "Seguiste a una persona caminando con la cámara en la mano y la imagen tiembla. ¿Qué faltó?",
+      "opciones": [
+        "Subir el ISO",
+        "Activar el SteadyShot o usar trípode",
+        "Cambiar a XAVC",
+        "Cerrar el iris"
+      ],
+      "correcta": 1,
+      "explicacion": "El SteadyShot recorta un poco la imagen, pero estabiliza las tomas a mano alzada.",
+      "repasar": "cuerpo"
+    },
+    {
+      "id": "audio",
+      "imagen": "camina",
+      "efecto": {},
+      "audio": "«…y por eso decidí estudiar comunicación…» (la voz del entrevistado, de fondo)",
+      "pregunta": "En las imágenes de apoyo se escucha la voz del entrevistado. ¿Qué salió mal?",
+      "opciones": [
+        "Seguía elegido MI SHOE MIC en vez de INT MIC",
+        "El volumen estaba bajo",
+        "Faltaba el filtro ND",
+        "El formato era AVCHD"
+      ],
+      "correcta": 0,
+      "explicacion": "Para imágenes de apoyo vuelve a Ajuste de audio → Selección micrófono → INT MIC. Así quedan con sonido ambiente.",
+      "repasar": "audio"
+    }
+  ],
+  "lista": [
+    {
+      "id": "bat",
+      "grupo": "Antes de salir",
+      "texto": "Batería cargada y una de repuesto"
+    },
+    {
+      "id": "sd",
+      "grupo": "Antes de salir",
+      "texto": "Dos tarjetas SD, formateadas en la cámara"
+    },
+    {
+      "id": "aud",
+      "grupo": "Antes de salir",
+      "texto": "Audífonos, micrófono y cable XLR"
+    },
+    {
+      "id": "lim",
+      "grupo": "Antes de salir",
+      "texto": "Parasol puesto y paño de microfibra"
+    },
+    {
+      "id": "fmt",
+      "grupo": "En el lugar",
+      "texto": "Formato de archivo en AVCHD"
+    },
+    {
+      "id": "man",
+      "grupo": "En el lugar",
+      "texto": "Interruptor AUTO/MANUAL en MANUAL"
+    },
+    {
+      "id": "nd",
+      "grupo": "En el lugar",
+      "texto": "Filtro ND según la luz"
+    },
+    {
+      "id": "wb",
+      "grupo": "En el lugar",
+      "texto": "Balance de blancos con algo blanco bajo la misma luz"
+    },
+    {
+      "id": "foco",
+      "grupo": "En el lugar",
+      "texto": "Enfoque en manual, con peaking"
+    },
+    {
+      "id": "mic",
+      "grupo": "En el lugar",
+      "texto": "INPUT en MIC y MI SHOE MIC (o INT MIC para apoyo)"
+    },
+    {
+      "id": "prueba",
+      "grupo": "En el lugar",
+      "texto": "Grabación de prueba de 10 segundos, revisada con audífonos"
+    }
+  ]
+}

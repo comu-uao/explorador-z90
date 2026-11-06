@@ -1,6 +1,8 @@
 // Evaluación: identificar (clic en el modelo), opción múltiple y ordenar.
 // Solo dibuja el contenido de la ficha. La navegación (Siguiente) la maneja el pie de la ficha.
 
+import { t } from './i18n/index.js';
+
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
 function shuffle(a) {
@@ -14,8 +16,8 @@ function shuffle(a) {
 
 export class Quiz {
   // byId: pasos del recorrido por id (cada uno con .titulo)
-  constructor(el, questions, byId, { onShow, onReview, onChange }) {
-    Object.assign(this, { el, qs: questions, byId, onShow, onReview, onChange });
+  constructor(el, questions, byId, { onShow, onReview, onChange, onAnswer }) {
+    Object.assign(this, { el, qs: questions, byId, onShow, onReview, onChange, onAnswer });
     this.active = false;
     el.addEventListener('click', (e) => this.click(e));
   }
@@ -63,6 +65,7 @@ export class Quiz {
     if (ok) this.score++;
     else this.missed.push(this.q);
     this.feedback = { ok, given };
+    this.onAnswer?.(this.i, ok);
     const id = this.q.respuesta || this.q.parte;
     if (id) this.onShow(id);
     this.render();
@@ -90,12 +93,12 @@ export class Quiz {
     const q = this.q, n = this.qs.length;
     let body = '';
     if (q.tipo === 'identificar') {
-      body = `<p class="q-hint">Haz clic en la pieza dentro del modelo. Puedes girarlo y ver la cámara por capas.</p>`;
+      body = `<p class="q-hint">${t('q.hint')}</p>`;
     } else if (q.tipo === 'opcion') {
       body = `<div class="q-opts">${q.opciones.map((o, k) => {
         let cls = '';
         if (this.answered) cls = k === q.correcta ? 'right' : (this.feedback.given === o ? 'wrong' : '');
-        const mark = cls === 'right' ? '<span class="q-mark" aria-label="correcta">✓</span>' : cls === 'wrong' ? '<span class="q-mark" aria-label="incorrecta">✕</span>' : '<span class="q-mark" aria-hidden="true"></span>';
+        const mark = cls === 'right' ? `<span class="q-mark" aria-label="${t('q.correcta')}">✓</span>` : cls === 'wrong' ? `<span class="q-mark" aria-label="${t('q.incorrecta')}">✕</span>` : '<span class="q-mark" aria-hidden="true"></span>';
         return `<button type="button" class="q-opt ${cls}" data-opt="${k}" ${this.answered ? 'disabled' : ''}><span>${esc(o)}</span>${mark}</button>`;
       }).join('')}</div>`;
     } else if (q.tipo === 'ordenar') {
@@ -103,23 +106,23 @@ export class Quiz {
       body = `<ol class="q-order">${list.map((id, k) => `
         <li><span class="nm">${esc(this.byId[id].titulo)}</span>
         <span class="mv">
-          <button type="button" class="icon" data-mv="${k}:-1" aria-label="Subir ${esc(this.byId[id].titulo)}" ${this.answered || k === 0 ? 'disabled' : ''}>↑</button>
-          <button type="button" class="icon" data-mv="${k}:1" aria-label="Bajar ${esc(this.byId[id].titulo)}" ${this.answered || k === list.length - 1 ? 'disabled' : ''}>↓</button>
+          <button type="button" class="icon" data-mv="${k}:-1" aria-label="${t('q.subir', { x: esc(this.byId[id].titulo) })}" ${this.answered || k === 0 ? 'disabled' : ''}>↑</button>
+          <button type="button" class="icon" data-mv="${k}:1" aria-label="${t('q.bajar', { x: esc(this.byId[id].titulo) })}" ${this.answered || k === list.length - 1 ? 'disabled' : ''}>↓</button>
         </span></li>`).join('')}</ol>
-        <button type="button" class="btn secondary" data-q="check" ${this.answered ? 'disabled' : ''}>Comprobar orden</button>`;
+        <button type="button" class="btn secondary" data-q="check" ${this.answered ? 'disabled' : ''}>${t('q.check')}</button>`;
     }
 
     let fb = '';
     if (this.answered) {
       const f = this.feedback;
       const extra = q.tipo === 'identificar' && !f.ok
-        ? `<p>Tocaste «${esc(f.given || 'otra pieza')}». La respuesta es <b>${esc(this.byId[q.respuesta].titulo)}</b>, resaltada en el modelo.</p>` : '';
+        ? `<p>${t('q.tocaste', { a: esc(f.given || t('q.otra')), b: esc(this.byId[q.respuesta].titulo) })}</p>` : '';
       fb = `<div class="q-fb ${f.ok ? 'ok' : 'bad'}" role="status">
-        <p class="q-fb-t">${f.ok ? '¡Correcto!' : 'No es correcto'}</p>${extra}<p>${esc(q.explicacion)}</p></div>`;
+        <p class="q-fb-t">${f.ok ? t('q.ok') : t('q.bad')}</p>${extra}<p>${esc(q.explicacion)}</p></div>`;
     }
 
     this.el.innerHTML = `
-      <p class="eyebrow">Evaluación · Pregunta ${this.i + 1} de ${n}</p>
+      <p class="eyebrow">${t('q.eyebrow', { n: this.i + 1, total: n })}</p>
       <h2 tabindex="-1">${esc(q.pregunta)}</h2>
       ${body}${fb}`;
     this.onChange?.();
@@ -128,16 +131,17 @@ export class Quiz {
   renderResult() {
     const n = this.qs.length;
     const pct = Math.round((this.score / n) * 100);
-    const msg = pct >= 85 ? '¡Conoces muy bien la cámara!' : pct >= 60 ? 'Buen trabajo. Repasa las partes que fallaste.' : 'Vale la pena hacer el recorrido otra vez.';
+    const msg = pct >= 85 ? t('q.msg.alto') : pct >= 60 ? t('q.msg.medio') : t('q.msg.bajo');
     const ids = [...new Set(this.missed.map((q) => q.respuesta || q.parte).filter(Boolean))];
     this.onShow(null);
     this.el.innerHTML = `
-      <p class="eyebrow">Evaluación · Resultado</p>
-      <h2 tabindex="-1"><span class="score">${this.score}/${n}</span> respuestas correctas</h2>
+      <p class="eyebrow">${t('q.result')}</p>
+      <h2 tabindex="-1"><span class="score">${this.score}/${n}</span> ${t('q.correctas')}</h2>
       <p class="resumen">${msg}</p>
-      ${ids.length ? `<div class="review"><p class="eyebrow">Para repasar</p>
+      ${ids.length ? `<div class="review"><p class="eyebrow">${t('q.repasar')}</p>
         ${ids.map((id) => `<button type="button" class="btn secondary" data-review="${id}">${esc(this.byId[id].titulo)}</button>`).join('')}</div>` : ''}
-      <button type="button" class="btn secondary" data-q="restart">Repetir evaluación</button>`;
+      <button type="button" class="btn secondary" data-q="restart">${t('q.repetir')}</button>
+      <div id="cert-slot"></div>`;
     this.el.querySelector('h2')?.focus();
     this.onChange?.();
   }
