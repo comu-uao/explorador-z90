@@ -185,6 +185,18 @@ export class Viewer {
     this.root = obj;
     this.scene.add(obj);
 
+    // Si una pieza quedó dentro de otra en Blender (por ejemplo el lente dentro del cuerpo),
+    // se saca al nivel principal sin moverla. Así cada pieza se resalta, se toca y se separa por su cuenta.
+    // Los controles (botones, anillos) sí se quedan dentro de su pieza.
+    const nombresPiezas = new Set(this.parts.map((p) => p.mesh));
+    const anidadas = [];
+    obj.traverse((o) => {
+      if (o === obj || !nombresPiezas.has(o.name)) return;
+      for (let a = o.parent; a && a !== obj; a = a.parent) if (nombresPiezas.has(a.name)) { anidadas.push(o); break; }
+    });
+    anidadas.forEach((o) => obj.attach(o));
+    obj.updateMatrixWorld(true);
+
     const missingParts = [];
     this.groups = new Map();
     for (const p of this.parts) {

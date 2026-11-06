@@ -533,7 +533,7 @@ viewer.on('loaded', ({ provisional, name, missingParts, missingCtrls }) => {
   $('#loading').hidden = true;
   $('#badge').hidden = !provisional;
   if (!provisional) {
-    const faltan = [...missingParts.map((p) => p.mesh), ...missingCtrls];
+    const faltan = [...new Set([...missingParts.map((p) => p.mesh), ...missingCtrls])];   // Pantalla_LCD y Bateria son pieza y control a la vez
     if (faltan.length) showNotice(t('aviso.faltan', { name, n: faltan.length, lista: faltan.join(', ') }), 'warn', 0);
     else showNotice(t('aviso.completo', { name }), 'ok');
   }
