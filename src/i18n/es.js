@@ -21,7 +21,7 @@ export default {
   'nav.ir.eval': 'Ir a Evaluación →', 'nav.terminar': 'Terminar →', 'nav.resultado': 'Ver resultado →', 'nav.sig.lab': 'Siguiente laboratorio →',
   'seg.parte': 'Parte {n}', 'seg.paso': 'Paso {n}', 'seg.item': 'Ejercicio {n}', 'seg.pregunta': 'Pregunta {n}',
   'ref.real': 'En la cámara real', 'ref.tutorial': 'Tutorial CPMA · {min}',
-  'voz.escuchar': 'Escuchar', 'voz.detener': 'Detener narración', 'video.ver': 'Ver en el video', 'video.corto': 'Video', 'video.error': 'Este navegador no pudo reproducir el video. Prueba con Chrome, Edge, Safari o Firefox actualizados.', 'video.titulo': 'Video tutorial', 'video.desde': 'desde {min}',
+  'voz.escuchar': 'Escuchar', 'voz.detener': 'Detener narración', 'video.ver': 'Ver en el video', 'video.corto': 'Video', 'video.error': 'Este navegador no pudo reproducir el video. Prueba con Chrome, Edge, Safari o Firefox actualizados.', 'video.titulo': 'Video tutorial', 'video.desde': 'desde {min}', 'video.tramo': 'de {a} a {b}', 'video.fin': 'Fin de esta parte. Cerrando el video…',
   'logo.uao': 'Universidad Autónoma de Occidente',
   'rec.eyebrow': 'Recorrido · Parte {n} de {total}', 'rec.que': '¿Qué es?', 'rec.para': '¿Para qué sirve?', 'tip': 'Tip',
   'uso.eyebrow': 'Uso de la cámara · Paso {n} de {total}', 'uso.asi': 'Así se ve en la cámara real',

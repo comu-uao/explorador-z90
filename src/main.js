@@ -155,14 +155,14 @@ function foto(id, pie, min) {
   </figure>`;
 }
 let textoVoz = '';
-function herramientas(texto, min) {
+function herramientas(texto, min, hasta) {
   textoVoz = texto;
   return `<div class="ficha-tools">
     <button type="button" class="btn small secondary" data-voz aria-pressed="false" ${vozDisponible ? '' : 'disabled'} aria-label="${t('voz.escuchar')}">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6L8 10z"/><path class="onda1" d="M16 9a4 4 0 0 1 0 6"/><path class="onda2" d="M18.5 6.5a7.5 7.5 0 0 1 0 11"/></svg>
       <span>${t('voz.escuchar')}</span>
     </button>
-    <button type="button" class="btn small secondary" data-video="${min || ''}" ${min && video.disponible ? '' : 'disabled'}>
+    <button type="button" class="btn small secondary" data-video="${min || ''}" data-hasta="${hasta || ''}" ${min && video.disponible ? '' : 'disabled'}>
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9v6l5-3z"/></svg>
       <span>${t('video.corto')}${min ? ' · ' + min : ''}</span>
     </button>
@@ -181,7 +181,7 @@ function renderPaso(s) {
   body.innerHTML = `
     <p class="eyebrow">${t('rec.eyebrow', { n: s.n, total: PASOS.length })}</p>
     <h2 tabindex="-1"><span class="num">${s.n}</span>${esc(s.titulo)}</h2>
-    ${herramientas([s.titulo, s.que_es, s.para_que, `${t('tip')}: ${s.tip}`].join('. '), s.min)}
+    ${herramientas([s.titulo, s.que_es, s.para_que, `${t('tip')}: ${s.tip}`].join('. '), s.min, s.hasta)}
     <div class="qa"><h3>${t('rec.que')}</h3><p>${esc(s.que_es)}</p></div>
     <div class="qa"><h3>${t('rec.para')}</h3><p>${esc(s.para_que)}</p></div>
     <div class="tip"><span class="tip-tag">${t('tip')}</span><p>${esc(s.tip)}</p></div>
@@ -227,12 +227,12 @@ function renderUso(pista = '') {
     <h2 tabindex="-1"><span class="num">${state.uso + 1}</span>${esc(u.titulo)}</h2>`;
   const ref = foto(u.foto, t('uso.asi'), u.min);
   if (state.usoHecho) {
-    body.innerHTML = `${head}${herramientas(`${u.titulo}. ${u.hecho}`, u.min)}
+    body.innerHTML = `${head}${herramientas(`${u.titulo}. ${u.hecho}`, u.min, u.hasta)}
       <div class="status ok"><span class="status-mark" aria-hidden="true">✓</span><p>${esc(u.hecho)}</p></div>
       <button type="button" class="btn secondary" data-uso="repetir">${t('uso.repetir')}</button>
       ${ref}`;
   } else {
-    body.innerHTML = `${head}${herramientas(`${u.titulo}. ${u.instruccion}`, u.min)}
+    body.innerHTML = `${head}${herramientas(`${u.titulo}. ${u.instruccion}`, u.min, u.hasta)}
       <p class="instr">${esc(u.instruccion)}</p>
       <div class="status ${pista ? 'warn' : 'info'}" role="status">
         <span class="status-mark" aria-hidden="true">${pista ? '!' : ''}</span>
@@ -312,7 +312,8 @@ body.addEventListener('click', (e) => {
   const b = e.target.closest('button');
   if (!b) return;
   if (b.hasAttribute('data-voz')) vozPulsada(b);
-  else if (b.dataset.video != null && b.dataset.video !== '') { callar(); video.abrir(b.dataset.video, body.querySelector('h2')?.textContent); }
+  else if (b.dataset.video != null && b.dataset.video !== '') { callar(); const h2 = body.querySelector('h2'); const titulo = h2 ? [...h2.childNodes].filter((n) => !n.classList?.contains('num')).map((n) => n.textContent).join('').trim() : '';
+    video.abrir(b.dataset.video, titulo, b.dataset.hasta); }
   else if (b.dataset.uso === 'mostrar') completarUso();
   else if (b.dataset.uso === 'repetir') goUso(state.uso);
   else if (b.dataset.uso === 'reiniciar') { state.usoListo.clear(); save(); goUso(0); }

@@ -2,89 +2,165 @@
   {
     "id": "lente",
     "titulo": "El lente y el parasol",
-    "partes": ["parasol", "lente"],
+    "partes": [
+      "parasol",
+      "lente"
+    ],
     "que_es": "Un lente fijo con zoom óptico: no se cambia, pero acerca la imagen sin perder calidad. El parasol es la visera de adelante.",
     "para_que": "El lente encuadra y enfoca. A su lado izquierdo están el botón AF/MF, para elegir enfoque automático o manual, y el interruptor FOCUS/ZOOM, que define si el anillo enfoca o hace zoom.",
     "tip": "El enfoque automático reconoce rostros muy rápido, pero el CPMA recomienda grabar casi siempre en manual.",
-    "foto": "frente", "foto_pie": "La Z90V con su lente fijo y el parasol", "min": "00:42",
-    "vista": [-2.4, 1.0, 2.4],
+    "foto": "frente",
+    "foto_pie": "La Z90V con su lente fijo y el parasol",
+    "min": "00:42",
+    "hasta": "00:54",
+    "vista": [
+      -2.4,
+      1.0,
+      2.4
+    ],
     "despiece": null
   },
   {
     "id": "nd",
     "titulo": "El filtro ND",
-    "partes": ["nd"],
+    "partes": [
+      "nd"
+    ],
     "que_es": "Unas «gafas de sol» que la cámara lleva por dentro, detrás del lente.",
     "para_que": "Cuando hay mucha luz o grabas en exteriores, quita luz para que la imagen no se vea quemada. Se maneja con el selector ND de la parte de atrás: cada vez que lo subes, oscurece un poco más.",
     "tip": "Primero sube el ND y después termina de ajustar el iris.",
-    "foto": "trasera", "foto_pie": "Parte trasera: selector ND, AUTO/MANUAL y botón REC", "min": "04:38",
-    "vista": [-1.4, 0.4, 2.6],
+    "foto": "trasera",
+    "foto_pie": "Parte trasera: selector ND, AUTO/MANUAL y botón REC",
+    "min": "04:38",
+    "hasta": "05:07",
+    "vista": [
+      -1.4,
+      0.4,
+      2.6
+    ],
     "despiece": 1
   },
   {
     "id": "sensor",
     "titulo": "El sensor",
-    "partes": ["sensor"],
+    "partes": [
+      "sensor"
+    ],
     "que_es": "Una placa que recibe la luz y la convierte en imagen digital.",
     "para_que": "Es grande para una cámara de este tamaño, por eso se ve bien con poca luz. También ayuda al enfoque automático híbrido, que tiene 273 puntos de referencia.",
     "tip": "Aunque el sensor es bueno, siempre es mejor iluminar bien la escena.",
-    "foto": null, "foto_pie": null, "min": "05:41",
-    "vista": [-1.2, 0.4, 2.6],
+    "foto": null,
+    "foto_pie": null,
+    "min": "05:41",
+    "hasta": "06:00",
+    "vista": [
+      -1.2,
+      0.4,
+      2.6
+    ],
     "despiece": 1
   },
   {
     "id": "pantalla",
     "titulo": "Pantalla y visor",
-    "partes": ["lcd", "visor"],
+    "partes": [
+      "lcd",
+      "visor"
+    ],
     "que_es": "La pantalla LCD, en el lado izquierdo, y el visor de atrás, donde pones el ojo.",
     "para_que": "Al abrir la pantalla la cámara se enciende y quedan a la vista los botones de control y las ranuras de las tarjetas. El visor sirve cuando hay sol y la pantalla no se ve bien.",
     "tip": "Apoyar el ojo en el visor también te ayuda a sostener la cámara más firme.",
-    "foto": "panel-lateral", "foto_pie": "Pantalla abierta: detrás están los botones y las ranuras SD", "min": "01:06",
-    "vista": [0.8, 1.2, 3.2],
+    "foto": "panel-lateral",
+    "foto_pie": "Pantalla abierta: detrás están los botones y las ranuras SD",
+    "min": "01:06",
+    "hasta": "01:33",
+    "vista": [
+      0.8,
+      1.2,
+      3.2
+    ],
     "despiece": null
   },
   {
     "id": "cuerpo",
     "titulo": "Cuerpo y botones",
-    "partes": ["cuerpo"],
+    "partes": [
+      "cuerpo"
+    ],
     "que_es": "La caja central con el «cerebro» de la cámara y casi todos sus botones.",
     "para_que": "Junto a la pantalla están encendido, WHITE BALANCE y MENU. Abajo, IRIS, ISO y SHUTTER para la exposición. Atrás, la palanca de mando para moverte por el menú y el interruptor AUTO/MANUAL.",
     "tip": "Si en AUTO no puedes cambiar nada, pasa el interruptor de atrás a MANUAL.",
-    "foto": "botones", "foto_pie": "Panel de botones del lado izquierdo", "min": "02:48",
-    "vista": [0.6, 0.6, 3.8],
+    "foto": "botones",
+    "foto_pie": "Panel de botones del lado izquierdo",
+    "min": "02:48",
+    "hasta": "03:06",
+    "vista": [
+      0.6,
+      0.6,
+      3.8
+    ],
     "despiece": null
   },
   {
     "id": "audio",
     "titulo": "Asa y sonido",
-    "partes": ["asa", "mic"],
+    "partes": [
+      "asa",
+      "mic"
+    ],
     "que_es": "El asa de arriba se puede quitar. Tiene dos entradas XLR para micrófonos profesionales, sus interruptores INPUT, la palanca de zoom y un segundo botón REC. Al frente hay un micrófono integrado.",
     "para_que": "Con un micrófono externo conectado por XLR grabas voces claras. El micrófono integrado capta el sonido ambiente.",
     "tip": "Para las imágenes de apoyo, vuelve al micrófono interno: así no se cuela la voz del entrevistado.",
-    "foto": "xlr", "foto_pie": "Entradas XLR al frente del asa", "min": "00:54",
-    "vista": [-1.4, 1.8, 2.8],
+    "foto": "xlr",
+    "foto_pie": "Entradas XLR al frente del asa",
+    "min": "00:54",
+    "hasta": "01:06",
+    "vista": [
+      -1.4,
+      1.8,
+      2.8
+    ],
     "despiece": null
   },
   {
     "id": "memoria",
     "titulo": "Tarjetas y conexiones",
-    "partes": ["sd", "conectores"],
+    "partes": [
+      "sd",
+      "conectores"
+    ],
     "que_es": "Dos ranuras para tarjetas SD, bajo una tapa pequeña detrás de la pantalla, y los puertos para conectar cables.",
     "para_que": "En la tarjeta queda guardado tu video. Los cables llevan la imagen a un televisor o a una transmisión en vivo.",
     "tip": "Mete la tarjeta siguiendo la forma que marca la guía, hasta que haga clic.",
-    "foto": "tarjeta", "foto_pie": "Ranuras de las tarjetas SD", "min": "02:00",
-    "vista": [0.6, 0.8, 3.0],
+    "foto": "tarjeta",
+    "foto_pie": "Ranuras de las tarjetas SD",
+    "min": "02:00",
+    "hasta": "02:35",
+    "vista": [
+      0.6,
+      0.8,
+      3.0
+    ],
     "despiece": null
   },
   {
     "id": "bateria",
     "titulo": "La batería",
-    "partes": ["bateria"],
+    "partes": [
+      "bateria"
+    ],
     "que_es": "La fuente de energía de la cámara. Va en la parte de atrás, debajo del visor.",
     "para_que": "Le da energía a todo. Para ponerla, corre el seguro de abajo e inserta la batería con los conectores hacia arriba; al soltar el seguro queda fija.",
     "tip": "Lleva siempre una batería de repuesto cargada.",
-    "foto": "bateria", "foto_pie": "Montaje de la batería en la parte trasera", "min": "01:33",
-    "vista": [2.6, 0.4, 2.1],
+    "foto": "bateria",
+    "foto_pie": "Montaje de la batería en la parte trasera",
+    "min": "01:33",
+    "hasta": "02:05",
+    "vista": [
+      2.6,
+      0.4,
+      2.1
+    ],
     "despiece": null
   }
 ]

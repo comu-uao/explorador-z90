@@ -1,247 +1,247 @@
 {
- "retos": {
-  "sol": {
-   "titulo": "Interview in the sun",
-   "desc": "You're shooting an outdoor interview at noon. You want a blurred background so the person stands out.",
-   "metas": [
-    "Correct exposure (needle in the center)",
-    "Blurred background: iris at f/4.5 or wider",
-    "Natural motion: shutter at 1/60",
-    "Clean image: ISO 400 or lower",
-    "Natural color: white balance for sunlight"
-   ],
-   "pista": "With the iris that wide, too much light comes in. Raise the ND filter to 1/64 before closing the iris."
+  "retos": {
+    "sol": {
+      "titulo": "Interview in the sun",
+      "desc": "You're shooting an outdoor interview at noon. You want a blurred background so the person stands out.",
+      "metas": [
+        "Correct exposure (needle in the center)",
+        "Blurred background: iris at f/4.5 or wider",
+        "Natural motion: shutter at 1/60",
+        "Clean image: ISO 400 or lower",
+        "Natural color: white balance for sunlight"
+      ],
+      "pista": "With the iris that wide, too much light comes in. Raise the ND filter to 1/64 before closing the iris."
+    },
+    "estudio": {
+      "titulo": "Podcast in the studio",
+      "desc": "You are recording a podcast in a dim studio lit with warm lamps. The image should look bright and free of grain.",
+      "metas": [
+        "Correct exposure (needle in the center)",
+        "No ND filter: light is missing here, not extra",
+        "Natural motion: shutter at 1/60",
+        "Grain under control: ISO 1250 or lower",
+        "Natural color: white balance for lamp light"
+      ],
+      "pista": "First remove the ND, open the iris all the way and set the shutter to 1/60. Only then raise the ISO."
+    },
+    "jardin": {
+      "titulo": "Sharp park shot",
+      "desc": "A wide shot in the park. Everything, front to back, must be in focus.",
+      "metas": [
+        "Correct exposure (needle in the center)",
+        "Everything sharp: iris at f/8 or narrower",
+        "Natural motion: shutter at 1/60",
+        "Clean image: ISO 400 or lower",
+        "Natural color: white balance for daylight"
+      ],
+      "pista": "Close the iris to f/8 and lower the ISO. If there's still too much light, use ND 1/4."
+    }
   },
-  "estudio": {
-   "titulo": "Presenter in the studio",
-   "desc": "The studio is dim and lit with warm lamps. The image should look bright and free of grain.",
-   "metas": [
-    "Correct exposure (needle in the center)",
-    "No ND filter: light is missing here, not extra",
-    "Natural motion: shutter at 1/60",
-    "Grain under control: ISO 1250 or lower",
-    "Natural color: white balance for lamp light"
-   ],
-   "pista": "First remove the ND, open the iris all the way and set the shutter to 1/60. Only then raise the ISO."
+  "menu": {
+    "nombres": {
+      "cam": "CAMERA SET",
+      "grab": "REC/OUT SET",
+      "audio": "AUDIO SET",
+      "pant": "DISPLAY SET",
+      "iso": "ISO/GAIN SELECT",
+      "wbpre": "WB PRESET",
+      "cebra": "ZEBRA",
+      "steady": "STEADYSHOT",
+      "ajgrab": "REC SET",
+      "fmt": "FILE FORMAT",
+      "formgrab": "REC FORMAT",
+      "simul": "SIMUL/RELAY REC",
+      "salida": "VIDEO OUT",
+      "vol": "VOLUME",
+      "fmtaudio": "AVCHD AUDIO FORMAT",
+      "mic": "MIC SELECT",
+      "hist": "HISTOGRAM",
+      "aten": "PEAKING",
+      "atenon": "ON/OFF",
+      "atencol": "COLOR"
+    },
+    "opciones": {
+      "iso": [
+        "ISO",
+        "GAIN"
+      ],
+      "wbpre": [
+        "OUTDOOR",
+        "INDOOR",
+        "MANUAL"
+      ],
+      "cebra": [
+        "OFF",
+        "ON"
+      ],
+      "steady": [
+        "STANDARD",
+        "ACTIVE",
+        "OFF"
+      ],
+      "formgrab": [
+        "1080/60i 50Mbps",
+        "1080/30p 50Mbps",
+        "720/60p 50Mbps"
+      ],
+      "simul": [
+        "OFF",
+        "SIMUL REC",
+        "RELAY REC"
+      ],
+      "salida": [
+        "HDMI",
+        "SDI",
+        "HDMI & SDI"
+      ],
+      "fmtaudio": [
+        "LINEAR PCM",
+        "DOLBY DIGITAL"
+      ],
+      "hist": [
+        "OFF",
+        "ON"
+      ],
+      "atenon": [
+        "OFF",
+        "ON"
+      ],
+      "atencol": [
+        "WHITE",
+        "RED",
+        "YELLOW"
+      ]
+    },
+    "misiones": {
+      "avchd": {
+        "texto": "Change the file format to AVCHD",
+        "ayuda": "Rec/Out Set → Rec Set → File Format"
+      },
+      "simul": {
+        "texto": "Record to both cards at the same time",
+        "ayuda": "Rec/Out Set → Rec Set → Simul/Relay Rec"
+      },
+      "intmic": {
+        "texto": "For supporting shots, choose the internal microphone",
+        "ayuda": "Audio Set → Mic Select → INT MIC"
+      },
+      "steady": {
+        "texto": "Turn on the stabilizer in Active mode",
+        "ayuda": "Camera Set → SteadyShot → Active"
+      },
+      "peaking": {
+        "texto": "Turn on peaking to help you focus",
+        "ayuda": "Display Set → Peaking → On/Off"
+      }
+    }
   },
-  "jardin": {
-   "titulo": "Sharp garden",
-   "desc": "A wide shot in the shade. Everything, front to back, must be in focus.",
-   "metas": [
-    "Correct exposure (needle in the center)",
-    "Everything sharp: iris at f/8 or narrower",
-    "Natural motion: shutter at 1/60",
-    "Clean image: ISO 400 or lower",
-    "Natural color: white balance for daylight"
-   ],
-   "pista": "Close the iris to f/8 and lower the ISO. If there's still too much light, use ND 1/4."
+  "errores": {
+    "quemada": {
+      "pregunta": "The sunny interview looks almost white. What went wrong?",
+      "opciones": [
+        "There was too much light and the ND filter wasn't used",
+        "The white balance",
+        "It needed focusing",
+        "The battery was low"
+      ],
+      "explicacion": "In strong sunlight, raise the ND filter. It cuts light without closing the iris or losing the blurred background."
+    },
+    "azul": {
+      "pregunta": "The outdoor shot turned out all bluish. What went wrong?",
+      "opciones": [
+        "The ISO was too high",
+        "White balance was set for lamp light (3200K)",
+        "The ND filter was at 1/64",
+        "The zoom was all the way in"
+      ],
+      "explicacion": "In daylight, a 3200K balance turns everything blue. Set the balance with something white under the same light."
+    },
+    "oscura": {
+      "pregunta": "In the studio podcast the image came out dark and very grainy. What went wrong?",
+      "opciones": [
+        "The ISO was raised without opening the iris first",
+        "The hood was missing",
+        "It was recorded in AVCHD",
+        "The microphone was on MIC"
+      ],
+      "explicacion": "In low light, open the iris first and set the shutter to 1/60. Raise the ISO last, and as little as possible."
+    },
+    "borrosa": {
+      "pregunta": "The whole shot is blurry. What went wrong?",
+      "opciones": [
+        "The ND filter",
+        "Focus: the ring wasn't adjusted after zooming",
+        "The white balance",
+        "The SD card"
+      ],
+      "explicacion": "Switch to manual focus with AF/MF, turn the ring and turn on peaking to see what's sharp."
+    },
+    "temblor": {
+      "pregunta": "You shot handheld while walking through the park and the image shakes. What was missing?",
+      "opciones": [
+        "Raising the ISO",
+        "Turning on SteadyShot or using a tripod",
+        "Switching to XAVC",
+        "Closing the iris"
+      ],
+      "explicacion": "SteadyShot crops the image slightly, but it stabilizes handheld shots."
+    },
+    "audio": {
+      "audio": "“…and that's why I decided to study communication…” (the interviewee's voice, in the background)",
+      "pregunta": "While editing the B-roll you can hear the interviewee's voice. What went wrong during recording?",
+      "opciones": [
+        "MI SHOE MIC was still selected instead of INT MIC",
+        "The volume was low",
+        "The ND filter was missing",
+        "The format was AVCHD"
+      ],
+      "explicacion": "For supporting shots, go back to Audio Set → Mic Select → INT MIC to keep ambient sound."
+    }
+  },
+  "lista": {
+    "bat": {
+      "grupo": "Before you leave",
+      "texto": "Charged battery plus a spare"
+    },
+    "sd": {
+      "grupo": "Before you leave",
+      "texto": "Two SD cards, formatted in the camera"
+    },
+    "aud": {
+      "grupo": "Before you leave",
+      "texto": "Headphones, microphone and XLR cable"
+    },
+    "lim": {
+      "grupo": "Before you leave",
+      "texto": "Lens hood on and a microfiber cloth"
+    },
+    "fmt": {
+      "grupo": "On location",
+      "texto": "File format set to AVCHD"
+    },
+    "man": {
+      "grupo": "On location",
+      "texto": "AUTO/MANUAL switch on MANUAL"
+    },
+    "nd": {
+      "grupo": "On location",
+      "texto": "ND filter set for the light"
+    },
+    "wb": {
+      "grupo": "On location",
+      "texto": "White balance with something white under the same light"
+    },
+    "foco": {
+      "grupo": "On location",
+      "texto": "Manual focus, with peaking"
+    },
+    "mic": {
+      "grupo": "On location",
+      "texto": "INPUT on MIC and MI SHOE MIC (or INT MIC for supporting shots)"
+    },
+    "prueba": {
+      "grupo": "On location",
+      "texto": "10-second test recording, checked with headphones"
+    }
   }
- },
- "menu": {
-  "nombres": {
-   "cam": "CAMERA SET",
-   "grab": "REC/OUT SET",
-   "audio": "AUDIO SET",
-   "pant": "DISPLAY SET",
-   "iso": "ISO/GAIN SELECT",
-   "wbpre": "WB PRESET",
-   "cebra": "ZEBRA",
-   "steady": "STEADYSHOT",
-   "ajgrab": "REC SET",
-   "fmt": "FILE FORMAT",
-   "formgrab": "REC FORMAT",
-   "simul": "SIMUL/RELAY REC",
-   "salida": "VIDEO OUT",
-   "vol": "VOLUME",
-   "fmtaudio": "AVCHD AUDIO FORMAT",
-   "mic": "MIC SELECT",
-   "hist": "HISTOGRAM",
-   "aten": "PEAKING",
-   "atenon": "ON/OFF",
-   "atencol": "COLOR"
-  },
-  "opciones": {
-   "iso": [
-    "ISO",
-    "GAIN"
-   ],
-   "wbpre": [
-    "OUTDOOR",
-    "INDOOR",
-    "MANUAL"
-   ],
-   "cebra": [
-    "OFF",
-    "ON"
-   ],
-   "steady": [
-    "STANDARD",
-    "ACTIVE",
-    "OFF"
-   ],
-   "formgrab": [
-    "1080/60i 50Mbps",
-    "1080/30p 50Mbps",
-    "720/60p 50Mbps"
-   ],
-   "simul": [
-    "OFF",
-    "SIMUL REC",
-    "RELAY REC"
-   ],
-   "salida": [
-    "HDMI",
-    "SDI",
-    "HDMI & SDI"
-   ],
-   "fmtaudio": [
-    "LINEAR PCM",
-    "DOLBY DIGITAL"
-   ],
-   "hist": [
-    "OFF",
-    "ON"
-   ],
-   "atenon": [
-    "OFF",
-    "ON"
-   ],
-   "atencol": [
-    "WHITE",
-    "RED",
-    "YELLOW"
-   ]
-  },
-  "misiones": {
-   "avchd": {
-    "texto": "Change the file format to AVCHD",
-    "ayuda": "Rec/Out Set → Rec Set → File Format"
-   },
-   "simul": {
-    "texto": "Record to both cards at the same time",
-    "ayuda": "Rec/Out Set → Rec Set → Simul/Relay Rec"
-   },
-   "intmic": {
-    "texto": "For supporting shots, choose the internal microphone",
-    "ayuda": "Audio Set → Mic Select → INT MIC"
-   },
-   "steady": {
-    "texto": "Turn on the stabilizer in Active mode",
-    "ayuda": "Camera Set → SteadyShot → Active"
-   },
-   "peaking": {
-    "texto": "Turn on peaking to help you focus",
-    "ayuda": "Display Set → Peaking → On/Off"
-   }
-  }
- },
- "errores": {
-  "quemada": {
-   "pregunta": "The sunny interview looks almost white. What went wrong?",
-   "opciones": [
-    "There was too much light and the ND filter wasn't used",
-    "The white balance",
-    "It needed focusing",
-    "The battery was low"
-   ],
-   "explicacion": "In strong sunlight, raise the ND filter. It cuts light without closing the iris or losing the blurred background."
-  },
-  "azul": {
-   "pregunta": "The outdoor shot turned out all bluish. What went wrong?",
-   "opciones": [
-    "The ISO was too high",
-    "White balance was set for lamp light (3200K)",
-    "The ND filter was at 1/64",
-    "The zoom was all the way in"
-   ],
-   "explicacion": "In daylight, a 3200K balance turns everything blue. Set the balance with something white under the same light."
-  },
-  "oscura": {
-   "pregunta": "In the studio the image came out dark and very grainy. What went wrong?",
-   "opciones": [
-    "The ISO was raised without opening the iris first",
-    "The hood was missing",
-    "It was recorded in AVCHD",
-    "The microphone was on MIC"
-   ],
-   "explicacion": "In low light, open the iris first and set the shutter to 1/60. Raise the ISO last, and as little as possible."
-  },
-  "borrosa": {
-   "pregunta": "The whole shot is blurry. What went wrong?",
-   "opciones": [
-    "The ND filter",
-    "Focus: the ring wasn't adjusted after zooming",
-    "The white balance",
-    "The SD card"
-   ],
-   "explicacion": "Switch to manual focus with AF/MF, turn the ring and turn on peaking to see what's sharp."
-  },
-  "temblor": {
-   "pregunta": "You followed a person walking with the camera in your hands and the image shakes. What was missing?",
-   "opciones": [
-    "Raising the ISO",
-    "Turning on SteadyShot or using a tripod",
-    "Switching to XAVC",
-    "Closing the iris"
-   ],
-   "explicacion": "SteadyShot crops the image slightly, but it stabilizes handheld shots."
-  },
-  "audio": {
-   "audio": "“…and that's why I decided to study communication…” (the interviewee's voice, in the background)",
-   "pregunta": "In the supporting shots you can hear the interviewee's voice. What went wrong?",
-   "opciones": [
-    "MI SHOE MIC was still selected instead of INT MIC",
-    "The volume was low",
-    "The ND filter was missing",
-    "The format was AVCHD"
-   ],
-   "explicacion": "For supporting shots, go back to Audio Set → Mic Select → INT MIC to keep ambient sound."
-  }
- },
- "lista": {
-  "bat": {
-   "grupo": "Before you leave",
-   "texto": "Charged battery plus a spare"
-  },
-  "sd": {
-   "grupo": "Before you leave",
-   "texto": "Two SD cards, formatted in the camera"
-  },
-  "aud": {
-   "grupo": "Before you leave",
-   "texto": "Headphones, microphone and XLR cable"
-  },
-  "lim": {
-   "grupo": "Before you leave",
-   "texto": "Lens hood on and a microfiber cloth"
-  },
-  "fmt": {
-   "grupo": "On location",
-   "texto": "File format set to AVCHD"
-  },
-  "man": {
-   "grupo": "On location",
-   "texto": "AUTO/MANUAL switch on MANUAL"
-  },
-  "nd": {
-   "grupo": "On location",
-   "texto": "ND filter set for the light"
-  },
-  "wb": {
-   "grupo": "On location",
-   "texto": "White balance with something white under the same light"
-  },
-  "foco": {
-   "grupo": "On location",
-   "texto": "Manual focus, with peaking"
-  },
-  "mic": {
-   "grupo": "On location",
-   "texto": "INPUT on MIC and MI SHOE MIC (or INT MIC for supporting shots)"
-  },
-  "prueba": {
-   "grupo": "On location",
-   "texto": "10-second test recording, checked with headphones"
-  }
- }
 }

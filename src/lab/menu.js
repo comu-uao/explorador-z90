@@ -150,7 +150,7 @@ export function crearMenu({ t, imagenes, stats, onCambio }) {
         <div class="status info" id="ml-estado" role="status"></div>
         <div class="lab-acciones">
           <button type="button" class="btn secondary" data-ml="pista">${t('lab.pista')}</button>
-          <button type="button" class="btn secondary" data-video="${mi.min || ''}" ${mi.min ? '' : 'disabled'}>${t('video.corto')}${mi.min ? ' · ' + mi.min : ''}</button>
+          <button type="button" class="btn secondary" data-video="${mi.min || ''}" data-hasta="${mi.hasta || ''}" ${mi.min ? '' : 'disabled'}>${t('video.corto')}${mi.min ? ' · ' + mi.min : ''}</button>
         </div>
         <p class="eyebrow">${t('lab.menu.todas')}</p>
         <ol class="misiones" id="ml-lista"></ol>`;

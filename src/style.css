@@ -532,7 +532,8 @@ body[data-mode="lab"] .lab-stage {
 .video-cuerpo { padding: 16px; display: grid; gap: 10px; }
 .video-cuerpo video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; border-radius: 12px; }
 .video-cuerpo video::cue { font: 500 1rem var(--f-body); background: rgba(0, 0, 0, .75); }
-.video-pie { font-size: .82rem; color: var(--muted); }
+.video-pie { font-size: .82rem; color: var(--muted); min-height: 1.3em; }
+.video-pie.fin { color: var(--red); font-weight: 600; }
 
 /* Lista antes de grabar */
 .lista-prog { display: grid; gap: 6px; font-size: .9rem; }

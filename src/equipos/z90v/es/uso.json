@@ -5,11 +5,35 @@
     "instruccion": "Haz clic en la batería que está suelta detrás de la cámara.",
     "hecho": "¡Listo! En la cámara real: corre el seguro de abajo, inserta la batería con los conectores hacia arriba y suelta el seguro para que quede fija.",
     "pista": "Busca el bloque oscuro separado en la parte de atrás, debajo del visor.",
-    "control": "Bateria", "parte": "bateria",
-    "foto": "bateria", "min": "01:33",
-    "vista": [2.6, 0.8, 1.8],
-    "acciones": [{ "objeto": "Bateria", "tipo": "mover", "de": [0.7, 0, 0], "a": [0, 0, 0] }],
-    "pantalla": { "bateria": true }
+    "control": "Bateria",
+    "parte": "bateria",
+    "foto": "bateria",
+    "min": "01:33",
+    "hasta": "02:05",
+    "vista": [
+      2.6,
+      0.8,
+      1.8
+    ],
+    "acciones": [
+      {
+        "objeto": "Bateria",
+        "tipo": "mover",
+        "de": [
+          0.7,
+          0,
+          0
+        ],
+        "a": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "pantalla": {
+      "bateria": true
+    }
   },
   {
     "id": "pantalla",
@@ -17,11 +41,32 @@
     "instruccion": "Haz clic en la pantalla del lado izquierdo para abrirla. Al abrirla, la cámara se enciende.",
     "hecho": "La cámara se encendió. Si la pantalla ya estaba abierta y la cámara está apagada, presiona el botón de encendido que queda detrás de ella.",
     "pista": "La pantalla está cerrada contra el lado izquierdo de la cámara.",
-    "control": "Pantalla_LCD", "parte": "lcd",
-    "foto": "panel-lateral", "min": "02:35",
-    "vista": [0.8, 0.8, 3.0],
-    "acciones": [{ "objeto": "Pantalla_LCD", "tipo": "girar", "eje": [0, 1, 0], "a": -90 }],
-    "pantalla": { "pantalla": true, "encendida": true }
+    "control": "Pantalla_LCD",
+    "parte": "lcd",
+    "foto": "panel-lateral",
+    "min": "02:35",
+    "hasta": "02:51",
+    "vista": [
+      0.8,
+      0.8,
+      3.0
+    ],
+    "acciones": [
+      {
+        "objeto": "Pantalla_LCD",
+        "tipo": "girar",
+        "eje": [
+          0,
+          1,
+          0
+        ],
+        "a": -90
+      }
+    ],
+    "pantalla": {
+      "pantalla": true,
+      "encendida": true
+    }
   },
   {
     "id": "tarjeta",
@@ -29,15 +74,55 @@
     "instruccion": "Detrás de la pantalla hay una tapa pequeña. Haz clic en ella para abrirla y meter la tarjeta.",
     "hecho": "La tarjeta quedó adentro. En la cámara real, sigue la forma que marca la guía y empújala hasta que haga clic.",
     "pista": "La tapa está en el panel que dejó a la vista la pantalla, hacia atrás.",
-    "control": "Tapa_SD", "parte": "sd",
-    "foto": "tarjeta", "min": "02:00",
-    "vista": [1.4, 0.6, 2.6],
-    "acciones": [
-      { "objeto": "Tapa_SD", "tipo": "mover", "a": [0, 0, 0.14] },
-      { "objeto": "Tarjeta_SD", "tipo": "mover", "de": [0, 0.55, 0.55], "a": [0, 0, 0], "retraso": 0.45 },
-      { "objeto": "Tapa_SD", "tipo": "mover", "a": [0, 0, 0], "retraso": 1.2 }
+    "control": "Tapa_SD",
+    "parte": "sd",
+    "foto": "tarjeta",
+    "min": "02:00",
+    "hasta": "02:35",
+    "vista": [
+      1.4,
+      0.6,
+      2.6
     ],
-    "pantalla": { "tarjeta": true }
+    "acciones": [
+      {
+        "objeto": "Tapa_SD",
+        "tipo": "mover",
+        "a": [
+          0,
+          0,
+          0.14
+        ]
+      },
+      {
+        "objeto": "Tarjeta_SD",
+        "tipo": "mover",
+        "de": [
+          0,
+          0.55,
+          0.55
+        ],
+        "a": [
+          0,
+          0,
+          0
+        ],
+        "retraso": 0.45
+      },
+      {
+        "objeto": "Tapa_SD",
+        "tipo": "mover",
+        "a": [
+          0,
+          0,
+          0
+        ],
+        "retraso": 1.2
+      }
+    ],
+    "pantalla": {
+      "tarjeta": true
+    }
   },
   {
     "id": "formato",
@@ -45,11 +130,31 @@
     "instruccion": "Presiona el botón MENU del panel lateral.",
     "hecho": "Con la palanca de mando de atrás entra a «Ajuste de grabación» → «Formato de archivo» y elige AVCHD. Es el formato que recomienda el CPMA porque funciona con cualquier tarjeta.",
     "pista": "MENU está en el panel de botones, a la derecha del botón WHITE BALANCE.",
-    "control": "Btn_Menu", "parte": "cuerpo",
-    "foto": "menu-formato", "min": "03:06",
-    "vista": [0.6, 0.5, 2.6],
-    "acciones": [{ "objeto": "Btn_Menu", "tipo": "pulsar", "eje": [0, 0, -1], "dist": 0.03 }],
-    "pantalla": { "formato": true }
+    "control": "Btn_Menu",
+    "parte": "cuerpo",
+    "foto": "menu-formato",
+    "min": "03:06",
+    "hasta": "03:55",
+    "vista": [
+      0.6,
+      0.5,
+      2.6
+    ],
+    "acciones": [
+      {
+        "objeto": "Btn_Menu",
+        "tipo": "pulsar",
+        "eje": [
+          0,
+          0,
+          -1
+        ],
+        "dist": 0.03
+      }
+    ],
+    "pantalla": {
+      "formato": true
+    }
   },
   {
     "id": "manual",
@@ -57,11 +162,30 @@
     "instruccion": "Mueve el interruptor AUTO/MANUAL de la parte trasera a MANUAL.",
     "hecho": "Ahora puedes ajustar la imagen tú mismo. En AUTO la cámara decide todo y no te deja mover ninguna configuración.",
     "pista": "Es el interruptor de abajo, en la esquina trasera del lado izquierdo.",
-    "control": "Interruptor_Auto", "parte": "cuerpo",
-    "foto": "trasera", "min": "07:53",
-    "vista": [2.0, 0.2, 2.2],
-    "acciones": [{ "objeto": "Interruptor_Auto", "tipo": "mover", "a": [0, -0.05, 0] }],
-    "pantalla": { "manual": true }
+    "control": "Interruptor_Auto",
+    "parte": "cuerpo",
+    "foto": "trasera",
+    "min": "07:53",
+    "hasta": "08:14",
+    "vista": [
+      2.0,
+      0.2,
+      2.2
+    ],
+    "acciones": [
+      {
+        "objeto": "Interruptor_Auto",
+        "tipo": "mover",
+        "a": [
+          0,
+          -0.05,
+          0
+        ]
+      }
+    ],
+    "pantalla": {
+      "manual": true
+    }
   },
   {
     "id": "iris",
@@ -69,11 +193,31 @@
     "instruccion": "Presiona el botón IRIS, el primero de la fila de abajo.",
     "hecho": "Ahora mueve la palanca de mando para ajustar y presiónala para fijar el valor. ISO y SHUTTER funcionan igual. Ojo: si vuelves a presionar IRIS después de ajustar, vuelve a automático.",
     "pista": "La fila de IRIS, ISO y SHUTTER está abajo, en el lado izquierdo, debajo de la pantalla.",
-    "control": "Btn_Iris", "parte": "cuerpo",
-    "foto": "exposicion", "min": "03:55",
-    "vista": [-0.2, -0.6, 2.6],
-    "acciones": [{ "objeto": "Btn_Iris", "tipo": "pulsar", "eje": [0, 0, -1], "dist": 0.03 }],
-    "pantalla": { "iris": true }
+    "control": "Btn_Iris",
+    "parte": "cuerpo",
+    "foto": "exposicion",
+    "min": "03:55",
+    "hasta": "04:38",
+    "vista": [
+      -0.2,
+      -0.6,
+      2.6
+    ],
+    "acciones": [
+      {
+        "objeto": "Btn_Iris",
+        "tipo": "pulsar",
+        "eje": [
+          0,
+          0,
+          -1
+        ],
+        "dist": 0.03
+      }
+    ],
+    "pantalla": {
+      "iris": true
+    }
   },
   {
     "id": "nd",
@@ -81,11 +225,30 @@
     "instruccion": "Hay mucho sol y la imagen se ve demasiado blanca. Sube el selector ND de la parte trasera.",
     "hecho": "Con el filtro ND la imagen ya no se ve quemada. Cada posición quita más luz.",
     "pista": "El selector ND está atrás, en el lado izquierdo, encima del interruptor AUTO/MANUAL.",
-    "control": "Selector_ND", "parte": "cuerpo",
-    "foto": "trasera", "min": "04:38",
-    "vista": [2.0, 0.4, 2.2],
-    "acciones": [{ "objeto": "Selector_ND", "tipo": "mover", "a": [0, 0.07, 0] }],
-    "pantalla": { "nd": true }
+    "control": "Selector_ND",
+    "parte": "cuerpo",
+    "foto": "trasera",
+    "min": "04:38",
+    "hasta": "05:07",
+    "vista": [
+      2.0,
+      0.4,
+      2.2
+    ],
+    "acciones": [
+      {
+        "objeto": "Selector_ND",
+        "tipo": "mover",
+        "a": [
+          0,
+          0.07,
+          0
+        ]
+      }
+    ],
+    "pantalla": {
+      "nd": true
+    }
   },
   {
     "id": "wb",
@@ -93,11 +256,31 @@
     "instruccion": "Los colores se ven azulados. Presiona el botón WHITE BALANCE del panel lateral.",
     "hecho": "En la cámara real: elige la memoria A o B, entra a Menú → «Ajuste de cámara» → «WB SET», llena el cuadro con algo blanco bajo la misma luz y presiona la palanca de mando. Presiona MENU para salir.",
     "pista": "WHITE BALANCE es el botón de la izquierda en el panel, debajo del encendido.",
-    "control": "Btn_WB", "parte": "cuerpo",
-    "foto": "balance", "min": "05:07",
-    "vista": [0.3, 0.5, 2.6],
-    "acciones": [{ "objeto": "Btn_WB", "tipo": "pulsar", "eje": [0, 0, -1], "dist": 0.03 }],
-    "pantalla": { "wb": true }
+    "control": "Btn_WB",
+    "parte": "cuerpo",
+    "foto": "balance",
+    "min": "05:07",
+    "hasta": "05:41",
+    "vista": [
+      0.3,
+      0.5,
+      2.6
+    ],
+    "acciones": [
+      {
+        "objeto": "Btn_WB",
+        "tipo": "pulsar",
+        "eje": [
+          0,
+          0,
+          -1
+        ],
+        "dist": 0.03
+      }
+    ],
+    "pantalla": {
+      "wb": true
+    }
   },
   {
     "id": "zoom",
@@ -105,11 +288,30 @@
     "instruccion": "Empuja la palanca de zoom que está encima del asa.",
     "hecho": "El zoom óptico acerca la imagen sin que tengas que moverte y sin perder calidad.",
     "pista": "Es la pieza plateada encima del asa, hacia el centro.",
-    "control": "Palanca_Zoom", "parte": "asa",
-    "foto": null, "min": null,
-    "vista": [0.3, 2.0, 2.6],
-    "acciones": [{ "objeto": "Palanca_Zoom", "tipo": "pulsar", "eje": [1, 0, 0], "dist": 0.06 }],
-    "pantalla": { "zoom": true }
+    "control": "Palanca_Zoom",
+    "parte": "asa",
+    "foto": null,
+    "min": null,
+    "vista": [
+      0.3,
+      2.0,
+      2.6
+    ],
+    "acciones": [
+      {
+        "objeto": "Palanca_Zoom",
+        "tipo": "pulsar",
+        "eje": [
+          1,
+          0,
+          0
+        ],
+        "dist": 0.06
+      }
+    ],
+    "pantalla": {
+      "zoom": true
+    }
   },
   {
     "id": "foco",
@@ -117,14 +319,42 @@
     "instruccion": "La imagen quedó borrosa. Presiona el botón AF/MF, al lado izquierdo del lente, para enfocar en manual.",
     "hecho": "Al girar el anillo la imagen queda nítida. Si el anillo mueve el zoom, pon el interruptor de al lado en FOCUS. Para ayudarte, activa el peaking: Menú → «Ajuste de pantalla» → «Atenuación».",
     "pista": "Está en el costado izquierdo del lente, cerca del cuerpo. Debajo está el interruptor FOCUS/ZOOM.",
-    "control": "Btn_AF", "parte": "lente",
-    "foto": "af-mf", "min": "05:41",
-    "vista": [-0.8, 0.6, 2.6],
-    "acciones": [
-      { "objeto": "Btn_AF", "tipo": "pulsar", "eje": [0, 0, -1], "dist": 0.03 },
-      { "objeto": "Anillo_Lente", "tipo": "girar", "eje": [1, 0, 0], "a": 160, "retraso": 0.5 }
+    "control": "Btn_AF",
+    "parte": "lente",
+    "foto": "af-mf",
+    "min": "05:41",
+    "hasta": "06:34",
+    "vista": [
+      -0.8,
+      0.6,
+      2.6
     ],
-    "pantalla": { "foco": true }
+    "acciones": [
+      {
+        "objeto": "Btn_AF",
+        "tipo": "pulsar",
+        "eje": [
+          0,
+          0,
+          -1
+        ],
+        "dist": 0.03
+      },
+      {
+        "objeto": "Anillo_Lente",
+        "tipo": "girar",
+        "eje": [
+          1,
+          0,
+          0
+        ],
+        "a": 160,
+        "retraso": 0.5
+      }
+    ],
+    "pantalla": {
+      "foco": true
+    }
   },
   {
     "id": "audio",
@@ -132,11 +362,30 @@
     "instruccion": "Conectaste un micrófono por XLR. Pasa el interruptor INPUT del asa a MIC.",
     "hecho": "Después, en Menú → «Ajuste de audio» → «Selección micrófono» elige MI SHOE MIC. Para las imágenes de apoyo, vuelve a INT MIC y tendrás sonido ambiente.",
     "pista": "Los interruptores INPUT están en el costado izquierdo del bloque de las entradas XLR, al frente del asa.",
-    "control": "Selector_Audio", "parte": "asa",
-    "foto": "microfono", "min": "06:35",
-    "vista": [-1.2, 1.4, 2.4],
-    "acciones": [{ "objeto": "Selector_Audio", "tipo": "mover", "a": [0.05, 0, 0] }],
-    "pantalla": { "audio": true }
+    "control": "Selector_Audio",
+    "parte": "asa",
+    "foto": "microfono",
+    "min": "06:35",
+    "hasta": "07:05",
+    "vista": [
+      -1.2,
+      1.4,
+      2.4
+    ],
+    "acciones": [
+      {
+        "objeto": "Selector_Audio",
+        "tipo": "mover",
+        "a": [
+          0.05,
+          0,
+          0
+        ]
+      }
+    ],
+    "pantalla": {
+      "audio": true
+    }
   },
   {
     "id": "rec",
@@ -144,10 +393,30 @@
     "instruccion": "Presiona el botón REC rojo que está encima del asa.",
     "hecho": "¡Estás grabando! La Z90V tiene dos botones REC: este y otro en la parte trasera. Para detener, presiona REC otra vez.",
     "pista": "El botón rojo está encima del asa, hacia atrás.",
-    "control": "Btn_REC", "parte": "asa",
-    "foto": "rec-asa", "min": "09:25",
-    "vista": [1.4, 1.9, 2.2],
-    "acciones": [{ "objeto": "Btn_REC", "tipo": "pulsar", "eje": [0, -1, 0], "dist": 0.03 }],
-    "pantalla": { "rec": true }
+    "control": "Btn_REC",
+    "parte": "asa",
+    "foto": "rec-asa",
+    "min": "09:25",
+    "hasta": "09:41",
+    "vista": [
+      1.4,
+      1.9,
+      2.2
+    ],
+    "acciones": [
+      {
+        "objeto": "Btn_REC",
+        "tipo": "pulsar",
+        "eje": [
+          0,
+          -1,
+          0
+        ],
+        "dist": 0.03
+      }
+    ],
+    "pantalla": {
+      "rec": true
+    }
   }
 ]

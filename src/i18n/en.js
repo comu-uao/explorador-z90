@@ -21,7 +21,7 @@ export default {
   'nav.ir.eval': 'Go to the Quiz →', 'nav.terminar': 'Finish →', 'nav.resultado': 'See result →', 'nav.sig.lab': 'Next lab →',
   'seg.parte': 'Part {n}', 'seg.paso': 'Step {n}', 'seg.item': 'Exercise {n}', 'seg.pregunta': 'Question {n}',
   'ref.real': 'On the real camera', 'ref.tutorial': 'CPMA tutorial · {min}',
-  'voz.escuchar': 'Listen', 'voz.detener': 'Stop narration', 'video.ver': 'Watch in the video', 'video.corto': 'Video', 'video.error': 'This browser could not play the video. Try an up-to-date Chrome, Edge, Safari or Firefox.', 'video.titulo': 'Video tutorial', 'video.desde': 'from {min}',
+  'voz.escuchar': 'Listen', 'voz.detener': 'Stop narration', 'video.ver': 'Watch in the video', 'video.corto': 'Video', 'video.error': 'This browser could not play the video. Try an up-to-date Chrome, Edge, Safari or Firefox.', 'video.titulo': 'Video tutorial', 'video.desde': 'from {min}', 'video.tramo': 'from {a} to {b}', 'video.fin': 'End of this part. Closing the video…',
   'logo.uao': 'Universidad Autónoma de Occidente',
   'rec.eyebrow': 'Tour · Part {n} of {total}', 'rec.que': 'What is it?', 'rec.para': 'What is it for?', 'tip': 'Tip',
   'uso.eyebrow': 'Using the camera · Step {n} of {total}', 'uso.asi': 'How it looks on the real camera',
